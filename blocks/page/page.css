@@ -1,0 +1,8 @@
+.page {
+  max-width: 1280px;
+  font-family: Inter, Arial, sans-serif; /* Задаём одинаковый шрифт по умолчанию */
+  font-style: normal; /* Тоже самое и со стилем */
+  color: #FFFFFF;; /* Тоже самое и с цветом */
+  margin: 0 auto;
+  padding-top: 45px;
+}
