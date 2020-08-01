@@ -1,0 +1,7 @@
+.pofile__info {
+  max-width: 336px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto 0 auto 0;
+}
