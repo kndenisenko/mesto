@@ -4,6 +4,7 @@
 @import url(./profile__button-edit/profile__button-edit.css);
 @import url(./__info-occupation/pofile__info-occupation.css);
 @import url(./__button-add/profile__button-add.css);
+@import url(./__open-popup/profile__open-popup.css);
 
 .profile {
   max-width: 882px;

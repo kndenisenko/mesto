@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <link rel="stylesheet" href="../_dev.css"> <!-- Delete before release Delete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before release-->
+  <link rel="stylesheet" href="../_de1v.css"> <!-- Delete before release Delete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before release-->
   <title>Проект "место"</title>
 <body class="body">
   <main class="page">
@@ -17,7 +17,7 @@
       <div class="profile__avatar"></div>
       <div class="pofile__info">
         <p class="pofile__info-name">Жак-Ив Кусто</p>
-        <button class="profile__button-edit"></button>
+        <button class="profile__button-edit profile__open-popup"></button>
         <p class="pofile__info-occupation">Исследователь океана</p>
       </div>
       <button class="profile__button-add"></button>
@@ -57,14 +57,24 @@
     <footer class="footer">
       <p class="footer__copywright">© 2020. Mesto Russia</p>
     </footer>
-
-
-
-
-
-
-
-
   </main>
+  <div class="popup">
+    <div class="popup__container">
+    <button class="popup__close-button" type="button"></button>
+    <p class="popup__paragraph">Редактировать профиль</p>
+    <ul class="popup__forms">
+      <li><input type="text" class="popup__form-info-name"></input></li>
+      <li><input type="text" class="popup__form-info-occupation"></input></li>
+    </ul>
+    <button class="popup__button-save" type="button">Сохранить</button>
+
+
+
+
+
+
+    </div>
+  </div>
+  <script src="./scripts/popup.js"></script>
 </body>
 </html>
