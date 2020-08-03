@@ -1,0 +1,5 @@
+@import url(./__copywright/footer__copywright.css);
+.footer {
+  display: flex;
+  margin: 66px auto 60px 199px;
+}

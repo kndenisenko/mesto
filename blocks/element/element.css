@@ -1,11 +1,14 @@
 @import url(./__image/element__image.css);
 @import url(./__paragraph/element__paragraph.css);
-@import url();
+@import url(./__button-like/element__button-like.css);
 @import url();
 
 .element {
   max-width: 282px;
   background-color: #ffffff;
-  border-radius: 10px
-
+  border-radius: 10px;
+  display: grid;
+  grid-template-areas:
+  "image image"
+  "paragraph like";
 }

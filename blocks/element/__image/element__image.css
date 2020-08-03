@@ -3,5 +3,5 @@
   max-height: 282px;
   overflow: hidden;
   border-radius: 10px 10px 0px 0px;
-
+  grid-area: image;
 }
