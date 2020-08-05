@@ -1,7 +1,6 @@
 @import url(./__image/element__image.css);
 @import url(./__paragraph/element__paragraph.css);
 @import url(./__button-like/element__button-like.css);
-@import url();
 
 .element {
   max-width: 282px;

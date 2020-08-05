@@ -16,9 +16,9 @@
     <section class="profile">
       <div class="profile__avatar"></div>
       <div class="pofile__info">
-        <p class="pofile__info-name">Жак-Ив Кусто</p>
+        <p class="pofile__info-name" id="userName">Жак-Ив Кусто</p>
         <button class="profile__button-edit profile__open-popup"></button>
-        <p class="pofile__info-occupation">Исследователь океана</p>
+        <p class="pofile__info-occupation" id="occupation">Исследователь океана</p>
       </div>
       <button class="profile__button-add"></button>
     </section>
@@ -63,8 +63,8 @@
     <button class="popup__close-button" type="button"></button>
     <p class="popup__paragraph">Редактировать профиль</p>
     <ul class="popup__forms">
-      <li><input type="text" class="popup__form-info-name"></input></li>
-      <li><input type="text" class="popup__form-info-occupation"></input></li>
+      <li><input type="text" class="popup__form-info-name" placeholder="" id="namePlaceholder"></input></li>
+      <li><input type="text" class="popup__form-info-occupation" placeholder="" id="occupyPlaceholder"></input></li>
     </ul>
     <button class="popup__button-save" type="button">Сохранить</button>
 

@@ -1,15 +1,13 @@
 .popup__form-info-name {
   width: 358px;
   height: 30px;
-
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-
   border: none;
   border-bottom: 1px solid #000000;
-
+  outline: none;
   margin: 24px 36px 0 36px;
 }

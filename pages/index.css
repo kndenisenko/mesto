@@ -1,3 +1,4 @@
+@import url(../blocks/popup/_toggle/popup_toggle.css);
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts.css);
 @import url(../blocks/body/body.css);
@@ -8,3 +9,4 @@
 @import url(../blocks/element/element.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_toggle/popup_toggle.css);

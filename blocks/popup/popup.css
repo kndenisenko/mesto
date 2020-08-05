@@ -1,6 +1,6 @@
 @import url(./__container/popup__container.css);
 @import url(./__close-button/popup__close-button.css);
-@import url(./_toggle/popup_toggle.css);
+/* @import url(./_toggle/popup_toggle.css); */
 @import url(./__paragraph/popup__paragraph.css);
 @import url(./__forms/popup__forms.css);
 @import url(./__form-info-name/popup__form-info-name.css);
@@ -12,19 +12,12 @@
 @import url();
 
 .popup {
-  position: absolute;
-  top: 195px;
+  display: none;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  max-width: 430px;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-
-
-
-  margin: 0 auto 0 auto;
-
-  max-height: 310px;
+  background: rgba(0, 0, 0, .8);
+  z-index: 10;
 }
