@@ -1,0 +1,12 @@
+.element__section {
+  display: flex;
+  flex-direction: row;
+  grid-area: section;
+  max-height: 85px;
+}
+
+@media (max-width: 320px) {
+  .element__section {
+    max-height: 79px;
+  }
+}

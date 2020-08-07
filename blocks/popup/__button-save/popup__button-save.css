@@ -5,16 +5,18 @@
   border: none;
   border-radius: 2px;
   font-family: Inter;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 22px;
-text-align: center;
-
-color: #FFFFFF;
-
-
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
   margin: 48px auto 36px auto;
+}
 
 
+.popup__button-save:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
 }

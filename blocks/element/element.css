@@ -1,6 +1,7 @@
 @import url(./__image/element__image.css);
 @import url(./__paragraph/element__paragraph.css);
 @import url(./__button-like/element__button-like.css);
+@import url(./__section/element__section.css);
 
 .element {
   max-width: 282px;
@@ -8,6 +9,19 @@
   border-radius: 10px;
   display: grid;
   grid-template-areas:
-  "image image"
-  "paragraph like";
+  "image"
+  "section";
+}
+
+@media (max-width: 768px) {
+  .element {
+    max-width: 400px;
+  }
+}
+@media (max-width: 460px) {
+  .element {
+    max-width: 430px;
+  }
+
+
 }

@@ -1,10 +1,15 @@
+<!-- FIXME: Добавить картинки и альты к ним -->
+<!-- FIXME: удолить dev.css -->
+
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <link rel="stylesheet" href="../_de1v.css"> <!-- Delete before release Delete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before releaseDelete before release-->
+  <link rel="stylesheet" href="../_dev1.css">
   <title>Проект "место"</title>
 <body class="body">
   <main class="page">
@@ -12,69 +17,74 @@
       <div class="header__logo"></div>
       <div class="header__line"></div>
     </header>
-
     <section class="profile">
       <div class="profile__avatar"></div>
       <div class="pofile__info">
-        <p class="pofile__info-name" id="userName">Жак-Ив Кусто</p>
+        <p class="pofile__info-name">Жак-Ив Кусто</p>
         <button class="profile__button-edit profile__open-popup"></button>
-        <p class="pofile__info-occupation" id="occupation">Исследователь океана</p>
+        <p class="pofile__info-occupation">Исследователь океана</p>
       </div>
       <button class="profile__button-add"></button>
     </section>
     <section class="elements">
       <div class="element">
         <img class="element__image" src="./images/karachaevsk.jpg" alt="">
-        <p class="element__paragraph">Карачаевcк</p>
-        <button class="element__button-like"></button>
+        <div class="element__section">
+          <p class="element__paragraph">Карачаевcк</p>
+          <button class="element__button-like"></button>
+        </div>
       </div>
       <div class="element">
         <img class="element__image" src="./images/elbrus-1.png" alt="">
-        <p class="element__paragraph">Гора Эльбрус</p>
-        <button class="element__button-like"></button>
+        <div class="element__section">
+          <p class="element__paragraph">Гора Эльбрус</p>
+          <button class="element__button-like"></button>
+        </div>
       </div>
       <div class="element">
         <img class="element__image" src="./images/Dombay-1.png" alt="">
-        <p class="element__paragraph">Домбай</p>
-        <button class="element__button-like"></button>
+        <div class="element__section">
+          <p class="element__paragraph">Домбай</p>
+          <button class="element__button-like"></button>
+        </div>
       </div>
       <div class="element">
         <img class="element__image" src="./images/elbrus-1.png" alt="">
-        <p class="element__paragraph">Гора Эльбрус</p>
-        <button class="element__button-like"></button>
+        <div class="element__section">
+          <p class="element__paragraph">Гора Эльбрус</p>
+          <button class="element__button-like"></button>
+        </div>
       </div>
       <div class="element">
         <img class="element__image" src="./images/Dombay-1.png" alt="">
-        <p class="element__paragraph">Домбай</p>
-        <button class="element__button-like"></button>
+        <div class="element__section">
+          <p class="element__paragraph">Домбай</p>
+          <button class="element__button-like"></button>
+        </div>
       </div>
       <div class="element">
         <img class="element__image" src="./images/karachaevsk.jpg" alt="">
-        <p class="element__paragraph">Карачаево-Черкессия</p>
-        <button class="element__button-like"></button>
+        <div class="element__section">
+          <p class="element__paragraph">Карачаево-Черкессия</p>
+          <button class="element__button-like"></button>
+        </div>
       </div>
     </section>
     <footer class="footer">
       <p class="footer__copywright">© 2020. Mesto Russia</p>
     </footer>
   </main>
-  <div class="popup">
+  <form class="popup">
     <div class="popup__container">
     <button class="popup__close-button" type="button"></button>
     <p class="popup__paragraph">Редактировать профиль</p>
-    <ul class="popup__forms">
-      <li><input type="text" class="popup__form-info-name" placeholder="" id="namePlaceholder"></input></li>
-      <li><input type="text" class="popup__form-info-occupation" placeholder="" id="occupyPlaceholder"></input></li>
-    </ul>
-    <button class="popup__button-save" type="button">Сохранить</button>
-
-
-
-
-
-
+    <div class="popup__forms">
+      <input type="text" class="popup__form-info-name" value=""></input>
+      <input type="text" class="popup__form-info-occupation" value=""></input>
     </div>
-  </div>
-  <script src="./scripts/popup.js"></script>
+    <button class="popup__button-save" type="submit">Сохранить</button>
+    </div>
+  </form>
+  <script src="./scripts/script.js"></script>
 </body>
 </html>

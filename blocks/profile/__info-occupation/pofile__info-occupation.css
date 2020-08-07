@@ -8,3 +8,11 @@
   overflow: hidden;
   margin: 16px 0 0 0;
 }
+
+@media (max-width: 360px) {
+  .pofile__info-occupation {
+    max-width: 280px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

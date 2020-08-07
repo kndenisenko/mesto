@@ -1,5 +1,12 @@
 @import url(./__copywright/footer__copywright.css);
 .footer {
   display: flex;
-  margin: 66px auto 60px 199px;
+  max-width: 882px;
+  margin: 66px auto 60px auto;
+}
+
+@media (max-width: 882px) {
+  .footer {
+    margin: 48px 19px 36px 19px;
+  }
 }

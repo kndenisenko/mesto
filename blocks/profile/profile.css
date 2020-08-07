@@ -1,7 +1,7 @@
 @import url(./__avatar/profile__avatar.css);
 @import url(./__info/profile__info.css);
 @import url(./__info-name/pofile__info-name.css);
-@import url(./profile__button-edit/profile__button-edit.css);
+@import url(./__profile__button-edit/profile__button-edit.css);
 @import url(./__info-occupation/pofile__info-occupation.css);
 @import url(./__button-add/profile__button-add.css);
 @import url(./__open-popup/profile__open-popup.css);
@@ -10,7 +10,12 @@
   max-width: 882px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 40px auto 0 auto;
 }
 
-
+@media (max-width: 659px) {
+  .profile {
+    flex-direction: column;
+  }
+}

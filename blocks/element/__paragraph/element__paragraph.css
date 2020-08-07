@@ -1,11 +1,41 @@
 .element__paragraph {
-    text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  max-width: 200px;
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
   color: #000000;
-  grid-area: paragraph;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   margin: 25px 0 31px 21px;
+}
+
+@media (max-width: 830px) {
+  .element__paragraph {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .element__paragraph {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 578px) {
+  .element__paragraph {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 460px) {
+  .element__paragraph {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 380px) {
+  .element__paragraph {
+    max-width: 210px;
+  }
 }

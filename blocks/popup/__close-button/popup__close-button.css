@@ -11,4 +11,11 @@
   border: none;
   background-size: 41px;
   border-radius: 2px;
+
+}
+
+.popup__close-button:hover {
+  cursor: pointer;
+  opacity: .6;
+
 }

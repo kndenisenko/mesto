@@ -10,3 +10,8 @@
   border: 1px solid #FFFFFF;
   margin: 19px 0 0 17px;
 }
+
+.profile__button-edit:hover {
+  cursor: pointer;
+  opacity: .6;
+}

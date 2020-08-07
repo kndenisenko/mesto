@@ -7,6 +7,10 @@
   background-position: center;
   background-size: 21px 19px;
   border: none;
-  grid-area: like;
   margin: 31px 22px 0 auto;
+}
+
+.element__button-like:hover {
+  cursor: pointer;
+  opacity: .6;
 }

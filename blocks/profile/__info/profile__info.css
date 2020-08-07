@@ -5,3 +5,24 @@
   flex-wrap: wrap;
   margin: auto 0 auto 0;
 }
+
+@media (max-width: 659px) {
+  .pofile__info {
+    margin: 11px auto 36px auto;
+  }
+}
+
+@media (max-width: 659px) {
+  .pofile__info {
+    margin: 11px auto 36px auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .pofile__info {
+    justify-content: center;
+    max-width: 280px;
+  }
+}
+
+

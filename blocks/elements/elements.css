@@ -7,3 +7,18 @@
   row-gap: 21px;
   margin: 51px auto 0 auto;
 }
+
+@media (max-width: 768px) {
+  .elements {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    margin: 51px 15px 0 15px;
+  }
+}
+
+@media (max-width: 460px) {
+  .elements {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+  }
+}
