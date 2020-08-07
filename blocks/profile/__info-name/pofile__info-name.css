@@ -13,6 +13,7 @@
 @media (max-width: 360px) {
   .pofile__info-name {
     width: 201px;
+    flex-basis: 80%;
     font-size: 27px;
     line-height: 207%;
   }

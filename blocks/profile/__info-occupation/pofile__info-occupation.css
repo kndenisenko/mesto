@@ -11,8 +11,9 @@
 
 @media (max-width: 360px) {
   .pofile__info-occupation {
-    max-width: 280px;
+    width: 100%;
     font-size: 14px;
     line-height: 17px;
+    margin-left: 9px;
   }
 }
