@@ -10,8 +10,6 @@ let popupSaveButton = document.querySelector('.popup__button-save');
 let usermane = document.querySelector('.pofile__info-name');                      // находим строку с именем
 let occupation = document.querySelector('.pofile__info-occupation');              // находим строку с профессией
 
-
-
 // функция отвечает за запуск формы
 function popupOpenClose() {
   let formFieldFirst = document.querySelector('.popup__form-info-name');          // находим первую форму в попапе
