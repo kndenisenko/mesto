@@ -11,7 +11,7 @@
   border: none;
   background-size: 41px;
   border-radius: 2px;
-
+  transition: opacity .3s ease-in-out;
 }
 
 .popup__close-button:hover {

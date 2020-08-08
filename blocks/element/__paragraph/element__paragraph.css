@@ -22,15 +22,9 @@
   }
 }
 
-@media (max-width: 578px) {
+@media (max-width: 580px) {
   .element__paragraph {
-    max-width: 140px;
-  }
-}
-
-@media (max-width: 460px) {
-  .element__paragraph {
-    max-width: 300px;
+    max-width: 440px;
   }
 }
 

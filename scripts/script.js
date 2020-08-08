@@ -2,7 +2,7 @@
 
 // Задаём переменные
 let popup = document.querySelector('.popup');
-let popupOpenButton = document.querySelector('.profile__open-popup');
+let popupOpenButton = document.querySelector('.profile__button-edit');
 let popupCloseButton = document.querySelector('.popup__close-button');
 let popupSaveButton = document.querySelector('.popup__button-save');
 
@@ -12,10 +12,10 @@ let occupation = document.querySelector('.pofile__info-occupation');            
 
 // функция отвечает за запуск формы
 function popupOpenClose() {
-  let formFieldFirst = document.querySelector('.popup__form-info-name');          // находим первую форму в попапе
+  let formFieldFirst = document.getElementById('username');          // находим первую форму в попапе
   formFieldFirst.setAttribute('value', usermane.textContent);                     // заменяем значение инпута
 
-  let formFieldSecond = document.querySelector('.popup__form-info-occupation');   // Повторяем всё тоже самое, для заполения второй формы
+  let formFieldSecond = document.getElementById('occupation');   // Повторяем всё тоже самое, для заполения второй формы
   formFieldSecond.setAttribute('value', occupation.textContent);
 
   popup.classList.toggle('popup_toggle');                                         // открываем/закрываем попап по кнопке Х
@@ -29,7 +29,7 @@ function formSubmitHandler(evt) {
   usermane.textContent = inputvalue[0].value;                                     // Помещаем вместо юзернейма новый, из формы
   occupation.textContent = inputvalue[1].value;                                   // Помещаем вместо профессиии новую, из формы
 
-popup.classList.toggle('popup_toggle');                                           // Попап, изыди
+  popup.classList.toggle('popup_toggle');                                         // Попап, изыди
 }
 
 // Обработчики кнопок открытия/закрытия попапа и кнопки "Сохранить"

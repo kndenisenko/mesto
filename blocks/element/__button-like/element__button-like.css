@@ -7,6 +7,7 @@
   background-position: center;
   background-size: 21px 19px;
   border: none;
+  transition: opacity .3s ease-in-out;
   margin: 31px 22px 0 auto;
 }
 

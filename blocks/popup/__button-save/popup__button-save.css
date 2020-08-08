@@ -4,13 +4,14 @@
   background: #000000;
   border: none;
   border-radius: 2px;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
   color: #FFFFFF;
+  transition: .3s ease-in-out;
   margin: 48px auto 36px auto;
 }
 
@@ -19,4 +20,12 @@
   cursor: pointer;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 2px;
+}
+
+
+@media (max-width: 500px) {
+  .popup__button-save {
+    max-width: 180px;
+
+  }
 }
