@@ -12,10 +12,10 @@ let occupation = document.querySelector('.pofile__info-occupation');            
 
 // функция отвечает за запуск формы
 function popupOpenClose() {
-  let formFieldFirst = document.getElementById('username');          // находим первую форму в попапе
+  let formFieldFirst = document.getElementById('username');                       // находим первую форму в попапе
   formFieldFirst.setAttribute('value', usermane.textContent);                     // заменяем значение инпута
 
-  let formFieldSecond = document.getElementById('occupation');   // Повторяем всё тоже самое, для заполения второй формы
+  let formFieldSecond = document.getElementById('occupation');                    // Повторяем всё тоже самое, для заполения второй формы
   formFieldSecond.setAttribute('value', occupation.textContent);
 
   popup.classList.toggle('popup_toggle');                                         // открываем/закрываем попап по кнопке Х
