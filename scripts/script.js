@@ -4,7 +4,7 @@
 let popup = document.querySelector('.popup');
 let popupOpenButton = document.querySelector('.profile__button-edit');
 let popupCloseButton = document.querySelector('.popup__close-button');
-let popupSaveButton = document.querySelector('.popup__button-save');
+let popupSaveButton = document.querySelector('.popup__button-save'); //
 
 // задаём переменные
 let usermane = document.querySelector('.pofile__info-name');                      // находим строку с именем

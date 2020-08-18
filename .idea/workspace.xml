@@ -29,6 +29,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Test commit WebStorm">
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> a1774e37419c167c95e08dc4aa8cffec0d1b7137
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +42,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
     <option name="RESET_MODE" value="HARD" />
+=======
+>>>>>>> a1774e37419c167c95e08dc4aa8cffec0d1b7137
   </component>
   <component name="ProjectId" id="1gEwgkXhMWq7DmRUybLsZg18nGC" />
   <component name="ProjectViewState">
@@ -50,7 +57,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/.ssh/id_rsa" />
     <property name="nodejs_package_manager_path" value="npm" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+=======
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+>>>>>>> a1774e37419c167c95e08dc4aa8cffec0d1b7137
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -67,7 +78,10 @@
       <updated>1597693172453</updated>
       <workItem from="1597693173500" duration="355000" />
       <workItem from="1597700480885" duration="608000" />
+<<<<<<< HEAD
       <workItem from="1597783273996" duration="1044000" />
+=======
+>>>>>>> a1774e37419c167c95e08dc4aa8cffec0d1b7137
     </task>
     <servers />
   </component>
@@ -107,10 +121,17 @@
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
     <state x="1066" y="448" key="FileChooserDialogImpl/0.30.2560.1322@0.30.2560.1322" timestamp="1597693510783" />
+<<<<<<< HEAD
     <state x="602" y="313" width="1752" height="862" key="SettingsEditor" timestamp="1597784010111">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
     <state x="602" y="313" width="1752" height="862" key="SettingsEditor/0.30.2560.1322@0.30.2560.1322" timestamp="1597784010111" />
+=======
+    <state x="680" y="327" width="1752" height="862" key="SettingsEditor" timestamp="1597700516769">
+      <screen x="0" y="30" width="2560" height="1322" />
+    </state>
+    <state x="680" y="327" width="1752" height="862" key="SettingsEditor/0.30.2560.1322@0.30.2560.1322" timestamp="1597700516769" />
+>>>>>>> a1774e37419c167c95e08dc4aa8cffec0d1b7137
     <state x="879" y="423" key="Vcs.Push.Dialog.v2" timestamp="1597699622684">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
@@ -123,9 +144,16 @@
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
     <state x="944" y="323" key="run.anything.popup/0.30.2560.1322@0.30.2560.1322" timestamp="1597700553632" />
+<<<<<<< HEAD
     <state x="943" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1597784112873">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
     <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/0.30.2560.1322@0.30.2560.1322" timestamp="1597784112873" />
+=======
+    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1597700492531">
+      <screen x="0" y="30" width="2560" height="1322" />
+    </state>
+    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/0.30.2560.1322@0.30.2560.1322" timestamp="1597700492531" />
+>>>>>>> a1774e37419c167c95e08dc4aa8cffec0d1b7137
   </component>
 </project>
