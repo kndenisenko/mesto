@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="" />
+    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Test commit WebStorm">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +50,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/.ssh/id_rsa" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Subversion.SSH" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -36,24 +66,65 @@
       <option name="presentableId" value="Default" />
       <updated>1597693172453</updated>
       <workItem from="1597693173500" duration="355000" />
+      <workItem from="1597700480885" duration="608000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Test commit WebStorm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test commit WebStorm" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1066" y="448" key="FileChooserDialogImpl" timestamp="1597693510783">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
     <state x="1066" y="448" key="FileChooserDialogImpl/0.30.2560.1322@0.30.2560.1322" timestamp="1597693510783" />
-    <state x="780" y="326" key="SettingsEditor" timestamp="1597693527707">
+    <state x="680" y="327" width="1752" height="862" key="SettingsEditor" timestamp="1597700516769">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
-    <state x="780" y="326" key="SettingsEditor/0.30.2560.1322@0.30.2560.1322" timestamp="1597693527707" />
-    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1597693501129">
+    <state x="680" y="327" width="1752" height="862" key="SettingsEditor/0.30.2560.1322@0.30.2560.1322" timestamp="1597700516769" />
+    <state x="879" y="423" key="Vcs.Push.Dialog.v2" timestamp="1597699622684">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
-    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/0.30.2560.1322@0.30.2560.1322" timestamp="1597693501129" />
+    <state x="879" y="423" key="Vcs.Push.Dialog.v2/0.30.2560.1322@0.30.2560.1322" timestamp="1597699622684" />
+    <state x="1087" y="605" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597699608694">
+      <screen x="0" y="30" width="2560" height="1322" />
+    </state>
+    <state x="1087" y="605" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.2560.1322@0.30.2560.1322" timestamp="1597699608694" />
+    <state x="944" y="323" key="run.anything.popup" timestamp="1597700553632">
+      <screen x="0" y="30" width="2560" height="1322" />
+    </state>
+    <state x="944" y="323" key="run.anything.popup/0.30.2560.1322@0.30.2560.1322" timestamp="1597700553632" />
+    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1597700492531">
+      <screen x="0" y="30" width="2560" height="1322" />
+    </state>
+    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/0.30.2560.1322@0.30.2560.1322" timestamp="1597700492531" />
   </component>
 </project>
