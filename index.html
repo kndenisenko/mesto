@@ -6,10 +6,10 @@
   <link rel="stylesheet" href="./pages/index.css">
   <title>Проект "место"</title>
 <body class="body">
-  <header class="header">
+<header class="header">
   <img class="header__logo" src="./images/logo.png" alt="Логотип проекта Mesto">
-  </header>
-  <main class="page">
+</header>
+<main class="page">
   <section class="profile">
     <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар пользователя">
     <div class="pofile__info">
@@ -20,53 +20,22 @@
     <button class="profile__button-add" type="button"></button>
   </section>
   <section class="elements">
-    <div class="element">
-      <img class="element__image" src="./images/karachaevsk-1.jpg" alt="Гора на Кавказе">
-      <div class="element__section">
-        <h2 class="element__paragraph">Карачаевcк</h2>
-        <button class="element__button-like" type="button"></button>
-      </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/elbrus-1.jpg" alt="Гора Эльбрус">
-      <div class="element__section">
-        <h2 class="element__paragraph">Гора Эльбрус</h2>
-        <button class="element__button-like" type="button"></button>
-      </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/dombai-1.jpg" alt="Лыжный курорт на Домбае">
-      <div class="element__section">
-        <h2 class="element__paragraph">Домбай</h2>
-        <button class="element__button-like" type="button"></button>
-      </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/elbrus-2.jpg" alt="Гора Эльбрус">
-      <div class="element__section">
-        <h2 class="element__paragraph">Гора Эльбрус</h2>
-        <button class="element__button-like" type="button"></button>
-      </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/dombai-2.jpg" alt="Домбай летом">
-      <div class="element__section">
-        <h2 class="element__paragraph">Домбай</h2>
-        <button class="element__button-like" type="button"></button>
-      </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/karachaevsk-1.jpg" alt="Гора на Кавказе">
-      <div class="element__section">
-        <h2 class="element__paragraph">Карачаево-Черкессия</h2>
-        <button class="element__button-like" type="button"></button>
-      </div>
-    </div>
   </section>
 </main>
- <footer class="footer">
-  <p class="footer__copywright">&copy; 2020. Mesto Russia</p>
+<footer class="footer">
+  <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
 </footer>
+
+<template id="user">
+  <div class="element">
+    <img class="element__image" src="" alt="Гора на Кавказе">
+    <div class="element__section">
+      <h2 class="element__paragraph"></h2>
+      <button class="element__button-like" type="button"></button>
+    </div>
+  </div>
+</template>
+
 <form class="popup" name="userInfoUpdateForm">
   <div class="popup__container">
     <button class="popup__close-button" type="reset"></button>
@@ -78,6 +47,6 @@
     <button class="popup__button-save" type="submit">Сохранить</button>
   </div>
 </form>
-  <script src="./scripts/script.js"></script>
+<script src="./scripts/script.js"></script>
 </body>
 </html>

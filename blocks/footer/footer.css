@@ -1,4 +1,4 @@
-@import url(./__copywright/footer__copywright.css);
+@import url(__copyright/footer__copyright.css);
 .footer {
   display: flex;
   max-width: 882px;
