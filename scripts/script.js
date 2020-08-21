@@ -104,5 +104,3 @@ initialCards.forEach(addFirstCards);
 
 
 
-
-

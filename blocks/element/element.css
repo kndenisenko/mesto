@@ -2,15 +2,19 @@
 @import url(./__paragraph/element__paragraph.css);
 @import url(./__button-like/element__button-like.css);
 @import url(./__section/element__section.css);
+@import url(./__thrashcan/element__thrashcan.css);
+@import url(__thrashcan-default/element__thrashcan-default.css);
+@import url(./__thrashcan-opened/element__thrashcan-opened.css);
 
 .element {
+  position: relative;
   max-width: 282px;
   background-color: #ffffff;
   border-radius: 10px;
   display: grid;
   grid-template-areas:
-  "image"
-  "section";
+    "image"
+    "section";
 }
 
 @media (max-width: 768px) {
