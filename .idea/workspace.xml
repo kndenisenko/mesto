@@ -28,9 +28,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Добавлена возможность удаления каждой карточки">
+    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Изменены функции изменения имени/профессии, переделаны функции добавления кастомной карточки">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +69,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\!Yandex_Praktikum\__works\005_mesto\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\!Yandex_Praktikum\__works\005_mesto\blocks\element" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\!Yandex_Praktikum\__works\005_mesto\images" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -97,7 +99,7 @@
       <workItem from="1598037228251" duration="3381000" />
       <workItem from="1598042255358" duration="2027000" />
       <workItem from="1598076680856" duration="2297000" />
-      <workItem from="1598088544814" duration="14065000" />
+      <workItem from="1598088544814" duration="29399000" />
     </task>
     <task id="LOCAL-00001" summary="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе">
       <created>1598018937031</created>
@@ -127,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598111221841</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Develop: Изменена переменная для удаления карточек">
+      <created>1598111387198</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598111387198</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +173,9 @@
     <MESSAGE value="Develop: Добавлен блок thrashcan со стилями. Настроен Hover" />
     <MESSAGE value="Develop: Добавлена  возможность создания новой карточки. Изменён код JS по обработке формы изменения имени и профессии пользователя" />
     <MESSAGE value="Develop: Добавлена возможность удаления каждой карточки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Develop: Добавлена возможность удаления каждой карточки" />
+    <MESSAGE value="Develop: Изменена переменная для удаления карточек" />
+    <MESSAGE value="Develop: Изменены функции изменения имени/профессии, переделаны функции добавления кастомной карточки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Develop: Изменены функции изменения имени/профессии, переделаны функции добавления кастомной карточки" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598109793872">
@@ -188,6 +199,10 @@
     </state>
     <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598108573166" />
     <state x="879" y="423" key="Vcs.Push.Dialog.v2/0.30.2560.1322@0.30.2560.1322" timestamp="1597699622684" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598122557376">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598122557376" />
     <state x="1087" y="605" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597699608694">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>

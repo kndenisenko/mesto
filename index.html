@@ -40,19 +40,39 @@
   </div>
 </template>
 
-<form class="popup" name="popupForm">
+
+
+
+<form class="popup popup_changeUser">
   <div class="popup__container">
     <button class="popup__close-button" type="reset"></button>
-    <h2 class="popup__paragraph"></h2>
+    <h2 class="popup__paragraph">Редактировать профиль</h2>
     <div class="popup__forms">
-      <input class="popup__input" type="text" value="" id="firstInput">
-      <input class="popup__input" type="text" value="" id="secondInput">
+      <input class="popup__input" type="text" value="" id="username">
+      <input class="popup__input" type="text" value="" id="occupation">
     </div>
-    <button class="popup__button-save" type="submit"></button>
+    <button class="popup__button-save" type="submit">Сохранить</button>
   </div>
 </form>
+
+<form class="popup popup_addCard">
+  <div class="popup__container">
+    <button class="popup__close-button popup__close-button_addCard" type="reset"></button>
+    <h2 class="popup__paragraph">Новое место</h2>
+    <div class="popup__forms">
+      <input class="popup__input popup__input_addCard" type="text" value="" id="firstInput">
+      <input class="popup__input popup__input_addCard" type="text" value="" id="secondInput">
+    </div>
+    <button class="popup__button-save" type="submit">Сохранить</button>
+  </div>
+</form>
+
+
 <script src="./scripts/script.js"></script>
 </body>
 </html>
+
+
+
 
 <!--todo решить вопрос с изменяемой высотой карточек. Она меняется в зависимости от размеров картинки, это плоха-->
