@@ -28,7 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Добавлена  возможность создания новой карточки. Изменён код JS по обработке формы изменения имени и профессии пользователя">
+    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Добавлена возможность удаления каждой карточки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
@@ -97,7 +97,7 @@
       <workItem from="1598037228251" duration="3381000" />
       <workItem from="1598042255358" duration="2027000" />
       <workItem from="1598076680856" duration="2297000" />
-      <workItem from="1598088544814" duration="13823000" />
+      <workItem from="1598088544814" duration="14065000" />
     </task>
     <task id="LOCAL-00001" summary="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе">
       <created>1598018937031</created>
@@ -120,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598108561046</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Develop: Добавлена возможность удаления каждой карточки">
+      <created>1598111221841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598111221841</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +163,8 @@
     <MESSAGE value="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе" />
     <MESSAGE value="Develop: Добавлен блок thrashcan со стилями. Настроен Hover" />
     <MESSAGE value="Develop: Добавлена  возможность создания новой карточки. Изменён код JS по обработке формы изменения имени и профессии пользователя" />
-    <option name="LAST_COMMIT_MESSAGE" value="Develop: Добавлена  возможность создания новой карточки. Изменён код JS по обработке формы изменения имени и профессии пользователя" />
+    <MESSAGE value="Develop: Добавлена возможность удаления каждой карточки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Develop: Добавлена возможность удаления каждой карточки" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598109793872">

@@ -95,8 +95,8 @@ function addFirstCards (card) {
   cardNode.querySelector('.element__image').alt = card.alt;                      //И снова магия. задаём alt
   cardNode.querySelector('.element__paragraph').textContent = card.name;         //Вжух! Имя.
   cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
-    const todo = event.target.closest('.element');
-    todo.remove();
+    const delCard = event.target.closest('.element');
+    delCard.remove();
   })
   cardContent.append(cardNode);  // Появление карточки при загрузке страницы
 }
@@ -138,8 +138,8 @@ function makeNewCard (evt) {
   cardNode.querySelector('.element__paragraph').textContent = inputvalue[0].value;         //Вжух! Имя.
 
   cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
-    const todo = event.target.closest('.element');
-    todo.remove();
+    const delCard = event.target.closest('.element');
+    delCard.remove();
   })
 
 
