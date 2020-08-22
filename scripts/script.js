@@ -19,8 +19,7 @@ function popupNameOccupation() {
   // заполения второй формы
   formFieldSecond.setAttribute('value', occupation.textContent);
 
-  firstPopup.classList.toggle('popup_toggle');                                                  // открываем/закрываем
-  // попап по кнопке Х
+  firstPopup.classList.toggle('popup_toggle');                                                  // открываем/закрываем попап по кнопке Х
 }
 
 // Функция отвечает за "сохранение" имени и профессии
@@ -97,6 +96,10 @@ function addFirstCards (card) {
     zyx.remove();
   });
 
+  cardNode.querySelector('.element__button-like').addEventListener('click', event => {
+    const makeLiked = event.target.closest('.element__button-like');
+    makeLiked.classList.toggle('element__button-liked');
+  });
   cardContent.append(cardNode);  // Появление карточки при загрузке страницы
 }
 initialCards.forEach(addFirstCards);
@@ -132,10 +135,17 @@ function makeNewCard (evt) {
   cardNode.querySelector('.element__image').alt = inputvalue[0].value;                      //И снова магия. задаём alt
   cardNode.querySelector('.element__paragraph').textContent = inputvalue[0].value;         //Вжух! Имя.
 
+  //удаление новой карточки
   cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
-    const zyx = event.target.closest('.element');
-    zyx.remove();
+    const removeCard = event.target.closest('.element');
+    removeCard.remove();
   });
+
+  //лайк новой карточки
+  cardNode.querySelector('.element__button-like').addEventListener('click', event =>{
+    const makeLiked = event.target.closest('.element__button-like');
+    makeLiked.classList.toggle('element__button-liked');
+  })
 
   cardContent.append(cardNode);
   SecondPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
@@ -146,6 +156,6 @@ SecondPopup.addEventListener('submit', makeNewCard);
 secondPopupCloseButton.addEventListener('click', popupAddNewCard);
 // Добавление карточки
 //----------------------------------------------------------------------------------------------------------------------
-
+//----------------------------------------------------------------------------------------------------------------------
 
 

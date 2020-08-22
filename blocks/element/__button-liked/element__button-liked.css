@@ -1,0 +1,17 @@
+.element__button-liked {
+  width: 21px;
+  height: 19px;
+  background: none;
+  background-image: url(../../../images/liked.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 21px 19px;
+  border: none;
+  transition: opacity .3s ease-in-out;
+  margin: 31px 22px 0 auto;
+}
+
+.element__button-liked:hover {
+  cursor: pointer;
+  opacity: .6;
+}

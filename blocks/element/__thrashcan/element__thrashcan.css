@@ -1,2 +1,19 @@
 .element__thrashcan {
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  right: 17px;
+  top: 24px;
+  background: none;
+  background-image: url(../../../images/thrash-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 19px 19px;
+  border: none;
+  cursor: pointer;
+  transition: opacity .3s ease-in-out;
+}
+
+.element__thrashcan:hover {
+  opacity: .6;
 }

@@ -23,14 +23,18 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:develop" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Изменены функции изменения имени/профессии, переделаны функции добавления кастомной карточки">
+    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Исправлено удаление всех карточек.">
+      <change afterPath="$PROJECT_DIR$/blocks/element/__button-liked/element__button-liked.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/liked.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__thrashcan-default/element__thrashcan-default.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__thrashcan-default/element__thrashcan-default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__thrashcan/element__thrashcan.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__thrashcan/element__thrashcan.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/element.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/element.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
     </list>
@@ -65,7 +69,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -99,7 +103,9 @@
       <workItem from="1598042255358" duration="2027000" />
       <workItem from="1598076680856" duration="2297000" />
       <workItem from="1598088544814" duration="29480000" />
-      <workItem from="1598132733630" duration="563000" />
+      <workItem from="1598132733630" duration="830000" />
+      <workItem from="1598165591648" duration="1883000" />
+      <workItem from="1598262831981" duration="4445000" />
     </task>
     <task id="LOCAL-00001" summary="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе">
       <created>1598018937031</created>
@@ -143,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598131742783</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Develop: Исправлено удаление всех карточек.">
+      <created>1598133309700</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598133309700</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +173,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>
@@ -182,7 +195,8 @@
     <MESSAGE value="Develop: Добавлена возможность удаления каждой карточки" />
     <MESSAGE value="Develop: Изменена переменная для удаления карточек" />
     <MESSAGE value="Develop: Изменены функции изменения имени/профессии, переделаны функции добавления кастомной карточки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Develop: Изменены функции изменения имени/профессии, переделаны функции добавления кастомной карточки" />
+    <MESSAGE value="Develop: Исправлено удаление всех карточек." />
+    <option name="LAST_COMMIT_MESSAGE" value="Develop: Исправлено удаление всех карточек." />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598109793872">
@@ -193,23 +207,31 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1008" y="488" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1598019529190" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1598272913917">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598272913917" />
     <state x="1066" y="448" key="FileChooserDialogImpl" timestamp="1597693510783">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
     <state x="1066" y="448" key="FileChooserDialogImpl/0.30.2560.1322@0.30.2560.1322" timestamp="1597693510783" />
-    <state x="652" y="477" key="SettingsEditor" timestamp="1598106445419">
+    <state x="629" y="530" key="SettingsEditor" timestamp="1598273772690">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="652" y="477" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1598106445419" />
-    <state x="879" y="416" key="Vcs.Push.Dialog.v2" timestamp="1598108573166">
+    <state x="629" y="530" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1598273772690" />
+    <state x="1001" y="441" width="540" height="540" key="StructurePopup" timestamp="1598262851604">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598108573166" />
+    <state x="1001" y="441" width="540" height="540" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1598262851604" />
+    <state x="879" y="416" key="Vcs.Push.Dialog.v2" timestamp="1598133325653">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598133325653" />
     <state x="879" y="423" key="Vcs.Push.Dialog.v2/0.30.2560.1322@0.30.2560.1322" timestamp="1597699622684" />
-    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598122557376">
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598165968436">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598122557376" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598165968436" />
     <state x="1087" y="605" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597699608694">
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
@@ -218,9 +240,9 @@
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
     <state x="944" y="323" key="run.anything.popup/0.30.2560.1322@0.30.2560.1322" timestamp="1597700553632" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1598093694154">
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1598273692548">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1598093694154" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1598273692548" />
   </component>
 </project>

@@ -3,8 +3,7 @@
 @import url(./__button-like/element__button-like.css);
 @import url(./__section/element__section.css);
 @import url(./__thrashcan/element__thrashcan.css);
-@import url(__thrashcan-default/element__thrashcan-default.css);
-@import url(./__thrashcan-opened/element__thrashcan-opened.css);
+@import url(./__button-liked/element__button-liked.css);
 
 .element {
   position: relative;
@@ -26,6 +25,4 @@
   .element {
     max-width: 546px;
   }
-
-
 }
