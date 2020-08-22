@@ -94,7 +94,10 @@ function addFirstCards (card) {
   cardNode.querySelector('.element__image').src = card.link;                     //Вот тут магия. задаём картинку
   cardNode.querySelector('.element__image').alt = card.alt;                      //И снова магия. задаём alt
   cardNode.querySelector('.element__paragraph').textContent = card.name;         //Вжух! Имя.
-
+  cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
+    const todo = event.target.closest('.element');
+    todo.remove();
+  })
   cardContent.append(cardNode);  // Появление карточки при загрузке страницы
 }
 initialCards.forEach(addFirstCards);
@@ -122,7 +125,8 @@ function popupAddNewCard () {
 SecondPopupOpenButton.addEventListener('click', popupAddNewCard);
 
 // Обработка данных из формы, создание новой карточки
-function makeNewCard () {
+function makeNewCard (evt) {
+  evt.preventDefault()
   let userTemplate = document.querySelector('#card').content;                // Находим темплейт
 
   const cardContent = document.querySelector('.elements');
@@ -133,7 +137,14 @@ function makeNewCard () {
   cardNode.querySelector('.element__image').alt = inputvalue[0].value;                      //И снова магия. задаём alt
   cardNode.querySelector('.element__paragraph').textContent = inputvalue[0].value;         //Вжух! Имя.
 
+  cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
+    const todo = event.target.closest('.element');
+    todo.remove();
+  })
+
+
   cardContent.append(cardNode);
+
 }
 popup.addEventListener('submit', makeNewCard);
 //----------------------------------------------------------------------------------------------------------------------

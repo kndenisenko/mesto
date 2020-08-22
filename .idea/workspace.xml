@@ -31,9 +31,6 @@
     <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Добавлена  возможность создания новой карточки. Изменён код JS по обработке формы изменения имени и профессии пользователя">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__thrashcan/element__thrashcan.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__thrashcan/element__thrashcan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +97,7 @@
       <workItem from="1598037228251" duration="3381000" />
       <workItem from="1598042255358" duration="2027000" />
       <workItem from="1598076680856" duration="2297000" />
-      <workItem from="1598088544814" duration="11384000" />
+      <workItem from="1598088544814" duration="13823000" />
     </task>
     <task id="LOCAL-00001" summary="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе">
       <created>1598018937031</created>
@@ -116,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598021531078</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Develop: Добавлена  возможность создания новой карточки. Изменён код JS по обработке формы изменения имени и профессии пользователя">
+      <created>1598108561046</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598108561046</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +159,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Develop: Добавлена  возможность создания новой карточки. Изменён код JS по обработке формы изменения имени и профессии пользователя" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598109793872">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598109793872" />
     <state x="1008" y="488" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598019529190">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -167,10 +175,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="652" y="477" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1598106445419" />
-    <state x="879" y="416" key="Vcs.Push.Dialog.v2" timestamp="1598021555074">
+    <state x="879" y="416" key="Vcs.Push.Dialog.v2" timestamp="1598108573166">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598021555074" />
+    <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598108573166" />
     <state x="879" y="423" key="Vcs.Push.Dialog.v2/0.30.2560.1322@0.30.2560.1322" timestamp="1597699622684" />
     <state x="1087" y="605" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597699608694">
       <screen x="0" y="30" width="2560" height="1322" />
