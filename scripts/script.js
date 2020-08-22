@@ -92,6 +92,11 @@ function addFirstCards (card) {
   cardNode.querySelector('.element__image').alt = card.alt;                      //И снова магия. задаём alt
   cardNode.querySelector('.element__paragraph').textContent = card.name;         //Вжух! Имя.
 
+  cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
+    const zyx = event.target.closest('.element');
+    zyx.remove();
+  });
+
   cardContent.append(cardNode);  // Появление карточки при загрузке страницы
 }
 initialCards.forEach(addFirstCards);
@@ -127,8 +132,6 @@ function makeNewCard (evt) {
   cardNode.querySelector('.element__image').alt = inputvalue[0].value;                      //И снова магия. задаём alt
   cardNode.querySelector('.element__paragraph').textContent = inputvalue[0].value;         //Вжух! Имя.
 
-
-  //todo это удаление, оно не работает, переделать/доделать
   cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
     const zyx = event.target.closest('.element');
     zyx.remove();

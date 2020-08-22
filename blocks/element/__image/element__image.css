@@ -1,6 +1,6 @@
 .element__image {
   max-width: 100%;
   overflow: hidden;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 0 0;
   grid-area: image;
 }
