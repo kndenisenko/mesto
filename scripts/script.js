@@ -2,7 +2,7 @@
 
 // Задаём переменные
 let popup = document.querySelector('.popup');
-let popupOpenButton = document.querySelector('.profile__button-edit');
+let firstPopupOpenButton = document.querySelector('.profile__button-edit');
 let popupCloseButton = document.querySelector('.popup__close-button');
 // let popupSaveButton = document.querySelector('.popup__button-save'); //
 
@@ -11,7 +11,7 @@ let usermane = document.querySelector('.pofile__info-name');                    
 let occupation = document.querySelector('.pofile__info-occupation');              // находим строку с профессией
 
 // функция отвечает за открытие/закрытие попапа и текст внутри него
-function popupOpenClose() {
+function popupNameOccupation() {
   let formFieldFirst = document.getElementById('firstInput');                           // находим первую форму в попапе
   formFieldFirst.setAttribute('value', usermane.textContent);                       // заменяем значение инпута
   document.querySelector('.popup__paragraph').textContent = 'Редактировать профиль';    // добавляем заголовок
@@ -26,7 +26,7 @@ function popupOpenClose() {
 }
 
 // Функция отвечает за "сохранение" имени и профессии
-function formSubmitHandler(evt) {
+function changeNameOccupation(evt) {
   evt.preventDefault();
   let inputvalue = document.querySelectorAll('input');                            // Получаем значение всех инпутов сразу
 
@@ -37,15 +37,19 @@ function formSubmitHandler(evt) {
 }
 
 // Обработчики кнопок открытия/закрытия попапа и кнопки "Сохранить"
-popupOpenButton.addEventListener('click', popupOpenClose);
-popupCloseButton.addEventListener('click', popupOpenClose);
-popup.addEventListener('submit', formSubmitHandler);
+firstPopupOpenButton.addEventListener('click', popupNameOccupation);
+popupCloseButton.addEventListener('click', popupNameOccupation);
+popup.addEventListener('submit', changeNameOccupation);
 
 
 // 01001000 01100001 01101001 01101100 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001 00100000
 // 01001000 01100101 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01000111 01101111 01100100 00100000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01001101 01100001 01100011 01101000 01101001 01101110 01100101
 // 01110100 01101000 01100101 00100000 01010011 01101111 01110101 01110010 01100011 01100101 00100000 01101111 01100110 00100000 01000001 01101100 01101100 00100000 01001011 01101110 01101111 01110111 01101100 01100101 01100100 01100111 01100101
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Начало вывода дефолтных карточек
+
+// Массив с дефолтными данными
 const initialCards = [
   {
     name: 'Карачаевcк',
@@ -80,27 +84,59 @@ const initialCards = [
 ];
 
 // Вывод первых карточек
-const addFirstCards = (card) => {
+function addFirstCards (card) {
 // Находим темплейт по ID и получаем его содержимое через .content и клонируем ноду
-  let userTemplate = document.querySelector('#user').content.cloneNode(true);
-  const cardContent = document.querySelector('.elements');                           // Находим место, куда будет
+  let userTemplate = document.querySelector('#card').content;                // Находим темплейт
+  let cardNode = userTemplate.cloneNode(true);                                       // клонируем
+  const cardContent = document.querySelector('.elements');                   // Находим место, куда будет
   // вставлен темплейт
 
-  userTemplate.querySelector('.element__image').src = card.link;                     //Вот тут магия. задаём картинку
-  userTemplate.querySelector('.element__image').alt = card.alt;                      //И снова магия. задаём alt
-  userTemplate.querySelector('.element__paragraph').textContent = card.name;        //Вжух! Имя.
+  cardNode.querySelector('.element__image').src = card.link;                     //Вот тут магия. задаём картинку
+  cardNode.querySelector('.element__image').alt = card.alt;                      //И снова магия. задаём alt
+  cardNode.querySelector('.element__paragraph').textContent = card.name;         //Вжух! Имя.
 
-  cardContent.append(userTemplate);  // Появление карточки при загрузке страницы
+  cardContent.append(cardNode);  // Появление карточки при загрузке страницы
 }
 initialCards.forEach(addFirstCards);
 
+// Конец вывода дефолтных карточек
+//----------------------------------------------------------------------------------------------------------------------
 
+//----------------------------------------------------------------------------------------------------------------------
+// Добавление карточки
+let SecondPopupOpenButton = document.querySelector('.profile__button-add');
 
+function popupAddNewCard () {
+  let formFieldFirst = document.getElementById('firstInput');                           // находим первую форму в попапе
+  formFieldFirst.setAttribute('value', 'Название');
+  let formFieldSecond = document.getElementById('secondInput');     // Повторяем всё тоже самое, для второй формы
+  formFieldSecond.setAttribute('value', 'Ссылка на картинку');
 
+  // заменяем значение инпута
+  document.querySelector('.popup__paragraph').textContent = 'Новое место';    // добавляем заголовок
+  document.querySelector('.popup__button-save').textContent = 'Сохранить';
 
+  popup.classList.toggle('popup_toggle');                                                  // открываем/закрываем
+  // попап по кнопке Х
+}
+SecondPopupOpenButton.addEventListener('click', popupAddNewCard);
 
+// Обработка данных из формы, создание новой карточки
+function makeNewCard () {
+  let userTemplate = document.querySelector('#card').content;                // Находим темплейт
 
+  const cardContent = document.querySelector('.elements');
+  let inputvalue = document.querySelectorAll('input');
 
+  let cardNode = userTemplate.cloneNode(true)
+  cardNode.querySelector('.element__image').src = inputvalue[1].value;
+  cardNode.querySelector('.element__image').alt = inputvalue[0].value;                      //И снова магия. задаём alt
+  cardNode.querySelector('.element__paragraph').textContent = inputvalue[0].value;         //Вжух! Имя.
 
+  cardContent.append(cardNode);
+}
+popup.addEventListener('submit', makeNewCard);
+//----------------------------------------------------------------------------------------------------------------------
+// Добавление карточки
 
 
