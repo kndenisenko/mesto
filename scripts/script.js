@@ -10,7 +10,7 @@ const usermane = document.querySelector('.pofile__info-name');                  
 const occupation = document.querySelector('.pofile__info-occupation');              // находим строку с профессией
 
 // функция отвечает за открытие/закрытие попапа и текст внутри него
-function popupNameOccupation() {
+function showUserEditPopup() {
   const formFieldFirst = document.getElementById('username');                           // находим первую форму в попапе
   formFieldFirst.setAttribute('value', usermane.textContent);                       // заменяем значение инпута
 
@@ -33,8 +33,8 @@ function changeNameOccupation(evt) {
 }
 
 // Обработчики кнопок открытия/закрытия попапа и кнопки "Сохранить"
-userEditPopupOpenButton.addEventListener('click', popupNameOccupation);
-userEditPopupCloseButton.addEventListener('click', popupNameOccupation);
+userEditPopupOpenButton.addEventListener('click', showUserEditPopup);
+userEditPopupCloseButton.addEventListener('click', showUserEditPopup);
 userEditPopup.addEventListener('submit', changeNameOccupation);
 
 
@@ -128,7 +128,7 @@ const addCardPopupOpenButton = document.querySelector('.profile__button-add');
 const addCardPopupCloseButton = document.querySelector('.popup__close-button_addCard');
 
 
-function popupAddNewCard () {
+function addNewCardPopup () {
   const formFieldFirst = document.getElementById('firstInput');                           // находим первую форму в попапе
   formFieldFirst.setAttribute('value', 'Название');
 
@@ -187,8 +187,8 @@ function makeNewCard (object) {
   addCardPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
 }
 
-addCardPopupOpenButton.addEventListener('click', popupAddNewCard);
-addCardPopupCloseButton.addEventListener('click', popupAddNewCard);
+addCardPopupOpenButton.addEventListener('click', addNewCardPopup);
+addCardPopupCloseButton.addEventListener('click', addNewCardPopup);
 addCardPopup.addEventListener('submit', makeNewCard);
 // Добавление карточки
 //----------------------------------------------------------------------------------------------------------------------
