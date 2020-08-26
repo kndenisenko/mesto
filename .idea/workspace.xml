@@ -22,15 +22,16 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:develop" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: В скрипте все let исправлены на const, функциональность не пострадала">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +42,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gEwgkXhMWq7DmRUybLsZg18nGC" />
@@ -192,7 +198,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -249,10 +255,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1001" y="441" width="540" height="540" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1598262851604" />
-    <state x="879" y="416" key="Vcs.Push.Dialog.v2" timestamp="1598133325653">
+    <state x="879" y="416" key="Vcs.Push.Dialog.v2" timestamp="1598476783208">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598133325653" />
+    <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598476783208" />
     <state x="879" y="423" key="Vcs.Push.Dialog.v2/0.30.2560.1322@0.30.2560.1322" timestamp="1597699622684" />
     <state x="56" y="85" width="2376" height="1216" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598299373517">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -266,6 +272,10 @@
       <screen x="0" y="30" width="2560" height="1322" />
     </state>
     <state x="1087" y="605" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.2560.1322@0.30.2560.1322" timestamp="1597699608694" />
+    <state x="1048" y="328" key="git4idea.branch.GitSmartOperationDialog" timestamp="1598476657471">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1048" y="328" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598476657471" />
     <state x="944" y="310" key="run.anything.popup" timestamp="1598452629861">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
