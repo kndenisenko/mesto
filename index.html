@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
   <title>Проект "место"</title>
+</head>
 <body class="body">
 <header class="header">
   <img class="header__logo" src="./images/logo.png" alt="Логотип проекта Mesto">
@@ -61,15 +62,16 @@
   </div>
 </form>
 
+<div class="popup popup_photobox">
+  <div class="popup__photobox-container" style="position: fixed">
+    <button class="popup__photobox-close" type="button"></button>
+    <figure class="popup__image-container">
+      <img class="popup__photobox-image" src="" alt="">
+      <figcaption class="popup__photobox-caption"></figcaption>
+    </figure>
+  </div>
+</div>
+
 <script src="./scripts/script.js"></script>
 </body>
 </html>
-
-
-<!--todo форма добавления карты не работает по Enter-->
-
-<!--todo решить вопрос с изменяемой высотой карточек. Она меняется в зависимости от размеров картинки, это плоха-->
-
-<!--todo изменить иконку удаления, оставить один hover, менять opacity при наведении-->
-
-

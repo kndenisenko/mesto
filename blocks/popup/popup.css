@@ -4,9 +4,13 @@
 @import url(./__forms/popup__forms.css);
 @import url(./__input/popup__input.css);
 @import url(./__button-save/popup__button-save.css);
+@import url(./_photobox/popup_photobox.css);
+@import url(__image-container/popup__image-container.css);
+@import url(./__photobox-image/popup__photobox-image.css);
+@import url(./__photobox-caption/popup__photobox-caption.css);
+@import url(./popup__photobox-close/popup__photobox-close.css);
 
 .popup {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,4 +18,12 @@
   bottom: 0;
   background: rgba(0, 0, 0, .5);
   z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s linear, visibility .5s ease-in-out;
+
 }

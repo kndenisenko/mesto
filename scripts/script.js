@@ -1,9 +1,9 @@
 // 01010000 01110010 01100001 01101001 01110011 01100101 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001
 
 // Задаём переменные
-let firstPopup = document.querySelector('.popup_changeUser');
-let firstPopupOpenButton = document.querySelector('.profile__button-edit');
-let popupCloseButton = document.querySelector('.popup__close-button');
+let userEditPopup = document.querySelector('.popup_changeUser');
+let userEditPopupOpenButton = document.querySelector('.profile__button-edit');
+let userEditPopupCloseButton = document.querySelector('.popup__close-button');
 // let popupSaveButton = document.querySelector('.popup__button-save'); //
 
 // задаём переменные
@@ -19,7 +19,7 @@ function popupNameOccupation() {
   // заполения второй формы
   formFieldSecond.setAttribute('value', occupation.textContent);
 
-  firstPopup.classList.toggle('popup_toggle');                                                  // открываем/закрываем попап по кнопке Х
+  userEditPopup.classList.toggle('popup_toggle');                                                  // открываем/закрываем попап по кнопке Х
 }
 
 // Функция отвечает за "сохранение" имени и профессии
@@ -30,13 +30,13 @@ function changeNameOccupation(evt) {
   usermane.textContent = inputvalue[0].value;                                     // Помещаем вместо юзернейма новый, из формы
   occupation.textContent = inputvalue[1].value;                                   // Помещаем вместо профессиии новую, из формы
 
-  firstPopup.classList.toggle('popup_toggle');                                         // Попап, изыди
+  userEditPopup.classList.toggle('popup_toggle');                                         // Попап, изыди
 }
 
 // Обработчики кнопок открытия/закрытия попапа и кнопки "Сохранить"
-firstPopupOpenButton.addEventListener('click', popupNameOccupation);
-popupCloseButton.addEventListener('click', popupNameOccupation);
-firstPopup.addEventListener('submit', changeNameOccupation);
+userEditPopupOpenButton.addEventListener('click', popupNameOccupation);
+userEditPopupCloseButton.addEventListener('click', popupNameOccupation);
+userEditPopup.addEventListener('submit', changeNameOccupation);
 
 
 // 01001000 01100001 01101001 01101100 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001 00100000
@@ -84,23 +84,43 @@ const initialCards = [
 function addFirstCards (card) {
 // Находим темплейт по ID и получаем его содержимое через .content и клонируем ноду
   let userTemplate = document.querySelector('#card').content;                // Находим темплейт
-  const cardContent = document.querySelector('.elements');                   // Находим место, куда будет
+  const cardContent = document.querySelector('.elements');                   // Находим место куда будем клонировать
 
   let cardNode = userTemplate.cloneNode(true);                                       // клонируем
-  cardNode.querySelector('.element__image').src = card.link;                     //Вот тут магия. задаём картинку
-  cardNode.querySelector('.element__image').alt = card.alt;                      //И снова магия. задаём alt
-  cardNode.querySelector('.element__paragraph').textContent = card.name;         //Вжух! Имя.
+  cardNode.querySelector('.element__image').src = card.link;                     //Задаём картинку карточки
+  cardNode.querySelector('.element__image').alt = card.alt;                      //Задаём alt
+  cardNode.querySelector('.element__paragraph').textContent = card.name;         //Задаём Имя.
 
+  //удаление карточки. Удаляем ближайшую карточку в HTML по клику на ведро
   cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
-    const zyx = event.target.closest('.element');
-    zyx.remove();
+    const removeCard = event.target.closest('.element');
+    removeCard.remove();
   });
 
+  // Добавление функции лайка. Лайкаем ближайшую в HTML карточку по клику на лайк
   cardNode.querySelector('.element__button-like').addEventListener('click', event => {
     const makeLiked = event.target.closest('.element__button-like');
     makeLiked.classList.toggle('element__button-liked');
   });
-  cardContent.append(cardNode);  // Появление карточки при загрузке страницы
+
+
+  // Выводим фотобокс.
+  // Задаём переменные для картинки и её описания
+  // let imagevariable = cardNode.querySelector('.element__image');
+  // let textvariable = cardNode.querySelector('.element__paragraph');
+
+  //Задаём действие по клику на картинку карточки
+  cardNode.querySelector('.element__image').addEventListener('click', event => {
+
+    //Вытаскиваем ссылку на изображение и выводим её в консоль, для теста работы функции. Эта функция работает.
+    document.querySelector('.popup__photobox-image').src = event.target.src;
+    document.querySelector('.popup__photobox-caption').textContent = card.name;
+
+    // открытие и закрытие попапа
+    imagePopop.classList.toggle('popup_toggle');
+    imagePopopCloseButton.addEventListener('click', closeImagePopup);
+  });
+cardContent.append(cardNode);  // Появление карточек при загрузке страницы
 }
 initialCards.forEach(addFirstCards);
 
@@ -108,32 +128,34 @@ initialCards.forEach(addFirstCards);
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------
 // Добавление карточки
-let SecondPopup = document.querySelector('.popup_addCard');
-let SecondPopupOpenButton = document.querySelector('.profile__button-add');
-let secondPopupCloseButton = document.querySelector('.popup__close-button_addCard');
+let addCardPopup = document.querySelector('.popup_addCard');
+let addCardPopupOpenButton = document.querySelector('.profile__button-add');
+let addCardPopupCloseButton = document.querySelector('.popup__close-button_addCard');
 
 
 function popupAddNewCard () {
   let formFieldFirst = document.getElementById('firstInput');                           // находим первую форму в попапе
-      formFieldFirst.setAttribute('value', 'Название');
+  formFieldFirst.setAttribute('value', 'Название');
 
   let formFieldSecond = document.getElementById('secondInput');     // Повторяем всё тоже самое, для второй формы
-      formFieldSecond.setAttribute('value', 'Ссылка на картинку');
+  formFieldSecond.setAttribute('value', 'Ссылка на картинку');
 
-  SecondPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
+  addCardPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
 }
 
 // Обработка данных из формы, создание новой карточки
-function makeNewCard (evt) {
-  evt.preventDefault()
+function makeNewCard (object) {
+  object.preventDefault()
+
   let userTemplate = document.querySelector('#card').content;                // Находим темплейт
-  const cardContent = document.querySelector('.elements');
+  const cardContent = document.querySelector('.elements');                   // Задаём место, куда он будет клонироваться
 
   let inputvalue = document.querySelectorAll('.popup__input_addCard');
   let cardNode = userTemplate.cloneNode(true)
-  cardNode.querySelector('.element__image').src = inputvalue[1].value;
-  cardNode.querySelector('.element__image').alt = inputvalue[0].value;                      //И снова магия. задаём alt
-  cardNode.querySelector('.element__paragraph').textContent = inputvalue[0].value;         //Вжух! Имя.
+  cardNode.querySelector('.element__image').src = inputvalue[1].value;                     // Получаем ссылку на картинку из формы
+  cardNode.querySelector('.element__image').alt = inputvalue[0].value;                     // Задаём alt картинке из формы
+  cardNode.querySelector('.element__paragraph').textContent = inputvalue[0].value;         // Задаём имя карточке из формы
+
 
   //удаление новой карточки
   cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
@@ -141,21 +163,44 @@ function makeNewCard (evt) {
     removeCard.remove();
   });
 
+
   //лайк новой карточки
   cardNode.querySelector('.element__button-like').addEventListener('click', event =>{
     const makeLiked = event.target.closest('.element__button-like');
     makeLiked.classList.toggle('element__button-liked');
   })
 
-  cardContent.append(cardNode);
-  SecondPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
+
+  //показ попапа с фото
+  cardNode.querySelector('.element__image').addEventListener('click', event => {
+
+    // Получаем название карточки, по которой кликнули
+    let getText = event.target.closest('.element').querySelector('.element__paragraph').textContent;
+
+    //Выставляем всё в попап
+    //картинка
+    document.querySelector('.popup__photobox-image').src = event.target.src;
+    //текст
+    document.querySelector('.popup__photobox-caption').textContent = getText;
+
+    // открытие и закрытие попапа
+    imagePopop.classList.toggle('popup_toggle');
+    imagePopopCloseButton.addEventListener('click', closeImagePopup);
+  });
+
+  cardContent.prepend(cardNode);
+  addCardPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
 }
 
-SecondPopupOpenButton.addEventListener('click', popupAddNewCard);
-SecondPopup.addEventListener('submit', makeNewCard);
-secondPopupCloseButton.addEventListener('click', popupAddNewCard);
+addCardPopupOpenButton.addEventListener('click', popupAddNewCard);
+addCardPopupCloseButton.addEventListener('click', popupAddNewCard);
+addCardPopup.addEventListener('submit', makeNewCard);
 // Добавление карточки
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------
-
-
+// Попап с фотокарточкой
+let imagePopop = document.querySelector('.popup_photobox');
+let imagePopopCloseButton = document.querySelector('.popup__photobox-close');
+function closeImagePopup() {
+  imagePopop.classList.remove('popup_toggle');
+}

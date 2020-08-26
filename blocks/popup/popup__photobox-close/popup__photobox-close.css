@@ -1,0 +1,21 @@
+.popup__photobox-close {
+  width: 41px;
+  height: 41px;
+  position: absolute;
+  top: -22px;
+  right: -10px;
+  background: none;
+  background-image: url(../../../images/popup-close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-size: 41px;
+  border-radius: 2px;
+  transition: opacity .3s ease-in-out;
+}
+
+.popup__photobox-close:hover {
+  cursor: pointer;
+  opacity: .6;
+
+}
