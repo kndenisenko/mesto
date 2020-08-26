@@ -28,22 +28,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Добавлена функция лайка для всех карточек">
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__image-container/popup__image-container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__photobox-caption/popup__photobox-caption.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__photobox-image/popup__photobox-image.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/_photobox/popup_photobox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/popup__photobox-close/popup__photobox-close.css" afterDir="false" />
+    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: Добавлена вся функциональность из ТЗ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__thrashcan-default/element__thrashcan-default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__thrashcan-opened/element__thrashcan-opened.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/element.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/element.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__close-button/popup__close-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__close-button/popup__close-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/_toggle/popup_toggle.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/_toggle/popup_toggle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +103,7 @@
       <workItem from="1598132733630" duration="830000" />
       <workItem from="1598165591648" duration="1883000" />
       <workItem from="1598262831981" duration="27540000" />
-      <workItem from="1598427137110" duration="33629000" />
+      <workItem from="1598427137110" duration="34361000" />
     </task>
     <task id="LOCAL-00001" summary="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе">
       <created>1598018937031</created>
@@ -175,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598277107225</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Develop: Добавлена вся функциональность из ТЗ">
+      <created>1598475301139</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1598475301139</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +209,8 @@
     <MESSAGE value="Develop: Изменены функции изменения имени/профессии, переделаны функции добавления кастомной карточки" />
     <MESSAGE value="Develop: Исправлено удаление всех карточек." />
     <MESSAGE value="Develop: Добавлена функция лайка для всех карточек" />
-    <option name="LAST_COMMIT_MESSAGE" value="Develop: Добавлена функция лайка для всех карточек" />
+    <MESSAGE value="Develop: Добавлена вся функциональность из ТЗ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Develop: Добавлена вся функциональность из ТЗ" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598109793872">
