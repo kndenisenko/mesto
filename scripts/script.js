@@ -21,13 +21,17 @@ function showUserEditPopup() {
   userEditPopup.classList.toggle('popup_toggle');                                                  // открываем/закрываем попап по кнопке Х
 }
 
+// Находим поля ввода значений в форме изменения данных о пользователе
+const newName = document.querySelector('.popup__input_name');
+const newOccupation = document.querySelector('.popup__input_occupation');
+
 // Функция отвечает за "сохранение" имени и профессии
 function changeNameOccupation(evt) {
   evt.preventDefault();
-  const inputvalue = document.querySelectorAll('input');                            // Получаем значение всех инпутов сразу
+  const inputvalue = document.querySelectorAll('input');            // Получаем значение всех инпутов сразу
 
-  usermane.textContent = inputvalue[0].value;                                     // Помещаем вместо юзернейма новый, из формы
-  occupation.textContent = inputvalue[1].value;                                   // Помещаем вместо профессиии новую, из формы
+  usermane.textContent = newName.value;                                      // Помещаем вместо юзернейма новый, из формы
+  occupation.textContent = newOccupation.value;                             // Помещаем вместо профессиии новую, из формы
 
   userEditPopup.classList.toggle('popup_toggle');                                         // Попап, изыди
 }
