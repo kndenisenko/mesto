@@ -22,16 +22,19 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:hotfixes" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Develop: В скрипте все let исправлены на const, функциональность не пострадала">
+    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Hotfixes: создана ветка hotfixes, исправления из код-ревью на 85-й строке script.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/_photobox/popup_photobox.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/_photobox/popup_photobox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/popup__photobox-close/popup__photobox-close.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/popup__photobox-close/popup__photobox-close.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,15 +74,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\!Yandex_Praktikum\__works\005_mesto\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\!Yandex_Praktikum\__works\005_mesto\blocks\popup" />
       <recent name="D:\Projects\!Yandex_Praktikum\__works\005_mesto\blocks\popup\__close-button" />
       <recent name="D:\Projects\!Yandex_Praktikum\__works\005_mesto\blocks\element" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\!Yandex_Praktikum\__works\005_mesto\images" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,6 +114,9 @@
       <workItem from="1598165591648" duration="1883000" />
       <workItem from="1598262831981" duration="27540000" />
       <workItem from="1598427137110" duration="34513000" />
+      <workItem from="1598538181775" duration="149000" />
+      <workItem from="1598541121130" duration="109000" />
+      <workItem from="1598619838658" duration="3430000" />
     </task>
     <task id="LOCAL-00001" summary="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе">
       <created>1598018937031</created>
@@ -181,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598475789046</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Master: дополнен README.md">
+      <created>1598477118754</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598477118754</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +212,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="hotfixes" />
                       </list>
                     </value>
                   </entry>
@@ -224,7 +238,9 @@
     <MESSAGE value="Develop: Добавлена функция лайка для всех карточек" />
     <MESSAGE value="Develop: Добавлена вся функциональность из ТЗ" />
     <MESSAGE value="Develop: В скрипте все let исправлены на const, функциональность не пострадала" />
-    <option name="LAST_COMMIT_MESSAGE" value="Develop: В скрипте все let исправлены на const, функциональность не пострадала" />
+    <MESSAGE value="Master: дополнен README.md" />
+    <MESSAGE value="Hotfixes: создана ветка hotfixes, исправления из код-ревью на 85-й строке script.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hotfixes: создана ветка hotfixes, исправления из код-ревью на 85-й строке script.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598109793872">
@@ -255,10 +271,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1001" y="441" width="540" height="540" key="StructurePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1598262851604" />
-    <state x="879" y="416" key="Vcs.Push.Dialog.v2" timestamp="1598476783208">
+    <state x="879" y="416" key="Vcs.Push.Dialog.v2" timestamp="1598624263935">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598476783208" />
+    <state x="879" y="416" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598624263935" />
     <state x="879" y="423" key="Vcs.Push.Dialog.v2/0.30.2560.1322@0.30.2560.1322" timestamp="1597699622684" />
     <state x="56" y="85" width="2376" height="1216" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598299373517">
       <screen x="0" y="0" width="2560" height="1400" />

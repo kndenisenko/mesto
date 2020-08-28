@@ -79,11 +79,12 @@ const initialCards = [
   }
 ];
 
+// Находим темплейт по ID и получаем его содержимое через .content и находим место для клонирования
+const userTemplate = document.querySelector('#card').content;                // Находим темплейт
+const cardContent = document.querySelector('.elements');                     // Находим место куда будем клонировать
+
 // Вывод первых карточек
 function addFirstCards (card) {
-// Находим темплейт по ID и получаем его содержимое через .content и клонируем ноду
-  const userTemplate = document.querySelector('#card').content;                // Находим темплейт
-  const cardContent = document.querySelector('.elements');                   // Находим место куда будем клонировать
 
   const cardNode = userTemplate.cloneNode(true);                                       // клонируем
   cardNode.querySelector('.element__image').src = card.link;                     //Задаём картинку карточки
