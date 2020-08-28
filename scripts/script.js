@@ -134,12 +134,6 @@ const addCardPopupCloseButton = document.querySelector('.popup__close-button_add
 
 
 function addNewCardPopup () {
-  const formFieldFirst = document.getElementById('firstInput');                           // находим первую форму в попапе
-  formFieldFirst.setAttribute('value', 'Название');
-
-  const formFieldSecond = document.getElementById('secondInput');     // Повторяем всё тоже самое, для второй формы
-  formFieldSecond.setAttribute('value', 'Ссылка на картинку');
-
   addCardPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
 }
 
