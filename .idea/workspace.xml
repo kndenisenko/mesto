@@ -30,7 +30,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Hotfixes: Изменена логика добавления новой карточки. Теперь при её добавлении создаётся объект, который передаётся в функцию создания первоначальных карточек">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +116,7 @@
       <workItem from="1598633134234" duration="1198000" />
       <workItem from="1598655032670" duration="428000" />
       <workItem from="1598709944763" duration="12932000" />
-      <workItem from="1598785080961" duration="12947000" />
+      <workItem from="1598785080961" duration="13081000" />
     </task>
     <task id="LOCAL-00001" summary="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе">
       <created>1598018937031</created>
@@ -210,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598626298736</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Hotfixes: Изменена логика добавления новой карточки. Теперь при её добавлении создаётся объект, который передаётся в функцию создания первоначальных карточек">
+      <created>1598805989606</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1598805989606</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

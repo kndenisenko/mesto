@@ -123,7 +123,6 @@ function addFirstCards (card) {
 
     // открытие и закрытие попапа
     imagePopop.classList.toggle('popup_toggle');
-    imagePopopCloseButton.addEventListener('click', closeImagePopup);
   });
 cloneTarget.prepend(cardNode); // Появление карточки на странице
 }
@@ -180,8 +179,9 @@ addCardPopupSaveButton.addEventListener('click', createdObj);
 // Попап с фотокарточкой
 const imagePopop = document.querySelector('.popup_photobox');
 const imagePopopCloseButton = document.querySelector('.popup__photobox-close');
+imagePopopCloseButton.addEventListener('click', closeImagePopup);
 
-// Функция
+// Функция открытия / закрытия фотобокса
 function closeImagePopup() {
   imagePopop.classList.toggle('popup_toggle');
 }
