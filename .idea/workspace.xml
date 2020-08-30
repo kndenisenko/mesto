@@ -28,7 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="Master: merge">
+    <list default="true" id="5f13cc30-c3b6-4235-a852-de477fb8e0e4" name="Default Changelist" comment="hotfixes: константы вынесены из функции">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
     </list>
@@ -117,7 +117,7 @@
       <workItem from="1598655032670" duration="428000" />
       <workItem from="1598709944763" duration="12932000" />
       <workItem from="1598785080961" duration="13081000" />
-      <workItem from="1598821176707" duration="150000" />
+      <workItem from="1598821176707" duration="708000" />
     </task>
     <task id="LOCAL-00001" summary="Develop: функция открытия попапа берёт названия из JS. Изменены ID в попапе">
       <created>1598018937031</created>
@@ -217,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598805989606</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="hotfixes: константы вынесены из функции">
+      <created>1598821375425</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1598821375425</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +272,8 @@
     <MESSAGE value="Hotfixes: справления из код-ревью на 85-й строке script.js" />
     <MESSAGE value="Hotfixes: В попапе добавления карточки добавлен плейсхолдер. Убрано подставление value вместо плейсхолдера в JS" />
     <MESSAGE value="Hotfixes: Изменена логика добавления новой карточки. Теперь при её добавлении создаётся объект, который передаётся в функцию создания первоначальных карточек" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hotfixes: Изменена логика добавления новой карточки. Теперь при её добавлении создаётся объект, который передаётся в функцию создания первоначальных карточек" />
+    <MESSAGE value="hotfixes: константы вынесены из функции" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfixes: константы вынесены из функции" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598109793872">
