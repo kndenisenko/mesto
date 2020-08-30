@@ -14,20 +14,22 @@ function showUserEditPopup() {
   const formFieldFirst = document.getElementById('username');                           // находим первую форму в попапе
   formFieldFirst.setAttribute('value', usermane.textContent);                       // заменяем значение инпута
 
-  const formFieldSecond = document.getElementById('occupation');                         // Повторяем всё тоже самое, для
-  // заполения второй формы
+  const formFieldSecond = document.getElementById('occupation');                        // Повторяем всё тоже самое, для заполения второй формы
   formFieldSecond.setAttribute('value', occupation.textContent);
 
-  userEditPopup.classList.toggle('popup_toggle');                                                  // открываем/закрываем попап по кнопке Х
+  userEditPopup.classList.toggle('popup_toggle');                                          // открываем/закрываем попап по кнопке Х
 }
+
+// Находим поля ввода значений в форме изменения данных о пользователе
+const newName = document.querySelector('.popup__input_name');
+const newOccupation = document.querySelector('.popup__input_occupation');
 
 // Функция отвечает за "сохранение" имени и профессии
 function changeNameOccupation(evt) {
   evt.preventDefault();
-  const inputvalue = document.querySelectorAll('input');                            // Получаем значение всех инпутов сразу
 
-  usermane.textContent = inputvalue[0].value;                                     // Помещаем вместо юзернейма новый, из формы
-  occupation.textContent = inputvalue[1].value;                                   // Помещаем вместо профессиии новую, из формы
+  usermane.textContent = newName.value;                                      // Помещаем вместо юзернейма новый, из формы
+  occupation.textContent = newOccupation.value;                             // Помещаем вместо профессиии новую, из формы
 
   userEditPopup.classList.toggle('popup_toggle');                                         // Попап, изыди
 }
@@ -79,13 +81,22 @@ const initialCards = [
   }
 ];
 
-// Вывод первых карточек
-function addFirstCards (card) {
-// Находим темплейт по ID и получаем его содержимое через .content и клонируем ноду
-  const userTemplate = document.querySelector('#card').content;                // Находим темплейт
-  const cardContent = document.querySelector('.elements');                   // Находим место куда будем клонировать
+// Находим темплейт по ID и получаем его содержимое через .content и находим место для клонирования
+const userTemplate = document.querySelector('#card').content;                // Находим темплейт
+const cloneTarget = document.querySelector('.elements');                     // Находим место куда будем клонировать
+                                    // клонируем
+// function ret() {
+//   let abc = 50
+//   return abc;
+// }
+// let zzz = ret();
+// console.log(zzz)
+//
 
-  const cardNode = userTemplate.cloneNode(true);                                       // клонируем
+//Функция создания карточки
+function addFirstCards (card) {
+
+  const cardNode = userTemplate.cloneNode(true);
   cardNode.querySelector('.element__image').src = card.link;                     //Задаём картинку карточки
   cardNode.querySelector('.element__image').alt = card.alt;                      //Задаём alt
   cardNode.querySelector('.element__paragraph').textContent = card.name;         //Задаём Имя.
@@ -102,7 +113,6 @@ function addFirstCards (card) {
     makeLiked.classList.toggle('element__button-liked');
   });
 
-
   // Выводим фотобокс.
   //Задаём действие по клику на картинку карточки
   cardNode.querySelector('.element__image').addEventListener('click', event => {
@@ -113,91 +123,65 @@ function addFirstCards (card) {
 
     // открытие и закрытие попапа
     imagePopop.classList.toggle('popup_toggle');
-    imagePopopCloseButton.addEventListener('click', closeImagePopup);
   });
-cardContent.append(cardNode);  // Появление карточек при загрузке страницы
+cloneTarget.prepend(cardNode); // Появление карточки на странице
 }
-initialCards.forEach(addFirstCards);
+initialCards.forEach(addFirstCards); // применение функции к каждому элементу массива - так появляются карточки
+
+
 
 // Конец вывода дефолтных карточек
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------
 // Добавление карточки
+// задаём константы для попапа добавления карточки
 const addCardPopup = document.querySelector('.popup_addCard');
 const addCardPopupOpenButton = document.querySelector('.profile__button-add');
 const addCardPopupCloseButton = document.querySelector('.popup__close-button_addCard');
+const addCardPopupSaveButton = document.querySelector('.popup__button-save_addCard');
+const newCardName = document.querySelector('.popup__input_addCard-paragraph');
+const newCardLink = document.querySelector('.popup__input_addCard-link');
 
-
+// функция проверяет открытость/закрытость попапа и открывает/закрывает его, добавляя или убирая класс
 function addNewCardPopup () {
-  const formFieldFirst = document.getElementById('firstInput');                           // находим первую форму в попапе
-  formFieldFirst.setAttribute('value', 'Название');
-
-  const formFieldSecond = document.getElementById('secondInput');     // Повторяем всё тоже самое, для второй формы
-  formFieldSecond.setAttribute('value', 'Ссылка на картинку');
-
   addCardPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
 }
 
-// Обработка данных из формы, создание новой карточки
-function makeNewCard (object) {
-  object.preventDefault()
+// Функция будет собирать введённые данные из формы и создавать из них объект newObject
+function createdObj (evt) {
+  evt.preventDefault();  //отмена перезагрузки страницы при отправке формы
 
-  const userTemplate = document.querySelector('#card').content;                // Находим темплейт
-  const cardContent = document.querySelector('.elements');                   // Задаём место, куда он будет клонироваться
+  // создаём пустой объект
+  let newObject = {
+    name: '',
+    link: '',
+    alt: ''
+  };
 
-  const inputvalue = document.querySelectorAll('.popup__input_addCard');
-  const cardNode = userTemplate.cloneNode(true)
-  cardNode.querySelector('.element__image').src = inputvalue[1].value;                     // Получаем ссылку на картинку из формы
-  cardNode.querySelector('.element__image').alt = inputvalue[0].value;                     // Задаём alt картинке из формы
-  cardNode.querySelector('.element__paragraph').textContent = inputvalue[0].value;         // Задаём имя карточке из формы
+  newObject.name = newCardName.value;
+  newObject.alt = newCardName.value;
+  newObject.link = newCardLink.value;
 
-
-  //удаление новой карточки
-  cardNode.querySelector('.element__thrashcan').addEventListener('click', event => {
-    const removeCard = event.target.closest('.element');
-    removeCard.remove();
-  });
-
-
-  //лайк новой карточки
-  cardNode.querySelector('.element__button-like').addEventListener('click', event =>{
-    const makeLiked = event.target.closest('.element__button-like');
-    makeLiked.classList.toggle('element__button-liked');
-  })
-
-
-  //показ попапа с фото
-  cardNode.querySelector('.element__image').addEventListener('click', event => {
-
-    // Получаем название карточки, по которой кликнули
-    const getText = event.target.closest('.element').querySelector('.element__paragraph').textContent;
-
-    //Выставляем всё в попап
-    //картинка
-    document.querySelector('.popup__photobox-image').src = event.target.src;
-    //текст
-    document.querySelector('.popup__photobox-caption').textContent = getText;
-
-    // открытие и закрытие попапа
-    imagePopop.classList.toggle('popup_toggle');
-    imagePopopCloseButton.addEventListener('click', closeImagePopup);
-  });
-
-  cardContent.prepend(cardNode);
-  addCardPopup.classList.toggle('popup_toggle');                       // открываем/закрываем попап по кнопке
+  //закрыть попап
+  addCardPopup.classList.toggle('popup_toggle');
+  //запуск добавления карточки через функцию отрисовки первых карточек
+  addFirstCards(newObject);
 }
 
 addCardPopupOpenButton.addEventListener('click', addNewCardPopup);
 addCardPopupCloseButton.addEventListener('click', addNewCardPopup);
-addCardPopup.addEventListener('submit', makeNewCard);
+addCardPopupSaveButton.addEventListener('click', createdObj);
+
+// addCardPopup.addEventListener('submit', makeNewCard);
 // Добавление карточки
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------
 // Попап с фотокарточкой
 const imagePopop = document.querySelector('.popup_photobox');
 const imagePopopCloseButton = document.querySelector('.popup__photobox-close');
+imagePopopCloseButton.addEventListener('click', closeImagePopup);
 
-// Функция
+// Функция открытия / закрытия фотобокса
 function closeImagePopup() {
-  imagePopop.classList.remove('popup_toggle');
+  imagePopop.classList.toggle('popup_toggle');
 }
