@@ -8,14 +8,12 @@ const userEditPopupCloseButton = document.querySelector('.popup__close-button');
 // задаём переменные
 const usermane = document.querySelector('.pofile__info-name');                      // находим строку с именем
 const occupation = document.querySelector('.pofile__info-occupation');              // находим строку с профессией
-
+const formFieldFirst = document.getElementById('username');                        // находим первую форму в попапе
+const formFieldSecond = document.getElementById('occupation');                        // Повторяем всё тоже самое, для заполения второй формы
 // функция отвечает за открытие/закрытие попапа и текст внутри него
 function showUserEditPopup() {
-  const formFieldFirst = document.getElementById('username');                           // находим первую форму в попапе
   formFieldFirst.setAttribute('value', usermane.textContent);                       // заменяем значение инпута
-
-  const formFieldSecond = document.getElementById('occupation');                        // Повторяем всё тоже самое, для заполения второй формы
-  formFieldSecond.setAttribute('value', occupation.textContent);
+  formFieldSecond.setAttribute('value', occupation.textContent);                   // заменяем значение второго инпута
 
   userEditPopup.classList.toggle('popup_toggle');                                          // открываем/закрываем попап по кнопке Х
 }
