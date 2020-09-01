@@ -84,8 +84,8 @@ const userTemplate = document.querySelector('#card').content;                // 
 const cloneTarget = document.querySelector('.elements');                     // Находим место куда будем клонировать
 
 // переменные для записи имени карточки, ссылки на фото и alt
-let newCardimg = document.querySelector('.popup__photobox-image');
-let newCardtext = document.querySelector('.popup__photobox-caption');
+const newCardimg = document.querySelector('.popup__photobox-image');
+const newCardtext = document.querySelector('.popup__photobox-caption');
 
 //Функция создания карточки
 function addFirstCards (card) {
