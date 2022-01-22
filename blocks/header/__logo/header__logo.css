@@ -1,0 +1,8 @@
+.header__logo {
+  background-image: url(../../../images/logo-mobile.png);
+  background-repeat: no-repeat;
+  width: 104px;
+  height: 25px;
+  margin: 0 0 0 37px;
+  padding-bottom: 27px;
+}
