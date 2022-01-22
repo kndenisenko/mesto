@@ -1,0 +1,16 @@
+.root__header {
+  margin: 28px 0 0 0;
+}
+
+.header {
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
+}
+
+.header__logo {
+  background-image: url(./images/logo-mobile.png);
+  background-repeat: no-repeat;
+  width: 104px;
+  height: 25px;
+  margin: 0 0 0 37px;
+  padding-bottom: 27px;
+}
