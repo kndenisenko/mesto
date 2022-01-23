@@ -1,0 +1,9 @@
+.profile__info {
+  max-width: 282px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 25px auto 0 auto;
+  position: relative;
+}

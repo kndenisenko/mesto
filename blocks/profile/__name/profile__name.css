@@ -1,0 +1,9 @@
+.profile__name {
+  max-width: 189px;
+  flex-basis: 80%;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 33px;
+  color: #FFF;
+  margin: 0;
+}
