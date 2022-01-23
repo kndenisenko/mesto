@@ -6,3 +6,12 @@
   margin: 0 0 0 27px;
   padding-bottom: 27px;
 }
+
+@media screen and (min-width: 680px) {
+  .header__logo {
+    background-image: url(../../../images/logo-desktop.png);
+    width: 142px;
+    height: 33px;
+    margin: 0 0 10px 0;
+  }
+}

@@ -1,5 +1,5 @@
 .profile__edit {
-  background-image: url(../../../images/edit-button.png);
+  background-image: url(../../../images/edit-button-mobile.png);
   background-repeat: no-repeat;
   background-position: center;
   background-color: black;
@@ -10,4 +10,14 @@
   position: absolute;
   top: 10px;
   left: 245px;
+}
+
+@media screen and (min-width: 680px) {
+  .profile__edit {
+    background-image: url(../../../images/edit-button-desktop.png);
+    width: 24px;
+    height: 24px;
+    top: 15px;
+    left: 312px;
+  }
 }
