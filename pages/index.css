@@ -4,6 +4,7 @@
 @import url(../blocks/root/root.css);
 @import url(../blocks/root/__header/root__header.css);
 @import url(../blocks/root/_profile/root_profile.css);
+@import url(../blocks/root/__elements/root__elements.css);
 
 /* * header block */
 @import url(../blocks/header/header.css);
@@ -18,3 +19,12 @@
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__occupation/profile__occupation.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
+
+/* * element and elements blocks */
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__group/element__group.css);
+@import url(../blocks/element/__title/element__title.css);
+@import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__liked/element__liked.css);
