@@ -1,8 +1,10 @@
 .popup__close-button {
   background: none;
   background-image: url(../../../images/close-button.png);
+  background-repeat: no-repeat;
   width: 35px;
   height: 35px;
+  border: none;
   cursor: pointer;
   position: absolute;
   right: -41px;
