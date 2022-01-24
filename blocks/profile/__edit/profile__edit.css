@@ -10,12 +10,12 @@
   position: absolute;
   top: 10px;
   left: 245px;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .profile__edit:hover {
   cursor: pointer;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 @media screen and (min-width: 680px) {

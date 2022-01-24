@@ -7,10 +7,10 @@
   height: 19px;
   align-self: center;
   margin: 0 0 3px 9px;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .element__like:hover {
   cursor: pointer;
-  opacity: .5;
+  opacity: 0.5;
 }
