@@ -1,5 +1,5 @@
 .header__logo {
-  background-image: url(../../../images/logo-mobile.png);
+  background-image: url(../../../images/logo-mobile.svg);
   background-repeat: no-repeat;
   width: 104px;
   height: 25px;
@@ -9,7 +9,7 @@
 
 @media screen and (min-width: 680px) {
   .header__logo {
-    background-image: url(../../../images/logo-desktop.png);
+    background-image: url(../../../images/logo-desktop.svg);
     width: 142px;
     height: 33px;
     margin: 0 0 10px 0;
