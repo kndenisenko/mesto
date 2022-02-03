@@ -1,4 +1,4 @@
-.footer__copywright {
+.footer__copyright {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (min-width: 680px) {
-  .footer__copywright {
+  .footer__copyright {
     font-size: 18px;
     line-height: 22px;
   }
