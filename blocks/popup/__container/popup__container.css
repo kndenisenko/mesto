@@ -6,8 +6,11 @@
   background-color: #fff;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  position: relative;
-  margin: auto;
+  /*
+  position: fixed;
+  */
+  align-self: center;
+  justify-self: center;
   z-index: 3;
 }
 
