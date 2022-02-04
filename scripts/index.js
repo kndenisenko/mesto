@@ -5,7 +5,7 @@
 const popup = document.querySelector('.popup');
 const popuOpenButton = document.querySelector('.profile__edit');
 const popupResetButton = document.querySelector('.popup__close-button');
-const popupSaveButton = document.querySelector('.popup__submit-button');
+const popupSaveButton = document.querySelector('.popup__container');
 
 
 // note поиск имени и профессии в HTML-разметке
@@ -41,7 +41,7 @@ function popupCloseAndSave(evt) {
 // note обработчики нажатий
 popuOpenButton.addEventListener('click', popupOpen);
 popupResetButton.addEventListener('click', popupClose);
-popupSaveButton.addEventListener('click', popupCloseAndSave);
+popupSaveButton.addEventListener('submit', popupCloseAndSave);
 
 
 
