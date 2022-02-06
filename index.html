@@ -1,90 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
-  <title>Экспедиция Фёдора Конюхова и Виктора Симонова</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./pages/index.css" />
+  <title>Экспедиция фёдора конюхова и виктора симонова</title>
 </head>
 
 <body class="root">
-<header class="header root__header">
-  <div class="header__logo"></div>
-</header>
-<main>
-  <section class="profile root__profile">
-    <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар пользователя">
-    <div class="profile__info">
-      <h1 class="profile__name">Федор Конюхов</h1>
-      <button class="profile__edit" type="button"></button>
-      <p class="profile__occupation">Путешественник везде</p>
-    </div>
-    <button class="profile__add-button" type="button"></button>
-  </section>
-
-  <section class="elements root__elements">
-    <ul class="elements__container">
-      <li class="element">
-        <img class="element__image" src="./images/001_petrozavodsk.jpg" alt="Петрозаводск, начало экспедиции">
-        <div class="element__group">
-          <h2 class="element__title">Петрозаводск</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-      </li>
-      <li class="element">
-        <img class="element__image" src="./images/002_Longyearbyen01.jpg" alt="Лонгйир, второй известный город на пути">
-        <div class="element__group">
-          <h2 class="element__title">Лонгйир</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-      </li>
-      <li class="element">
-        <img class="element__image" src="./images/003-barneo.jpg" alt="Барнео. База на Северном Полюсе">
-        <div class="element__group">
-          <h2 class="element__title">Барнео</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-      </li>
-      <li class="element">
-        <img class="element__image" src="./images/004-north-pole.jpg" alt="Северный полюс. Главная точка экспедиции">
-        <div class="element__group">
-          <h2 class="element__title">Северный полюс</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-      </li>
-      <li class="element">
-        <img class="element__image" src="./images/005-greenland.jpg" alt="Гренландия. Здесь тоже был Фёдор Конюхов">
-        <div class="element__group">
-          <h2 class="element__title">Гренландия</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-      </li>
-      <li class="element">
-        <img class="element__image" src="./images/006-Qaqortoq.jpg" alt="Юлианехоб, также известный как Какорто́к">
-        <div class="element__group">
-          <h2 class="element__title">Юлианехоб (Какорто́к)</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-      </li>
-    </ul>
-  </section>
+  <header class="header root__header">
+    <div class="header__logo"></div>
+  </header>
+  <main>
+    <section class="profile root__profile">
+      <img class="profile__avatar" src="./images/avatar.jpg" alt="аватар пользователя" />
+      <div class="profile__info">
+        <h1 class="profile__name">федор Конюхов</h1>
+        <button class="profile__edit" aria-label="редактировать профиль" type="button"></button>
+        <p class="profile__occupation">Путешественник везде</p>
+      </div>
+      <button class="profile__add-button" aria-label="добавить карточку места" type="button"></button>
+    </section>
+    <section class="elements root__elements">
+      <ul class="elements__container">
+        <li class="element">
+          <img class="element__image" src="./images/001_petrozavodsk.jpg" alt="петрозаводск, начало экспедиции" />
+          <div class="element__group">
+            <h2 class="element__title">Петрозаводск</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__image" src="./images/002_longyearbyen01.jpg" alt="лонгйир, второй известный город на пути" />
+          <div class="element__group">
+            <h2 class="element__title">Лонгйир</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__image" src="./images/003-barneo.jpg" alt="барнео. база на северном полюсе" />
+          <div class="element__group">
+            <h2 class="element__title">Барнео</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__image" src="./images/004-north-pole.jpg" alt="северный полюс. главная точка экспедиции" />
+          <div class="element__group">
+            <h2 class="element__title">Северный полюс</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__image" src="./images/005-greenland.jpg" alt="гренландия. здесь тоже был фёдор конюхов" />
+          <div class="element__group">
+            <h2 class="element__title">Гренландия</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__image" src="./images/006-qaqortoq.jpg" alt="юлианехоб, также известный как какорто́к" />
+          <div class="element__group">
+            <h2 class="element__title">Юлианехоб (какорто́к)</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
   <footer class="footer root__footer">
-  <p class="footer__copyright">© 2022 Mesto Russia</p>
+    <p class="footer__copyright">© 2022 mesto russia</p>
   </footer>
-<div class="popup">
-  <div class="popup__button-placeholder">
-    <button class="popup__close-button" type="button"></button>
-    <form class="popup__container" name="profile-form">
-      <h2 class="popup__header">Редактировать профиль</h2>
-      <input class="popup__input" type="text" id="username" name="usermane" value="">
-      <input class="popup__input" type="text" id="occupation" name="occupation" value="">
-      <button class="popup__submit-button" type="submit">Сохранить</button>
-    </form>
+  <div class="popup">
+    <div class="popup__placeholder">
+      <button class="popup__close-button" type="button"></button>
+      <form class="popup__form" name="profile-form">
+        <h2 class="popup__header">Редактировать профиль</h2>
+        <input class="popup__input" type="text" id="username" name="usermane" value="" />
+        <input class="popup__input" type="text" id="occupation" name="occupation" value="" />
+        <button class="popup__submit-button" type="submit">Сохранить</button>
+      </form>
+    </div>
   </div>
-</div>
-<script src="./scripts/index.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>

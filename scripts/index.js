@@ -3,10 +3,9 @@
 
 // note попап, кнокпи его открытия и закрытия
 const popup = document.querySelector('.popup');
-const popuOpenButton = document.querySelector('.profile__edit');
+const popupOpenButton = document.querySelector('.profile__edit');
 const popupResetButton = document.querySelector('.popup__close-button');
-const popupSaveButton = document.querySelector('.popup__container');
-
+const popupContainer = document.querySelector('.popup__placeholder');
 
 // note поиск имени и профессии в HTML-разметке
 const username = document.querySelector('.profile__name');
@@ -16,32 +15,30 @@ const occupation = document.querySelector('.profile__occupation');
 const nameField = document.getElementById('username');
 const occupationField = document.getElementById('occupation');
 
-// note функция открытия попапа b добавления данных в поля попапа
+// note функция открытия попапа и добавления данных в поля попапа
 function popupOpen() {
-  popup.classList.add('popup__visible');
+  popup.classList.add('popup_visible');
   nameField.value = username.textContent;
   occupationField.value = occupation.textContent;
-}
-
-// note функция закрытия попапа
-function popupClose() {
-  popup.classList.remove('popup__visible')
 }
 
 // note сохранение данных из попапа
 function popupCloseAndSave(evt) {
   evt.preventDefault();
-  let newUserName = document.getElementById('username');
-  let newOccupation = document.getElementById('occupation');
-  username.textContent = newUserName.value;
-  occupation.textContent = newOccupation.value;
+  username.textContent = nameField.value;
+  occupation.textContent = occupationField.value;
   popupClose();
 }
 
+// note функция закрытия попапа
+function popupClose() {
+  popup.classList.remove('popup_visible')
+}
+
 // note обработчики нажатий
-popuOpenButton.addEventListener('click', popupOpen);
+popupOpenButton.addEventListener('click', popupOpen);
 popupResetButton.addEventListener('click', popupClose);
-popupSaveButton.addEventListener('submit', popupCloseAndSave);
+popupContainer.addEventListener('submit', popupCloseAndSave);
 
 
 

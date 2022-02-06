@@ -23,7 +23,8 @@
     background-image: url(../../../images/edit-button-desktop.svg);
     width: 24px;
     height: 24px;
-    top: 15px;
-    left: 312px;
+    position: static;
+    margin: 2px 0 0 18px;
+
   }
 }

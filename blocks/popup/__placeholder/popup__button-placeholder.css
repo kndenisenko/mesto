@@ -1,20 +1,17 @@
-.popup__container {
+.popup__placeholder {
+  position: relative;
   max-width: 430px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  /*
-  position: fixed;
-  */
   align-self: center;
   justify-self: center;
   z-index: 3;
 }
-
 @media screen and (max-width: 580px) {
-  .popup__container {
+  .popup__placeholder {
     width: 282px;
   }
 }
