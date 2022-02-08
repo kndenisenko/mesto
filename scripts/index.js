@@ -5,7 +5,7 @@
 const popup = document.querySelector('.popup');
 const popupOpenButton = document.querySelector('.profile__edit');
 const popupResetButton = document.querySelector('.popup__close-button');
-const popupContainer = document.querySelector('.popup__placeholder');
+const popupForm = document.querySelector('.popup__form');
 
 // note поиск имени и профессии в HTML-разметке
 const username = document.querySelector('.profile__name');
@@ -38,7 +38,7 @@ function popupClose() {
 // note обработчики нажатий
 popupOpenButton.addEventListener('click', popupOpen);
 popupResetButton.addEventListener('click', popupClose);
-popupContainer.addEventListener('submit', popupCloseAndSave);
+popupForm.addEventListener('submit', popupCloseAndSave);
 
 
 

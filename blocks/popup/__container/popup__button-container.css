@@ -1,4 +1,4 @@
-.popup__placeholder {
+.popup__container {
   position: relative;
   max-width: 430px;
   display: flex;
@@ -11,7 +11,7 @@
   z-index: 3;
 }
 @media screen and (max-width: 580px) {
-  .popup__placeholder {
+  .popup__container {
     width: 282px;
   }
 }
