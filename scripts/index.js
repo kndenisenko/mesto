@@ -39,6 +39,66 @@ function popupClose() {
 popupOpenButton.addEventListener('click', popupOpen);
 popupResetButton.addEventListener('click', popupClose);
 popupForm.addEventListener('submit', popupCloseAndSave);
+//----------------------------------------------------------------------------------------------------------------------
+// mesto - 5
+//----------------------------------------------------------------------------------------------------------------------
+const initialCards = [
+  {
+    name: 'Петрозаводск',
+    url: './images/001_petrozavodsk.jpg',
+    alt: 'Петрозаводск, начало экспедиции'
+  },
+  {
+    name: 'Лонгйир',
+    url: './images/002_Longyearbyen.jpg',
+    alt: 'Лонгйир, второй известный город на пути'
+  },
+  {
+    name: 'Барнео',
+    url: './images/003-barneo.jpg',
+    alt: 'Барнео. база на северном полюсе'
+  },
+  {
+    name: 'Северный полюс',
+    url: './images/004-north-pole.jpg',
+    alt: 'северный полюс. главная точка экспедиции'
+  },
+  {
+    name: 'Гренландия',
+    url: './images/005-greenland.jpg',
+    alt: 'Гренландия. здесь тоже был Фёдор Конюхов'
+  },
+  {
+    name: 'Юлианехоб (какорто́к)',
+    url: './images/006-Qaqortoq.jpg',
+    alt: 'Юлианехоб, также известный как Какорто́к'
+  }
+];
+
+//Находим темплейт в разметке и получаем его содержимое с помощью content и место для клонирования
+const cardTemplate = document.querySelector('#cardTemplate').content;
+const cloneTarget = document.querySelector('.elements__container');
+/*
+const cardElement = cardTemplate.querySelector('.elements__container').cloneNode(true);
+*/
+
+function renderFirstCards (card) {
+  const cardNode = cardTemplate.cloneNode(true);
+  cardNode.querySelector('.element__title').textContent = card.name;
+  cardNode.querySelector('.element__image').src = card.url;
+  cardNode.querySelector('.element__image').alt = card.alt;
+
+  // Да будет лайк - добавляем лайк
+  cardNode.querySelector('.element__like').addEventListener('click', event => {
+    const liked = event.target.closest('.element__like');
+    liked.classList.toggle('element__like_liked');
+  });
 
 
 
+
+
+
+  cloneTarget.prepend(cardNode);
+}
+initialCards.forEach(renderFirstCards);

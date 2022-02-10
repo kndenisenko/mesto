@@ -23,55 +23,23 @@
       <button class="profile__add-button" aria-label="добавить карточку места" type="button"></button>
     </section>
     <section class="elements root__elements">
-      <ul class="elements__container">
-        <li class="element">
-          <img class="element__image" src="./images/001_petrozavodsk.jpg" alt="петрозаводск, начало экспедиции" />
-          <div class="element__group">
-            <h2 class="element__title">Петрозаводск</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/002_Longyearbyen.jpg" alt="лонгйир, второй известный город на пути" />
-          <div class="element__group">
-            <h2 class="element__title">Лонгйир</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/003-barneo.jpg" alt="барнео. база на северном полюсе" />
-          <div class="element__group">
-            <h2 class="element__title">Барнео</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/004-north-pole.jpg" alt="северный полюс. главная точка экспедиции" />
-          <div class="element__group">
-            <h2 class="element__title">Северный полюс</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/005-greenland.jpg" alt="гренландия. здесь тоже был фёдор конюхов" />
-          <div class="element__group">
-            <h2 class="element__title">Гренландия</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__image" src="./images/006-Qaqortoq.jpg" alt="юлианехоб, также известный как какорто́к" />
-          <div class="element__group">
-            <h2 class="element__title">Юлианехоб (какорто́к)</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-      </ul>
+      <ul class="elements__container"></ul>
     </section>
   </main>
   <footer class="footer root__footer">
     <p class="footer__copyright">© 2022 mesto russia</p>
   </footer>
+
+  <template id="cardTemplate">
+    <li class="element">
+      <img class="element__image" src="" alt="" />
+      <div class="element__group">
+        <h2 class="element__title"></h2>
+        <button class="element__like" type="button"></button>
+      </div>
+    </li>
+  </template>
+
   <div class="popup">
     <div class="popup__container">
       <button class="popup__close-button" type="button"></button>
