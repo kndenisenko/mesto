@@ -94,7 +94,12 @@ function renderFirstCards (card) {
     liked.classList.toggle('element__like_liked');
   });
 
-
+  // Удаление картинки
+  cardNode.querySelector('.element__delete').addEventListener('click', event => {
+    const removed = event.target.closest('.element');
+    console.log(removed);
+    removed.remove();
+  });
 
 
 
