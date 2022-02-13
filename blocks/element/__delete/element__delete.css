@@ -1,8 +1,5 @@
 .element__delete {
-  /*background-image: url(../../../images/Group.svg);*/
-  /*background-repeat: no-repeat;*/
-  background-color: unset;
-  background: url("../../../images/Group.svg");
+  background: no-repeat url("../../../images/Group.svg");
   position: absolute;
   top: 20px;
   right: 20px;
@@ -10,7 +7,6 @@
   width: 18px;
   height: 20px;
   align-self: center;
-  transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
 

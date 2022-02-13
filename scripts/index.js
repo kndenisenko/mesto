@@ -1,7 +1,7 @@
 // note вот без этого не заработает ничего
 // ! 01010000 01110010 01100001 01101001 01110011 01100101 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001
 
-// note попап, кнокпи его открытия и закрытия
+// note попап, кнопка его открытия и закрытия
 const popup = document.querySelector('.popup');
 const popupOpenButton = document.querySelector('.profile__edit');
 const popupResetButton = document.querySelector('.popup__close-button');
@@ -78,9 +78,7 @@ const initialCards = [
 //Находим темплейт в разметке и получаем его содержимое с помощью content и место для клонирования
 const cardTemplate = document.querySelector('#cardTemplate').content;
 const cloneTarget = document.querySelector('.elements__container');
-/*
-const cardElement = cardTemplate.querySelector('.elements__container').cloneNode(true);
-*/
+
 
 function renderFirstCards (card) {
   const cardNode = cardTemplate.cloneNode(true);
@@ -88,22 +86,42 @@ function renderFirstCards (card) {
   cardNode.querySelector('.element__image').src = card.url;
   cardNode.querySelector('.element__image').alt = card.alt;
 
-  // Да будет лайк - добавляем лайк
+  // Да будет лайк - добавляем функцию лайка
   cardNode.querySelector('.element__like').addEventListener('click', event => {
     const liked = event.target.closest('.element__like');
     liked.classList.toggle('element__like_liked');
   });
 
-  // Удаление картинки
+  // Удаление карточки
   cardNode.querySelector('.element__delete').addEventListener('click', event => {
-    const removed = event.target.closest('.element');
-    console.log(removed);
-    removed.remove();
+    const devNull = event.target.closest('.element');
+    devNull.remove();
   });
 
-
-
+// Открытие попапа с большой картинкой
+  cardNode.querySelector('.element__image').addEventListener('click', event => {
+    const imagePicture = event.target.closest('.element__image'); //Вытаскиваем источник картинки и альт
+    popupPhotobox.classList.add('popup_visible');
+    popupPhotoboxImage.src = event.target.src;
+    popupPhotoboxImage.alt = event.target.alt;
+    popupPhotoboxCaption.textContent = event.target.alt;
+  })
 
   cloneTarget.prepend(cardNode);
 }
 initialCards.forEach(renderFirstCards);
+
+
+//Блок попапа с фотобоксом
+const popupPhotobox = document.querySelector('.popup__photobox');
+const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption')
+const popupPhotoboxClose = document.querySelector('.popup__photobox-close');
+const popupPhotoboxImage = document.querySelector('.popup__photobox-image');
+
+
+
+function photoboxClose () {
+  popupPhotobox.classList.remove('popup_visible');
+}
+
+popupPhotoboxClose.addEventListener('click', photoboxClose);
