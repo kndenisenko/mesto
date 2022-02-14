@@ -127,7 +127,7 @@ popupPhotoboxClose.addEventListener('click', photoboxClose);
 
 // note Добавление новой карточки
 const openNewCardButton = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки
-const newCardPopup = document.querySelector('.popup__add-card'); // Находим попап добавления карточки в разметке
+const newCardPopup = document.querySelector('.popup__addcard'); // Находим попап добавления карточки в разметке
 const newCardPopupReset = document.querySelector('.popup__close-button_add'); // кнопка закрытия попапа с новой карточкой
 const newCardSubmit = document.querySelector('.popup__submit-button_addCard'); // кнопка "сохранить" при добавлении попапа
 const newCardName = document.querySelector('.popup__input-caption');
@@ -148,17 +148,17 @@ function popupAddCardCLose () {
 function createNewCard (evt) {
   evt.preventDefault();
 
-  // создаём пустой объект
+  // note создаём пустой объект для будущей карточки
   const newCard = {
     name: newCardName.value,
     url: newCardSrc.value,
     alt: newCardName.value
   };
 
-  //закрытьие попапа
+  // note закрытие попапа
   popupAddCardCLose();
 
-  //запуск добавления карточки через функцию отрисовки первых карточек
+  // note запуск добавления карточки через функцию отрисовки первых карточек
   renderFirstCards(newCard);
 }
 newCardPopupReset.addEventListener('click', popupAddCardCLose);
