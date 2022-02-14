@@ -40,7 +40,7 @@ popupOpenButton.addEventListener('click', popupOpen);
 popupResetButton.addEventListener('click', popupClose);
 popupForm.addEventListener('submit', popupCloseAndSave);
 //----------------------------------------------------------------------------------------------------------------------
-// mesto - 5
+// note mesto - 5
 //----------------------------------------------------------------------------------------------------------------------
 const initialCards = [
   {
@@ -75,30 +75,30 @@ const initialCards = [
   }
 ];
 
-//Находим темплейт в разметке и получаем его содержимое с помощью content и место для клонирования
-const cardTemplate = document.querySelector('#cardTemplate').content;
-const cloneTarget = document.querySelector('.elements__container');
+// note Находим темплейт в разметке и получаем его содержимое с помощью content и место для клонирования
+const cardTemplate = document.querySelector('#cardTemplate').content;  // что клонируем
+const cloneTarget = document.querySelector('.elements__container'); // куда клонируем
 
-
+// note функция создания карточек и добавления к ним слушателей
 function renderFirstCards (card) {
   const cardNode = cardTemplate.cloneNode(true);
   cardNode.querySelector('.element__title').textContent = card.name;
   cardNode.querySelector('.element__image').src = card.url;
   cardNode.querySelector('.element__image').alt = card.alt;
 
-  // Да будет лайк - добавляем функцию лайка
+  // note Да будет лайк - добавляем функцию лайка
   cardNode.querySelector('.element__like').addEventListener('click', event => {
     const liked = event.target.closest('.element__like');
     liked.classList.toggle('element__like_liked');
   });
 
-  // Удаление карточки
+  // note Удаление карточки
   cardNode.querySelector('.element__delete').addEventListener('click', event => {
     const devNull = event.target.closest('.element');
     devNull.remove();
   });
 
-// Открытие попапа с большой картинкой
+// note Открытие попапа с большой картинкой
   cardNode.querySelector('.element__image').addEventListener('click', event => {
     const imagePicture = event.target.closest('.element__image'); //Вытаскиваем источник картинки и альт
     popupPhotobox.classList.add('popup_visible');
@@ -112,16 +112,54 @@ function renderFirstCards (card) {
 initialCards.forEach(renderFirstCards);
 
 
-//Блок попапа с фотобоксом
+// note Блок попапа с фотобоксом
 const popupPhotobox = document.querySelector('.popup__photobox');
 const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption')
 const popupPhotoboxClose = document.querySelector('.popup__photobox-close');
 const popupPhotoboxImage = document.querySelector('.popup__photobox-image');
 
 
-
+// note Функция закрытия попапа с картинкой и её слушатель
 function photoboxClose () {
   popupPhotobox.classList.remove('popup_visible');
 }
-
 popupPhotoboxClose.addEventListener('click', photoboxClose);
+
+// note Добавление новой карточки
+const openNewCardButton = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки
+const newCardPopup = document.querySelector('.popup__add-card'); // Находим попап добавления карточки в разметке
+const newCardPopupReset = document.querySelector('.popup__close-button_add'); // кнопка закрытия попапа с новой карточкой
+const newCardSubmit = document.querySelector('.popup__submit-button_addCard'); // кнопка "сохранить" при добавлении попапа
+const newCardName = document.querySelector('.popup__input-caption');
+const newCardSrc = document.querySelector('.popup__input-src');
+
+
+// note открытие попапа и вызов функции его закрытия
+  openNewCardButton.addEventListener('click', event => {
+  newCardPopup.classList.add('popup_visible');
+  })
+
+// note функция закрытия попапа и её слушатель
+function popupAddCardCLose () {
+  newCardPopup.classList.remove('popup_visible');
+}
+
+// note функция добавления новой карточки
+function createNewCard (evt) {
+  evt.preventDefault();
+
+  // создаём пустой объект
+  const newCard = {
+    name: newCardName.value,
+    url: newCardSrc.value,
+    alt: newCardName.value
+  };
+
+  //закрытьие попапа
+  popupAddCardCLose();
+
+  //запуск добавления карточки через функцию отрисовки первых карточек
+  renderFirstCards(newCard);
+}
+newCardPopupReset.addEventListener('click', popupAddCardCLose);
+newCardSubmit.addEventListener('click', createNewCard);

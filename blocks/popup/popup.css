@@ -1,6 +1,6 @@
 .popup {
   max-width: 100%;
-  display: none;
+  /*display: none;*/
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -10,4 +10,7 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s linear, visibility .5s ease-in-out;
 }

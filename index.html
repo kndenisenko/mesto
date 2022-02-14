@@ -5,7 +5,6 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./pages/index.css" />
-  <link rel="stylesheet" href="./works.css" />
   <title>Экспедиция Фёдора Конюхова и Виктора Симонова</title>
 </head>
 
@@ -52,6 +51,18 @@
         <input class="popup__input" type="text" id="username" name="usermane" value="" />
         <input class="popup__input" type="text" id="occupation" name="occupation" value="" />
         <button class="popup__submit-button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup__add-card">
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_add" type="button"></button>
+      <form class="popup__form" name="profile-form">
+        <h2 class="popup__header">Новое место</h2>
+        <input class="popup__input popup__input-caption" type="text" id="newHeader" name="caption" placeholder="Название" value=""  />
+        <input class="popup__input popup__input-src" type="text" id="newSrc" name="src" placeholder="ссылка на картинку" value="" />
+        <button class="popup__submit-button popup__submit-button_addCard" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
