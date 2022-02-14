@@ -1,4 +1,4 @@
-/* * normalize.css, and fonts import, basic page options set */
+/* normalize.css, and fonts import, basic page options set */
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
 @import url(../blocks/root/root.css);
@@ -7,12 +7,12 @@
 @import url(../blocks/root/__elements/root__elements.css);
 @import url(../blocks/root/__footer/root__footer.css);
 
-/* * header block */
+/* header block */
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 
 
-/* * profile block */
+/* profile block */
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__name/profile__name.css);
@@ -32,7 +32,7 @@
 @import url(../blocks/element/__like/_liked/element__like_liked.css);
 @import url(../blocks/element/__delete/element__delete.css);
 
-/* * footer  */
+/* footer  */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
@@ -46,7 +46,7 @@
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
-@import url(../blocks/popup/__photobox/popup__photobox.css);
+@import url(../blocks/popup/_photobox/popup_photobox.css);
 @import url(../blocks/popup/__photobox-close/popup__photobox-close.css);
 @import url(../blocks/popup/__photobox-container/popup__photobox-container.css);
 @import url(../blocks/popup/__photobox-image/popup__photobox-image.css);

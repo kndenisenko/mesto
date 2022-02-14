@@ -113,7 +113,7 @@ initialCards.forEach(renderFirstCards);
 
 
 // note Блок попапа с фотобоксом
-const popupPhotobox = document.querySelector('.popup__photobox');
+const popupPhotobox = document.querySelector('.popup_photobox');
 const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption')
 const popupPhotoboxClose = document.querySelector('.popup__photobox-close');
 const popupPhotoboxImage = document.querySelector('.popup__photobox-image');
@@ -127,7 +127,7 @@ popupPhotoboxClose.addEventListener('click', photoboxClose);
 
 // note Добавление новой карточки
 const openNewCardButton = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки
-const newCardPopup = document.querySelector('.popup__addcard'); // Находим попап добавления карточки в разметке
+const newCardPopup = document.querySelector('.popup_addcard'); // Находим попап добавления карточки в разметке
 const newCardPopupReset = document.querySelector('.popup__close-button_add'); // кнопка закрытия попапа с новой карточкой
 const newCardSubmit = document.querySelector('.popup__submit-button_addCard'); // кнопка "сохранить" при добавлении попапа
 const newCardName = document.querySelector('.popup__input-caption');
