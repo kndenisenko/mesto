@@ -130,10 +130,43 @@ initialCards.forEach(renderCard);
 
 // note функция открытия попапа с большой картинкой
 function setBigPicture(picture) {
-  console.log(picture);
   popupPhotoboxPicture.src = picture.querySelector('.element__image').src;
   popupPhotoboxCaption.textContent = picture.querySelector('.element__title').textContent;
 }
+
+
+const newCardPopup = document.querySelector('.popup_addcard'); // Находим попап добавления карточки в разметке
+const NewCardPopupOpen = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки (открытия попапа)
+const newCardPopupClose = document.querySelector('.popup__close-button_add'); // кнопка закрытия попапа с новой карточкой
+const newCardSubmit = document.querySelector('.popup__submit-button_addCard'); // кнопка "сохранить" при добавлении попапа
+// const newCardName = document.querySelector('.popup__input-caption');
+// const newCardSrc = document.querySelector('.popup__input-src');
+
+// note обработчики нажатий открытия и закрытия попапа добавления карточки
+NewCardPopupOpen.addEventListener('click', evt => { // открытие попапа добавления карточки
+  openPopup(newCardPopup);
+})
+newCardPopupClose.addEventListener('click', evt => { // закрытие попапа добавления карточки
+  closePopup(newCardPopup);
+})
+newCardSubmit.addEventListener('click', createNewCard); // вызов функции создания новой карточки
+
+
+// fixme функция, которая должна добавлять карточку
+function createNewCard (evt) {
+  evt.preventDefault();
+  const newCardName = document.querySelector('.popup__input-caption');
+  const newCardSrc = document.querySelector('.popup__input-src');
+  // note создаём пустой объект для будущей карточки
+  const newCard = {
+    name: newCardName.value,
+    src: newCardSrc.value,
+  };
+console.log(newCard);
+  renderCard(newCard);
+
+}
+
 
 
 
@@ -152,7 +185,7 @@ popupPhotoboxClose.addEventListener('click', photoboxClose);
 
 
 // note Добавление новой карточки
-const openNewCardButton = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки
+const NewCardPopupOpen = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки
 const newCardPopup = document.querySelector('.popup_addcard'); // Находим попап добавления карточки в разметке
 const newCardPopupClose = document.querySelector('.popup__close-button_add'); // кнопка закрытия попапа с новой карточкой
 const newCardSubmit = document.querySelector('.popup__submit-button_addCard'); // кнопка "сохранить" при добавлении попапа
@@ -161,7 +194,7 @@ const newCardSrc = document.querySelector('.popup__input-src');
 
 
 // note открытие попапа и вызов функции его закрытия
-  openNewCardButton.addEventListener('click', event => {
+  NewCardPopupOpen.addEventListener('click', event => {
   newCardPopup.classList.add('popup_visible');
   })
 
