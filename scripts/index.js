@@ -151,7 +151,7 @@ newCardPopupClose.addEventListener('click', evt => { // закрытие поп�
 })
 
 
-// fixme функция, которая должна добавлять карточку
+// note добавление новой карточки
 function createNewCard (evt) {
   evt.preventDefault();
   const newCardName = document.querySelector('.popup__input-caption'); // берём заголовок для карточки из поля
