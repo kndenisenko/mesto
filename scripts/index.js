@@ -140,7 +140,6 @@ function setBigPicture(picture) {
 const newCardPopup = document.querySelector('.popup_addcard'); // Находим попап добавления карточки в разметке
 const NewCardPopupOpen = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки (открытия попапа)
 const newCardPopupClose = document.querySelector('.popup__close-button_add'); // кнопка закрытия попапа с новой карточкой
-const newCardSubmit = document.querySelector('.popup__submit-button_addCard'); // кнопка "сохранить" при добавлении попапа
 newCardPopup.addEventListener('submit', createNewCard); // вызов функции создания новой карточки по кнопке submit
 
 // note обработчики нажатий открытия и закрытия попапа добавления карточки
@@ -164,8 +163,8 @@ function createNewCard (evt) {
   };
   renderSecondCards(newCard); // рендер карточки
   closePopup(newCardPopup); // закрытие попапа
-  newCardName.value = ''; // очистка полей ввода после вывода карточки
-  newCardSrc.value = '';  // очистка полей ввода после вывода карточки
+  newCardName.value = ''; // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
+  newCardSrc.value = '';  // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
 }
 
 
