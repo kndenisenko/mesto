@@ -1,5 +1,5 @@
 // note вот без этого не заработает ничего
-// ! 01010000 01110010 01100001 01101001 01110011 01100101 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001
+// 01010000 01110010 01100001 01101001 01110011 01100101 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopup = document.querySelector('.popup-profile');
@@ -89,24 +89,21 @@ const popupPhotoboxClose = document.querySelector('.popup__photobox-close');
 
 function createCard(item) {
   // note тут создаете карточку и возвращаете ее
-  const cardNode = cardTemplate.cloneNode(true);
+  const cardNode = cardTemplate.cloneNode(true);  // клонируем темплейт
   cardNode.querySelector('.element__title').textContent = item.name;
   cardNode.querySelector('.element__image').src = item.src;
 //  cardNode.querySelector('.element__image').alt = item.alt; // fixme Если нельзя искать картинку (element__image) дважды, то как можно задать ей alt?
 
-  // note Да будет лайк - добавляем функцию лайка
-  cardNode.querySelector('.element__like').addEventListener('click', event => {
+  cardNode.querySelector('.element__like').addEventListener('click', event => { // добавляем функцию лайка
     event.target.classList.toggle('element__like_liked');
   });
 
-  // note Удаление карточки
-  cardNode.querySelector('.element__delete').addEventListener('click', event => {
+  cardNode.querySelector('.element__delete').addEventListener('click', event => { // Удаление карточки
     const cardElement = event.target.closest('.element');
     cardElement.remove();
   });
 
-// note Открытие попапа с большой картинкой
-  cardNode.querySelector('.element__image').addEventListener('click', event => {
+  cardNode.querySelector('.element__image').addEventListener('click', event => { // Открытие попапа с большой картинкой
     const pictureForPhotobox = event.target.closest('.element'); //вытаскиваем кликнутый элемент
     setBigPicture(pictureForPhotobox);
     openPopup(popupPhotobox);  // открытие попапа
@@ -118,14 +115,19 @@ function createCard(item) {
   return cardNode; // Возвращаем результат работы функции
 }
 
-// note функция, которая создаёт карточки
-function renderCard(card) {
+// note функция, которая создаёт карточки и добавляет их в начало
+function renderFirstCards(card) {
   const cardNode = createCard(card)
   cloneTarget.append(cardNode);
 }
 
+function renderSecondCards(card) {
+  const cardNode = createCard(card)
+  cloneTarget.prepend(cardNode);
+}
+
 // note Вывод дефолтных карточек
-initialCards.forEach(renderCard);
+initialCards.forEach(renderFirstCards);
 
 
 // note функция открытия попапа с большой картинкой
@@ -139,8 +141,7 @@ const newCardPopup = document.querySelector('.popup_addcard'); // Находим
 const NewCardPopupOpen = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки (открытия попапа)
 const newCardPopupClose = document.querySelector('.popup__close-button_add'); // кнопка закрытия попапа с новой карточкой
 const newCardSubmit = document.querySelector('.popup__submit-button_addCard'); // кнопка "сохранить" при добавлении попапа
-// const newCardName = document.querySelector('.popup__input-caption');
-// const newCardSrc = document.querySelector('.popup__input-src');
+newCardPopup.addEventListener('submit', createNewCard); // вызов функции создания новой карточки по кнопке submit
 
 // note обработчики нажатий открытия и закрытия попапа добавления карточки
 NewCardPopupOpen.addEventListener('click', evt => { // открытие попапа добавления карточки
@@ -149,156 +150,22 @@ NewCardPopupOpen.addEventListener('click', evt => { // открытие попа
 newCardPopupClose.addEventListener('click', evt => { // закрытие попапа добавления карточки
   closePopup(newCardPopup);
 })
-newCardSubmit.addEventListener('click', createNewCard); // вызов функции создания новой карточки
 
 
 // fixme функция, которая должна добавлять карточку
 function createNewCard (evt) {
   evt.preventDefault();
-  const newCardName = document.querySelector('.popup__input-caption');
-  const newCardSrc = document.querySelector('.popup__input-src');
-  // note создаём пустой объект для будущей карточки
-  const newCard = {
+  const newCardName = document.querySelector('.popup__input-caption'); // берём заголовок для карточки из поля
+  const newCardSrc = document.querySelector('.popup__input-src'); // берём ссылку для карточки из поля
+
+  const newCard = { // создаём массив для будущей карточки, данные берутся из формы
     name: newCardName.value,
     src: newCardSrc.value,
   };
-console.log(newCard);
-  renderCard(newCard);
-
+  renderSecondCards(newCard); // рендер карточки
+  closePopup(newCardPopup); // закрытие попапа
+  newCardName.value = ''; // очистка полей ввода после вывода карточки
+  newCardSrc.value = '';  // очистка полей ввода после вывода карточки
 }
 
 
-
-
-
-/*
-
-// note Функция закрытия попапа с картинкой и её слушатель
-function photoboxClose () {
-  popupPhotobox.classList.remove('popup_visible');
-}
-popupPhotoboxClose.addEventListener('click', photoboxClose);
-
-
-
-
-
-
-// note Добавление новой карточки
-const NewCardPopupOpen = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки
-const newCardPopup = document.querySelector('.popup_addcard'); // Находим попап добавления карточки в разметке
-const newCardPopupClose = document.querySelector('.popup__close-button_add'); // кнопка закрытия попапа с новой карточкой
-const newCardSubmit = document.querySelector('.popup__submit-button_addCard'); // кнопка "сохранить" при добавлении попапа
-const newCardName = document.querySelector('.popup__input-caption');
-const newCardSrc = document.querySelector('.popup__input-src');
-
-
-// note открытие попапа и вызов функции его закрытия
-  NewCardPopupOpen.addEventListener('click', event => {
-  newCardPopup.classList.add('popup_visible');
-  })
-
-// note функция закрытия попапа и её слушатель
-function popupAddCardCLose () {
-  newCardPopup.classList.remove('popup_visible');
-}
-
-// note функция добавления новой карточки
-function createNewCard (evt) {
-  evt.preventDefault();
-
-  // note создаём пустой объект для будущей карточки
-  const newCard = {
-    name: newCardName.value,
-    url: newCardSrc.value,
-    alt: newCardName.value
-  };
-
-  // note закрытие попапа
-  popupAddCardCLose();
-
-  // note запуск добавления карточки через функцию отрисовки первых карточек
-  renderFirstCards(newCard);
-}
-newCardPopupClose.addEventListener('click', popupAddCardCLose);
-newCardSubmit.addEventListener('click', createNewCard);
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* note мусор, использованный в новом релизе код
-
-
-
-// note функция создания карточек и добавления к ним слушателей
-function renderFirstCards (card) {
-  const cardNode = cardTemplate.cloneNode(true);
-  cardNode.querySelector('.element__title').textContent = card.name;
-  cardNode.querySelector('.element__image').src = card.url;
-  cardNode.querySelector('.element__image').alt = card.alt;
-
-// note Да будет лайк - добавляем функцию лайка
-cardNode.querySelector('.element__like').addEventListener('click', event => {
-  const liked = event.target.closest('.element__like');
-  liked.classList.toggle('element__like_liked');
-});
-
-
-  // note Удаление карточки
-  cardNode.querySelector('.element__delete').addEventListener('click', event => {
-    const devNull = event.target.closest('.element');
-    devNull.remove();
-  });
-
-// note Открытие попапа с большой картинкой? ранее находился внутри функции добавления карточек
-  cardNode.querySelector('.element__image').addEventListener('click', event => {
-    const imagePicture = event.target.closest('.element__image'); //Вытаскиваем источник картинки и альт
-    popupPhotobox.classList.add('popup_visible');
-    popupPhotoboxImage.src = event.target.src;
-    popupPhotoboxImage.alt = event.target.alt;
-    popupPhotoboxCaption.textContent = event.target.alt;
-  })
-
-  cloneTarget.prepend(cardNode);
-}
-initialCards.forEach(renderFirstCards);
-
-
-// note Открытие попапа с большой картинкой
-  cardNode.querySelector('.element__image').addEventListener('click', event => {
-    const imagePicture = event.target.closest('.element__image'); //Вытаскиваем источник картинки и альт
-    popupPhotobox.classList.add('popup_visible');
-    popupPhotoboxImage.src = event.target.src;
-    popupPhotoboxImage.alt = event.target.alt;  // fixme Если нельзя искать картинку дважды, то как можно задать ей alt?
-    popupPhotoboxCaption.textContent = event.target.alt;
-  })
-
-
-
-
-
-
-
-
-
-
-
-
-*/
