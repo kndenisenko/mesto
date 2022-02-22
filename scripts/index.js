@@ -95,7 +95,6 @@ function createCard(item) {
   cardImage.src = item.src;
   cardImage.alt = item.alt;
 
-
   cardNode.querySelector('.element__like').addEventListener('click', event => { // добавляем функцию лайка
     event.target.classList.toggle('element__like_liked');
   });
@@ -110,9 +109,6 @@ function createCard(item) {
     setBigPicture(pictureForPhotobox);
     openPopup(popupPhotobox);  // открытие попапа
   });
-  popupPhotoboxClose.addEventListener('click', evt => { // Закрытие попапа
-    closePopup(popupPhotobox);
-  });
 
   return cardNode; // Возвращаем результат работы функции
 }
@@ -123,6 +119,7 @@ function renderFirstCards(card) {
   cloneTarget.append(cardNode);
 }
 
+// note Создание дополнительной карточки и добавление её в начало
 function renderSecondCards(card) {
   const cardNode = createCard(card)
   cloneTarget.prepend(cardNode);
@@ -131,12 +128,17 @@ function renderSecondCards(card) {
 // note Вывод дефолтных карточек
 initialCards.forEach(renderFirstCards);
 
-
 // note функция открытия попапа с большой картинкой
 function setBigPicture(picture) {
   popupPhotoboxPicture.src = picture.querySelector('.element__image').src;
+  popupPhotoboxPicture.alt = picture.querySelector('.element__image').alt;
   popupPhotoboxCaption.textContent = picture.querySelector('.element__title').textContent;
 }
+
+// note Обработчик нажатия на клавишу закрытия попапа с большой картитнкой
+popupPhotoboxClose.addEventListener('click', evt => { // Закрытие попапа
+  closePopup(popupPhotobox);
+});
 
 // note попап с добавлением новой карточки
 const newCardPopup = document.querySelector('.popup_addcard'); // Находим попап добавления карточки в разметке
