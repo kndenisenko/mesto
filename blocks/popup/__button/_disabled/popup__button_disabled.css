@@ -9,3 +9,6 @@
   line-height: 22px;
 }
 
+.popup__button_disabled:hover {
+  opacity: .2;
+}

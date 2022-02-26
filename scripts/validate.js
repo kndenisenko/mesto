@@ -58,10 +58,10 @@ const hasInvalidInput = (inputList) => {
 // note Переключение состояния кнопки Submit, если инпут валиден или невалиден
 function toggleButtonState(inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {  //действия, если инпут невалиден
-    buttonElement.classList.add('popup__save_disabled')
+    buttonElement.classList.add('popup__button_disabled')
     buttonElement.setAttribute('disabled', true)
   } else { //действия, если инпут валиден
-    buttonElement.classList.remove('popup__save_disabled')
+    buttonElement.classList.remove('popup__button_disabled')
     buttonElement.removeAttribute('disabled')
   }
 };

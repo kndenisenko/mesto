@@ -15,13 +15,7 @@ const occupation = document.querySelector('.profile__occupation');
 const nameField = document.getElementById('username');
 const occupationField = document.getElementById('occupation');
 
-// note Функции открытия и закрытия попапов, используются во всех попапах
-function openPopup(popup) {
-  popup.classList.add('popup_visible');
-}
-function closePopup(popup) {
-  popup.classList.remove('popup_visible');
-}
+
 
 // note обработчики нажатий для попапа с изменением информации о пользователе
 profilePopupOpenButton.addEventListener('click', evt => {
@@ -180,3 +174,25 @@ function createNewCard (evt) {
 }
 
 
+//----------------------------------------------------------------------------------------------------------------------
+// note mesto - 6
+//----------------------------------------------------------------------------------------------------------------------
+// note закрытие попапа через escape
+const closePushingEscape = (event) => {
+  if (event.key === 'Escape') { // если нажат escape, то
+    const openedPopup = document.querySelector('.popup_visible'); // находим попап
+    openedPopup.classList.remove('popup_visible'); // удаляем класс открытого попапа
+  }
+}
+
+// note Функции открытия и закрытия попапов, используются во всех попапах. Улучшена в шестом спринте, добавлена возможность закрытия через esc
+function openPopup(popup) {
+  popup.classList.add('popup_visible');
+  document.addEventListener('keydown', closePushingEscape);
+  setTimeout(testfunc, 500); // функция запускается через полсекунды, чтобы она не срабатывала при открытии попапа
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_visible');
+  document.removeEventListener('keydown', closePushingEscape); // снятие слушателя, если попап закрыт другим способом
+}
