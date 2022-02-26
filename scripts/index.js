@@ -86,40 +86,47 @@ const popupPhotoboxPicture = document.querySelector('.popup__photobox-image');
 const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption')
 const popupPhotoboxClose = document.querySelector('.popup__photobox-close');
 
-
+// note функция создания карточек
 function createCard(item) {
-  // note тут создаете карточку и возвращаете ее
   const cardNode = cardTemplate.cloneNode(true);  // клонируем темплейт
   cardNode.querySelector('.element__title').textContent = item.name;
   const cardImage = cardNode.querySelector('.element__image');
   cardImage.src = item.src;
   cardImage.alt = item.alt;
 
-  cardNode.querySelector('.element__like').addEventListener('click', event => { // добавляем функцию лайка
-    event.target.classList.toggle('element__like_liked');
-  });
-
-  cardNode.querySelector('.element__delete').addEventListener('click', event => { // Удаление карточки
-    const cardElement = event.target.closest('.element');
-    cardElement.remove();
-  });
-
-  cardImage.addEventListener('click', event => { // Открытие попапа с большой картинкой
-    const pictureForPhotobox = event.target.closest('.element'); //вытаскиваем кликнутый элемент
-    setBigPicture(pictureForPhotobox);
-    openPopup(popupPhotobox);  // открытие попапа
-  });
+  addEventListeners(cardNode, cardImage);
 
   return cardNode; // Возвращаем результат работы функции
 }
 
-// note функция, которая создаёт карточки и добавляет их в начало
+
+// note функция создания обработчиков событий, добавлена после ревью
+function addEventListeners (card, image) {
+  card.querySelector('.element__like').addEventListener('click', event => { // добавляем функцию лайка
+    event.target.classList.toggle('element__like_liked');
+  });
+
+  card.querySelector('.element__delete').addEventListener('click', event => { // Удаление карточки
+    const cardElement = event.target.closest('.element');
+    cardElement.remove();
+  });
+
+  image.addEventListener('click', event => { // Открытие попапа с большой картинкой
+    const pictureForPhotobox = event.target.closest('.element'); //вытаскиваем кликнутый элемент
+    setBigPicture(pictureForPhotobox);
+    openPopup(popupPhotobox);  // открытие попапа
+  });
+}
+
+
+
+// note функция, которая создаёт начальные карточки и добавляет их в начало
 function renderFirstCards(card) {
   const cardNode = createCard(card)
   cloneTarget.append(cardNode);
 }
 
-// note Создание дополнительной карточки и добавление её в начало
+// note Создание дополнительной, пользовательской карточки и добавления её в начало
 function renderSecondCards(card) {
   const cardNode = createCard(card)
   cloneTarget.prepend(cardNode);
@@ -160,7 +167,6 @@ newCardPopupClose.addEventListener('click', evt => { // закрытие поп�
 // note добавление новой карточки
 function createNewCard (evt) {
   evt.preventDefault();
-
 
   const newCard = { // создаём массив для будущей карточки, данные берутся из формы
     name: newCardName.value,

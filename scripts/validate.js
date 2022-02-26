@@ -1,0 +1,81 @@
+// note функция запуска валидации - самая главная функция, которая ссылается на остальные
+const enableValidation = (config) => {
+  const formsList = Array.from(document.querySelectorAll(config.formSelector))  //собираем формы в массив
+  formsList.forEach((formElement) => {
+    formElement.addEventListener('submit', function(event) { // добавляем каждому элементу массива (форме) слушателей
+      event.preventDefault();
+    })
+  })
+  formsList.forEach((formsList) => {
+    setEventListeners(formsList, config);
+  });
+};
+
+// note Устанавливаем слушателей, которые потом добавляются к инпутам
+const setEventListeners = (formsList, config) => {
+  const inputList = Array.from(formsList.querySelectorAll(config.inputSelector))  // собираем массив из инпутов, которые берутся из форм
+  const buttonElement = formsList.querySelector(config.submitButtonSelector)  // находим кнопки сабмитов
+  toggleButtonState(inputList, buttonElement)  // вызов функции переключения состояния кнопок сабмитов в зависимости от действий пользователя
+
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener('input', function() {
+      checkInputValidity(inputElement, config); // вызов функции проверки валидности инпутов
+      toggleButtonState(inputList, buttonElement);
+    })
+  });
+};
+
+// note проверка валидности или невалидности инпутов
+const checkInputValidity = (inputElement, config) => {
+  if (!inputElement.validity.valid) { // если инпут невалиден, вызвать функцию ниже
+    showInputError(inputElement, inputElement.validationMessage, config);   // вызов функции показа ошибки
+  } else { // если инпут валиден, то вызвать функцию
+    hideInputError(inputElement, config); // вызов функции скрытия ошибки
+  }
+};
+
+// note показ ошибки и подчёркивание поля, если инпут невалиден
+const showInputError = (inputElement, errorMessage, config) => {
+  const errorElement = inputElement.nextElementSibling; // находим ближайший span рядом с инпутом
+  inputElement.classList.add(config.inputErrorClass); // добавление подчёркивание линии инпута
+  errorElement.textContent = errorMessage; // вывод сообщения об ошибке
+};
+
+// note скрытие ошибки и удаление красного подчёркивания поля, если инпут валиден
+const hideInputError = (inputElement, config) => {
+  const errorElement = inputElement.nextElementSibling; // находим ближайший span рядом с инпутом
+  inputElement.classList.remove(config.inputErrorClass) // удаление подчёркивание линии инпута
+  errorElement.textContent = ''; // скрытие сообщения об ошибке
+};
+
+// note возврат true, если инпут валиден и false, если невалиден
+const hasInvalidInput = (inputList) => {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid
+  });
+};
+
+// note Переключение состояния кнопки Submit, если инпут валиден или невалиден
+function toggleButtonState(inputList, buttonElement) {
+  if (hasInvalidInput(inputList)) {  //действия, если инпут невалиден
+    buttonElement.classList.add('popup__save_disabled')
+    buttonElement.setAttribute('disabled', true)
+  } else { //действия, если инпут валиден
+    buttonElement.classList.remove('popup__save_disabled')
+    buttonElement.removeAttribute('disabled')
+  }
+};
+
+
+// note запуск функции валидации с массивом настроек
+enableValidation(
+  {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type-error',
+    errorClass: 'popup__error_visible'
+  }
+);
+
