@@ -5,22 +5,23 @@ const enableValidation = (config) => {
     formElement.addEventListener('submit', function(event) { // добавляем каждому элементу массива (форме) слушателей
       event.preventDefault();
     })
+    setEventListeners(formElement, config);
   })
-  formsList.forEach((formsList) => {
-    setEventListeners(formsList, config);
-  });
+  //formsList.forEach((formsList) => {
+   // setEventListeners(forsList, config);
+ // });
 };
 
 // note Устанавливаем слушателей, которые потом добавляются к инпутам
 const setEventListeners = (formsList, config) => {
   const inputList = Array.from(formsList.querySelectorAll(config.inputSelector))  // собираем массив из инпутов, которые берутся из форм
   const buttonElement = formsList.querySelector(config.submitButtonSelector)  // находим кнопки сабмитов
-  toggleButtonState(inputList, buttonElement)  // вызов функции переключения состояния кнопок сабмитов в зависимости от действий пользователя
+  toggleButtonState(inputList, buttonElement, config)  // вызов функции переключения состояния кнопок сабмитов в зависимости от действий пользователя
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function() {
       checkInputValidity(inputElement, config); // вызов функции проверки валидности инпутов
-      toggleButtonState(inputList, buttonElement);
+      toggleButtonState(inputList, buttonElement, config);
     })
   });
 };
@@ -56,12 +57,12 @@ const hasInvalidInput = (inputList) => {
 };
 
 // note Переключение состояния кнопки Submit, если инпут валиден или невалиден
-function toggleButtonState(inputList, buttonElement) {
+function toggleButtonState(inputList, buttonElement, config) {
   if (hasInvalidInput(inputList)) {  //действия, если инпут невалиден
-    buttonElement.classList.add('popup__button_disabled')
+    buttonElement.classList.add(config.inactiveButtonClass);
     buttonElement.setAttribute('disabled', true)
   } else { //действия, если инпут валиден
-    buttonElement.classList.remove('popup__button_disabled')
+    buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.removeAttribute('disabled')
   }
 };

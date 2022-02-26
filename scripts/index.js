@@ -1,6 +1,11 @@
 // note вот без этого не заработает ничего
 // 01010000 01110010 01100001 01101001 01110011 01100101 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001
 
+
+
+
+
+
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopup = document.querySelector('.popup-profile');
 const profilePopupOpenButton = document.querySelector('.profile__edit');
@@ -36,38 +41,7 @@ profilePopupForm.addEventListener('submit', evt => {
 //----------------------------------------------------------------------------------------------------------------------
 // note mesto - 5
 //----------------------------------------------------------------------------------------------------------------------
-const initialCards = [
-  {
-    name: 'Петрозаводск',
-    src: './images/001_petrozavodsk.jpg',
-    alt: 'Петрозаводск, начало экспедиции'
-  },
-  {
-    name: 'Лонгйир',
-    src: './images/002_Longyearbyen.jpg',
-    alt: 'Лонгйир, второй известный город на пути'
-  },
-  {
-    name: 'Барнео',
-    src: './images/003-barneo.jpg',
-    alt: 'Барнео. база на северном полюсе'
-  },
-  {
-    name: 'Северный полюс',
-    src: './images/004-north-pole.jpg',
-    alt: 'северный полюс. главная точка экспедиции'
-  },
-  {
-    name: 'Гренландия',
-    src: './images/005-greenland.jpg',
-    alt: 'Гренландия. здесь тоже был Фёдор Конюхов'
-  },
-  {
-    name: 'Юлианехоб (какорто́к)',
-    src: './images/006-Qaqortoq.jpg',
-    alt: 'Юлианехоб, также известный как Какорто́к'
-  }
-];
+
 
 // note Находим темплейт в разметке и получаем его содержимое с помощью content и место для клонирования
 const cardTemplate = document.querySelector('#cardTemplate').content;  // что клонируем
@@ -171,6 +145,12 @@ function createNewCard (evt) {
   closePopup(newCardPopup); // закрытие попапа
   newCardName.value = ''; // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
   newCardSrc.value = '';  // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
+
+  // Делаем кнопку сабмита неактивной совсем
+  const popupButtondisabled = newCardPopup.querySelector('.popup__button')
+  popupButtondisabled.setAttribute('disabled', true)
+  popupButtondisabled.classList.add('popup__button_disabled')
+
 }
 
 
@@ -181,18 +161,27 @@ function createNewCard (evt) {
 const closePushingEscape = (event) => {
   if (event.key === 'Escape') { // если нажат escape, то
     const openedPopup = document.querySelector('.popup_visible'); // находим попап
-    openedPopup.classList.remove('popup_visible'); // удаляем класс открытого попапа
+    closePopup(openedPopup) //удаляем класс открытого попапа
   }
 }
 
-// note Функции открытия и закрытия попапов, используются во всех попапах. Улучшена в шестом спринте, добавлена возможность закрытия через esc
+// note Функции открытия и закрытия попапов, используются во всех попапах. Улучшена в шестом спринте, добавлена возможность закрытия через esc и оверлей
 function openPopup(popup) {
   popup.classList.add('popup_visible');
   document.addEventListener('keydown', closePushingEscape);
-  setTimeout(testfunc, 500); // функция запускается через полсекунды, чтобы она не срабатывала при открытии попапа
+  popup.addEventListener('mousedown', closePopupClickingOverlay)
 }
+
 
 function closePopup(popup) {
   popup.classList.remove('popup_visible');
   document.removeEventListener('keydown', closePushingEscape); // снятие слушателя, если попап закрыт другим способом
 }
+
+// note закрытие попапа по клику на оверлей
+function closePopupClickingOverlay (evt) {
+if (evt.target === evt.currentTarget) {
+  closePopup(evt.target);
+}
+}
+
