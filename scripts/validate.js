@@ -7,15 +7,12 @@ const enableValidation = (config) => {
     })
     setEventListeners(formElement, config);
   })
-  //formsList.forEach((formsList) => {
-   // setEventListeners(forsList, config);
- // });
 };
 
 // note Устанавливаем слушателей, которые потом добавляются к инпутам
-const setEventListeners = (formsList, config) => {
-  const inputList = Array.from(formsList.querySelectorAll(config.inputSelector))  // собираем массив из инпутов, которые берутся из форм
-  const buttonElement = formsList.querySelector(config.submitButtonSelector)  // находим кнопки сабмитов
+const setEventListeners = (form, config) => {
+  const inputList = Array.from(form.querySelectorAll(config.inputSelector))  // собираем массив из инпутов, которые берутся из форм
+  const buttonElement = form.querySelector(config.submitButtonSelector)  // находим кнопки сабмитов
   toggleButtonState(inputList, buttonElement, config)  // вызов функции переключения состояния кнопок сабмитов в зависимости от действий пользователя
 
   inputList.forEach((inputElement) => {

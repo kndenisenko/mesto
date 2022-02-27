@@ -147,9 +147,9 @@ function createNewCard (evt) {
   newCardSrc.value = '';  // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
 
   // Делаем кнопку сабмита неактивной совсем
-  const popupButtondisabled = newCardPopup.querySelector('.popup__button')
-  popupButtondisabled.setAttribute('disabled', true)
-  popupButtondisabled.classList.add('popup__button_disabled')
+  const popupButtondisabled = newCardPopup.querySelector('.popup__button');
+  popupButtondisabled.setAttribute('disabled', true);
+  popupButtondisabled.classList.add('popup__button_disabled');
 
 }
 
