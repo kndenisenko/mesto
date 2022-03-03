@@ -1,11 +1,6 @@
 // note вот без этого не заработает ничего
 // 01010000 01110010 01100001 01101001 01110011 01100101 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001
 
-
-
-
-
-
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopup = document.querySelector('.popup-profile');
 const profilePopupOpenButton = document.querySelector('.profile__edit');
@@ -41,18 +36,10 @@ profilePopupForm.addEventListener('submit', evt => {
 //----------------------------------------------------------------------------------------------------------------------
 // note mesto - 5
 //----------------------------------------------------------------------------------------------------------------------
-
-
 // note Находим темплейт в разметке и получаем его содержимое с помощью content и место для клонирования
 const cardTemplate = document.querySelector('#cardTemplate').content;  // что клонируем
 const cloneTarget = document.querySelector('.elements__container'); // куда клонируем
 
-
-// note Блок попапа с фотобоксом
-const popupPhotobox = document.querySelector('.popup_photobox');  // находим попап фотобокса в разметке
-const popupPhotoboxPicture = document.querySelector('.popup__photobox-image');
-const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption')
-const popupPhotoboxClose = document.querySelector('.popup__photobox-close');
 
 // note функция создания карточек
 function createCard(item) {
@@ -102,6 +89,12 @@ function renderSecondCards(card) {
 
 // note Вывод дефолтных карточек
 initialCards.forEach(renderFirstCards);
+
+// note Блок попапа с фотобоксом
+const popupPhotobox = document.querySelector('.popup_photobox');  // находим попап фотобокса в разметке
+const popupPhotoboxPicture = document.querySelector('.popup__photobox-image');
+const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption')
+const popupPhotoboxClose = document.querySelector('.popup__photobox-close');
 
 // note функция открытия попапа с большой картинкой
 function setBigPicture(picture) {
