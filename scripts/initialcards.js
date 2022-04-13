@@ -1,5 +1,5 @@
 // note Массив исходных карточек
-const initialCards = [
+export const initialCards = [
   {
     name: 'Петрозаводск',
     src: './images/001_petrozavodsk.jpg',

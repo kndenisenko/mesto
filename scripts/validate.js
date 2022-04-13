@@ -34,7 +34,10 @@ const checkInputValidity = (inputElement, config) => {
 
 // note показ ошибки и подчёркивание поля, если инпут невалиден
 const showInputError = (inputElement, errorMessage, config) => {
-  const errorElement = inputElement.nextElementSibling; // находим ближайший span рядом с инпутом
+  console.log(inputElement);
+  // const errorElement = inputElement.nextElementSibling; // находим ближайший span рядом с инпутом
+  const errorElement = inputElement.querySelector(`.${inputElement.id}-error`);
+  console.log(errorElement);
   inputElement.classList.add(config.inputErrorClass); // добавление подчёркивание линии инпута
   errorElement.textContent = errorMessage; // вывод сообщения об ошибке
 };
@@ -42,6 +45,7 @@ const showInputError = (inputElement, errorMessage, config) => {
 // note скрытие ошибки и удаление красного подчёркивания поля, если инпут валиден
 const hideInputError = (inputElement, config) => {
   const errorElement = inputElement.nextElementSibling; // находим ближайший span рядом с инпутом
+  // const errorElement = inputElement.querySelector(`.${inputElement.id}-error`); // находим ближайший span рядом с инпутом
   inputElement.classList.remove(config.inputErrorClass) // удаление подчёркивание линии инпута
   errorElement.textContent = ''; // скрытие сообщения об ошибке
 };
@@ -62,18 +66,19 @@ function toggleButtonState(inputList, buttonElement, config) {
     buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.removeAttribute('disabled')
   }
-};
+}
 
 
 // note запуск функции валидации с массивом настроек
-enableValidation(
-  {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type-error',
-    errorClass: 'popup__error_visible'
-  }
-);
+
+const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type-error',
+  errorClass: 'popup__error_visible'
+}
+
+enableValidation(validationConfig);
 

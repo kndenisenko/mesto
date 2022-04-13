@@ -1,5 +1,17 @@
-// note вот без этого не заработает ничего
-// 01010000 01110010 01100001 01101001 01110011 01100101 00100000 01110100 01101000 01100101 00100000 01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100001
+import { initialCards } from "./initialcards.js"
+import { FormValidator } from "./formValidator.js"
+
+
+
+const validatorConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type-error',
+  errorClass: 'popup__error_visible'
+}
+
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopup = document.querySelector('.popup-profile');
@@ -14,6 +26,7 @@ const occupation = document.querySelector('.profile__occupation');
 // note поиск полей имени и профессии в попапе
 const nameField = document.getElementById('username');
 const occupationField = document.getElementById('occupation');
+
 
 
 
@@ -178,3 +191,14 @@ if (evt.target === evt.currentTarget) {
 }
 }
 
+
+
+
+const addCardForm = document.querySelector('.popup_addform');
+const userInfoForm = document.querySelector('.popup__form_username')
+
+const addCardValidator = new FormValidator(validatorConfig, addCardForm);
+const editPrifileValidator = new FormValidator(validatorConfig, userInfoForm);
+
+addCardValidator.enableValidation();
+editPrifileValidator.enableValidation();
