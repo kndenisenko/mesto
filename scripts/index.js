@@ -1,5 +1,5 @@
 import { initialCards } from "./initialcards.js"
-import { FormValidator } from "./formValidator.js"
+// import { FormValidator } from "./formValidator.js"
 
 
 
@@ -24,8 +24,8 @@ const username = document.querySelector('.profile__name');
 const occupation = document.querySelector('.profile__occupation');
 
 // note поиск полей имени и профессии в попапе
-const nameField = document.getElementById('username');
-const occupationField = document.getElementById('occupation');
+const nameField = document.getElementById('username-input');
+const occupationField = document.getElementById('occupation-input');
 
 
 
@@ -194,11 +194,11 @@ if (evt.target === evt.currentTarget) {
 
 
 
-const addCardForm = document.querySelector('.popup_addform');
-const userInfoForm = document.querySelector('.popup__form_username')
-
-const addCardValidator = new FormValidator(validatorConfig, addCardForm);
-const editPrifileValidator = new FormValidator(validatorConfig, userInfoForm);
-
-addCardValidator.enableValidation();
-editPrifileValidator.enableValidation();
+// const addCardForm = document.querySelector('.popup_addform');
+// const userInfoForm = document.querySelector('.popup__form_username')
+//
+// const addCardValidator = new FormValidator(validatorConfig, addCardForm);
+// const editPrifileValidator = new FormValidator(validatorConfig, userInfoForm);
+//
+// addCardValidator.enableValidation();
+// editPrifileValidator.enableValidation();

@@ -1,15 +1,22 @@
 export class FormValidator {
+  formInput;
   constructor(settings, form) {
     this._form = form
     this._settings = settings
   }
 
   _showInputError(inputElement, errorMessage) {
+    const formInputt = this._form.querySelector('.popup__input');
+    console.log(formInputt);
+    const formaError = this._form.querySelector(`.${formInputt.id}`)
+    console.log(formaError);
     const errorElement = this._form.querySelector('.popup__input');
-    console.log(errorElement);
+    // console.log(errorElement);
+
+
     inputElement.classList.add(this._settings.inputErrorClass);
     errorElement.textContent = errorMessage; // вывод сообщения об ошибке
-    errorElement.classList.add(this._settings.errorClass) // добавлен в 7-м спринте, аналог действия из _toggleButtonState
+    // errorElement.classList.add(this._settings.errorClass) // добавлен в 7-м спринте, аналог действия из _toggleButtonState
   };
 
   _hideInputError (inputElement) {
