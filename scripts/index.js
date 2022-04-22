@@ -1,5 +1,5 @@
 import { initialCards } from "./initialcards.js"
-// import { FormValidator } from "./formValidator.js"
+import { FormValidator } from "./formValidator.js"
 
 
 
@@ -192,13 +192,16 @@ if (evt.target === evt.currentTarget) {
 }
 
 
+//----------------------------------------------------------------------------------------------------------------------
+// note mesto - 7
+//----------------------------------------------------------------------------------------------------------------------
 
+const addCardForm = document.querySelector('.popup_addform');
+const userInfoForm = document.querySelector('.popup__form_username')
 
-// const addCardForm = document.querySelector('.popup_addform');
-// const userInfoForm = document.querySelector('.popup__form_username')
-//
-// const addCardValidator = new FormValidator(validatorConfig, addCardForm);
-// const editPrifileValidator = new FormValidator(validatorConfig, userInfoForm);
-//
-// addCardValidator.enableValidation();
-// editPrifileValidator.enableValidation();
+const addCardValidator = new FormValidator(validatorConfig, addCardForm);
+const editPrifileValidator = new FormValidator(validatorConfig, userInfoForm);
+
+addCardValidator.enableValidation();
+editPrifileValidator.enableValidation();
+

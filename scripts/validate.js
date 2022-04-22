@@ -34,13 +34,12 @@ const checkInputValidity = (inputElement, config) => {
 
 // note показ ошибки и подчёркивание поля, если инпут невалиден
 const showInputError = (inputElement, errorMessage, config) => {
-  console.log(`{inputElement}`, inputElement);
+  console.log(inputElement)
   const forrma = document.querySelector('.popup__form_username'); // находим попап
   const forrmaa = forrma.querySelector('.popup__input')  // находим элемент ввода в попапе
-  console.log(`{forrmaa}`, forrmaa);
-  console.log(`{сравнение inputElement и forrmaa}`, `${forrma === inputElement}`);
+  console.log(forrma)
   // const errorElement = inputElement.nextElementSibling; // находим ближайший span рядом с инпутом
-  const errorElement = forrma.querySelector(`.${inputElement.id}-error`); // находим спан элемента инпута (не работает)
+  const errorElement = forrma.querySelector(`#${inputElement.id}-error`); // находим спан элемента инпута (не работает)
   // const errorElement = forrma.querySelector('.opup__input');
 
   // console.log(errorElement);
