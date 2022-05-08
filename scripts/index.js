@@ -76,7 +76,7 @@ note всё содержимое отрефакторено в 7-м спринт
 // note mesto - спринт 7
 //----------------------------------------------------------------------------------------------------------------------
 // note переменные и классы для валидации
-const addCardForm = document.querySelector('.popup_addform');
+const addCardForm = document.querySelector('.popup__addform');
 const userInfoForm = document.querySelector('.popup__form_username')
 
 const addCardValidator = new FormValidator(validatorConfig, addCardForm);
