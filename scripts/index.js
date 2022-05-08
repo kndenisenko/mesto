@@ -1,16 +1,6 @@
-import { initialCards } from "./initialcards.js"
-import { FormValidator } from "./formValidator.js"
+import { validatorConfig, initialCards } from "./const.js";
+import { FormValidator } from "./formValidator.js";
 
-
-
-const validatorConfig = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type-error',
-  errorClass: 'popup__error_visible'
-}
 
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
