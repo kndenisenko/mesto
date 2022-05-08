@@ -23,7 +23,7 @@ const setEventListeners = (form, config) => {
   });
 };
 
-// note проверка валидности или невалидности инпутов
+// note проверка валидности или не валидности инпутов
 const checkInputValidity = (inputElement, config) => {
   if (!inputElement.validity.valid) { // если инпут невалиден, вызвать функцию ниже
     showInputError(inputElement, inputElement.validationMessage, config);   // вызов функции показа ошибки
@@ -35,14 +35,11 @@ const checkInputValidity = (inputElement, config) => {
 // note показ ошибки и подчёркивание поля, если инпут невалиден
 const showInputError = (inputElement, errorMessage, config) => {
   console.log(inputElement)
-  const forrma = document.querySelector('.popup__form_username'); // находим попап
-  const forrmaa = forrma.querySelector('.popup__input')  // находим элемент ввода в попапе
-  console.log(forrma)
-  // const errorElement = inputElement.nextElementSibling; // находим ближайший span рядом с инпутом
-  const errorElement = forrma.querySelector(`#${inputElement.id}-error`); // находим спан элемента инпута (не работает)
-  // const errorElement = forrma.querySelector('.opup__input');
+  const form = document.querySelector('.popup__form_username'); // находим попап
+  // const form = form.querySelector('.popup__input')  // находим элемент ввода в попапе
+  console.log(form)
+  const errorElement = form.querySelector(`#${inputElement.id}-error`); // находим спан элемента инпута (не работает)
 
-  // console.log(errorElement);
   inputElement.classList.add(config.inputErrorClass); // добавление подчёркивание линии инпута
   errorElement.textContent = errorMessage; // вывод сообщения об ошибке
 };
@@ -50,7 +47,6 @@ const showInputError = (inputElement, errorMessage, config) => {
 // note скрытие ошибки и удаление красного подчёркивания поля, если инпут валиден
 const hideInputError = (inputElement, config) => {
   const errorElement = inputElement.nextElementSibling; // находим ближайший span рядом с инпутом
-  // const errorElement = inputElement.querySelector(`.${inputElement.id}-error`); // находим ближайший span рядом с инпутом
   inputElement.classList.remove(config.inputErrorClass) // удаление подчёркивание линии инпута
   errorElement.textContent = ''; // скрытие сообщения об ошибке
 };

@@ -120,7 +120,7 @@ function setBigPicture(picture) {
   popupPhotoboxCaption.textContent = picture.querySelector('.element__title').textContent;
 }
 
-// note Обработчик нажатия на клавишу закрытия попапа с большой картитнкой
+// note Обработчик нажатия на клавишу закрытия попапа с большой картинкой
 popupPhotoboxClose.addEventListener('click', () => { // Закрытие попапа
   closePopup(popupPhotobox);
 });
@@ -204,8 +204,8 @@ const addCardForm = document.querySelector('.popup_addform');
 const userInfoForm = document.querySelector('.popup__form_username')
 
 const addCardValidator = new FormValidator(validatorConfig, addCardForm);
-const editPrifileValidator = new FormValidator(validatorConfig, userInfoForm);
+const editProfileValidator = new FormValidator(validatorConfig, userInfoForm);
 
 addCardValidator.enableValidation();
-editPrifileValidator.enableValidation();
+editProfileValidator.enableValidation();
 

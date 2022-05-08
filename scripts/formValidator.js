@@ -1,4 +1,4 @@
-// note Содзаём класс и сразу экспортируем его
+// note Создаём класс и сразу экспортируем его
 export class FormValidator {
   constructor(settings, form) {
     this._form = form
@@ -41,7 +41,7 @@ export class FormValidator {
     errorElement.textContent = ''; // скрытие сообщения об ошибке
   };
 
-// note оценка состояния пнпута (валиден или нет)
+// note оценка состояния инпута (валиден или нет)
   _hasInvalidInput() {
     return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid
