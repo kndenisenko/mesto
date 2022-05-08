@@ -1,3 +1,11 @@
+//----------------------------------------------------------------------------------------------------------------------
+// note mesto - спринт 7
+//----------------------------------------------------------------------------------------------------------------------
+
+export const popupPhotoboxPicture = document.querySelector('.popup__photobox-image');
+export const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption');
+export const popupPhotobox = document.querySelector('.popup_photobox');
+
 // note Массив исходных карточек
 export const initialCards = [
   {
