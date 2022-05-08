@@ -68,22 +68,26 @@ function createCard(item) {
 }
 
 
+// note Три отдельные функции для обработки события
+const handleLikeIcon = (event) => {
+  event.target.classList.toggle('element__like_liked')
+}
+const handleDelete = (event) => { // Удаление карточки
+  const cardElement = event.target.closest('.element');
+  cardElement.remove();
+}
+const handlePhotobox = (event) => { // Открытие попапа с большой картинкой
+  const pictureForPhotobox = event.target.closest('.element'); //вытаскиваем кликнутый элемент
+  setBigPicture(pictureForPhotobox);
+  openPopup(popupPhotobox);  // открытие попапа
+}
+
+
 // note функция создания обработчиков событий, добавлена после ревью
-function addEventListeners (card, image) {
-  card.querySelector('.element__like').addEventListener('click', event => { // добавляем функцию лайка
-    event.target.classList.toggle('element__like_liked');
-  });
-
-  card.querySelector('.element__delete').addEventListener('click', event => { // Удаление карточки
-    const cardElement = event.target.closest('.element');
-    cardElement.remove();
-  });
-
-  image.addEventListener('click', event => { // Открытие попапа с большой картинкой
-    const pictureForPhotobox = event.target.closest('.element'); //вытаскиваем кликнутый элемент
-    setBigPicture(pictureForPhotobox);
-    openPopup(popupPhotobox);  // открытие попапа
-  });
+function addEventListeners (cardNode, cardImage) {
+  cardNode.querySelector('.element__like').addEventListener('click', handleLikeIcon);
+  cardNode.querySelector('.element__delete').addEventListener('click', handleDelete);
+  cardImage.addEventListener('click', handlePhotobox);
 }
 
 
