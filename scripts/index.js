@@ -31,12 +31,12 @@ const occupationField = document.getElementById('occupation-input');
 
 
 // note обработчики нажатий для попапа с изменением информации о пользователе
-profilePopupOpenButton.addEventListener('click', evt => {
+profilePopupOpenButton.addEventListener('click', () => {
   nameField.value = username.textContent;
   occupationField.value = occupation.textContent;
   openPopup(profilePopup);
 });
-profilePopupClose.addEventListener('click', evt => {
+profilePopupClose.addEventListener('click', () => {
   closePopup(profilePopup)
 });
 profilePopupForm.addEventListener('submit', evt => {
@@ -121,7 +121,7 @@ function setBigPicture(picture) {
 }
 
 // note Обработчик нажатия на клавишу закрытия попапа с большой картитнкой
-popupPhotoboxClose.addEventListener('click', evt => { // Закрытие попапа
+popupPhotoboxClose.addEventListener('click', () => { // Закрытие попапа
   closePopup(popupPhotobox);
 });
 
@@ -135,10 +135,10 @@ const newCardSrc = document.querySelector('.popup__input-src'); // берём с
 newCardPopup.addEventListener('submit', createNewCard); // вызов функции создания новой карточки по кнопке submit
 
 // note обработчики нажатий открытия и закрытия попапа добавления карточки
-newCardPopupOpen.addEventListener('click', evt => { // открытие попапа добавления карточки
+newCardPopupOpen.addEventListener('click', () => { // открытие попапа добавления карточки
   openPopup(newCardPopup);
 })
-newCardPopupClose.addEventListener('click', evt => { // закрытие попапа добавления карточки
+newCardPopupClose.addEventListener('click', () => { // закрытие попапа добавления карточки
   closePopup(newCardPopup);
 })
 
