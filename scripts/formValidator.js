@@ -52,8 +52,8 @@ export class FormValidator {
     });
   };
 
-  // note отключение кнопки при невалидном инпуте
-  _disableSubmitButton() {
+  // note отключение кнопки при невалидном инпуте, сделан приватным после код-ревью
+  disableSubmitButton() {
     this._buttonElement.classList.add(this._settings.inactiveButtonClass);
     this._buttonElement.disabled = true;
   }
@@ -67,16 +67,16 @@ export class FormValidator {
   // note выбор класса включения или выключения клавиши в зависимости от состояния инпута
   _toggleButtonState(inputList, buttonElement) {
     if (this._hasInvalidInput(inputList)) {
-      this._disableSubmitButton(buttonElement);
+      this.disableSubmitButton(buttonElement);
     } else {
       this._enableSubmitButton(buttonElement);
     }
   };
 
-  // note первый и последний неприватный метод включения валидации
+  // note неприватный метод включения валидации
   enableValidation() {
-    this._form.addEventListener('submit', (evt) => { // добавляем каждому элементу массива (форме) слушателей
-      evt.preventDefault();
+    this._form.addEventListener('submit', () => { // добавляем каждому элементу массива (форме) слушателей
+      // evt.preventDefault();
     });
     this._setEventListeners();
   };

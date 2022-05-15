@@ -11,7 +11,6 @@ export class Card {
     this._cardTemplate = document.querySelector(cardTemplateSelector).content /* .querySelector('.element') */;  // что клонируем
     this._name = data.name;
     this._src = data.src;
-    this._alt = data.alt;
   }
 
 
@@ -24,19 +23,20 @@ export class Card {
   }
   _handlePhotobox = () => { // Открытие попапа с большой картинкой
     popupPhotoboxPicture.src = this._src;
-    popupPhotoboxPicture.alt = this._alt;
+    popupPhotoboxPicture.alt = this._name;
     popupPhotoboxCaption.textContent = this._name;
     openModalWindow(popupPhotobox);  // открытие попапа
   }
 
   _addEventListeners (cardNode, cardImage) {
-    cardNode.querySelector('.element__like').addEventListener('click', this._handleLikeIcon);
-    cardNode.querySelector('.element__delete').addEventListener('click', this._handleDelete);
+    this._cardElement.querySelector('.element__like').addEventListener('click', this._handleLikeIcon);
+    // cardNode.querySelector('.element__delete').addEventListener('click', this._handleDelete);
+    this._cardElement.querySelector('.element__delete').addEventListener('click', this._handleDelete);
     cardImage.addEventListener('click', this._handlePhotobox);
   }
 
   // note функция создания карточек
-  GetCardElement () {
+  getCardElement () {
     this._cardElement = this._cardTemplate.cloneNode(true);  // клонируем темплейт
     this._cardElement.querySelector('.element__title').textContent = this._name;
 
