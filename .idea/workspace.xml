@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="066ac7fb-1546-4bd8-8b0e-f1b7b0a21073" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/blocks/popup/__button/_disabled/popup__button_disabled.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blocks/popup/__button/popup__button.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/works.css" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="24obufTfAS3tRwXxIILe1r9tJA0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.vendoring.notification.had.been.shown&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\Yandex_Praktikum\006_mesto\blocks\popup\__submit-button\_disabled" />
+      <recent name="D:\Projects\Yandex_Praktikum\005_mesto" />
+    </key>
+  </component>
+  <component name="RubyModuleManagerSettings">
+    <option name="blackListedRootsPaths">
+      <list>
+        <option value="$PROJECT_DIR$" />
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\gzx20\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="066ac7fb-1546-4bd8-8b0e-f1b7b0a21073" name="Changes" comment="" />
+      <created>1644300111638</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644300111638</updated>
+      <workItem from="1644300113636" duration="1460000" />
+      <workItem from="1644317656958" duration="1801000" />
+      <workItem from="1644319484454" duration="1285000" />
+      <workItem from="1644339948927" duration="733000" />
+      <workItem from="1644385581499" duration="5000" />
+      <workItem from="1644395405686" duration="49000" />
+      <workItem from="1644395689920" duration="7000" />
+      <workItem from="1644395797519" duration="299000" />
+      <workItem from="1644396328046" duration="731000" />
+      <workItem from="1644520142669" duration="150000" />
+      <workItem from="1644520342740" duration="53000" />
+      <workItem from="1644520398626" duration="3470000" />
+      <workItem from="1644523921115" duration="69000" />
+      <workItem from="1644558613353" duration="1100000" />
+      <workItem from="1644559855266" duration="1119000" />
+      <workItem from="1644575213480" duration="24000" />
+      <workItem from="1644575468814" duration="2678000" />
+      <workItem from="1644578365664" duration="7262000" />
+      <workItem from="1644753756717" duration="1027000" />
+      <workItem from="1644756916075" duration="1910000" />
+      <workItem from="1644813479241" duration="1863000" />
+      <workItem from="1644817955389" duration="2058000" />
+      <workItem from="1644824877127" duration="1869000" />
+      <workItem from="1644829260365" duration="4580000" />
+      <workItem from="1644835463884" duration="745000" />
+      <workItem from="1644837675224" duration="2164000" />
+      <workItem from="1644847842492" duration="2886000" />
+      <workItem from="1644851986270" duration="315000" />
+      <workItem from="1644946777773" duration="2232000" />
+      <workItem from="1645185794603" duration="604000" />
+      <workItem from="1645195369060" duration="4267000" />
+      <workItem from="1645355074986" duration="4862000" />
+      <workItem from="1645362110794" duration="958000" />
+      <workItem from="1645365694769" duration="795000" />
+      <workItem from="1645374149867" duration="597000" />
+      <workItem from="1645380172295" duration="251000" />
+      <workItem from="1645380442001" duration="43000" />
+      <workItem from="1645418643713" duration="1746000" />
+      <workItem from="1645466621226" duration="1604000" />
+      <workItem from="1645470053329" duration="644000" />
+      <workItem from="1645510105912" duration="942000" />
+      <workItem from="1645555717466" duration="1438000" />
+      <workItem from="1645630218091" duration="507000" />
+      <workItem from="1645630739752" duration="10000" />
+      <workItem from="1645630794564" duration="7000" />
+      <workItem from="1645634048952" duration="1163000" />
+      <workItem from="1645769184253" duration="14000" />
+      <workItem from="1645786093708" duration="3600000" />
+      <workItem from="1645791708411" duration="9681000" />
+      <workItem from="1645872901946" duration="21822000" />
+      <workItem from="1645894976795" duration="243000" />
+      <workItem from="1645911101669" duration="1243000" />
+      <workItem from="1645916079301" duration="2946000" />
+      <workItem from="1645963314721" duration="300000" />
+      <workItem from="1645970424934" duration="2270000" />
+      <workItem from="1645976498159" duration="954000" />
+      <workItem from="1646052985822" duration="1972000" />
+      <workItem from="1646295847587" duration="260000" />
+      <workItem from="1646392317900" duration="4000" />
+      <workItem from="1647523666613" duration="5000" />
+      <workItem from="1649272908655" duration="976000" />
+      <workItem from="1649356186469" duration="2132000" />
+      <workItem from="1649582066498" duration="2521000" />
+      <workItem from="1649594334509" duration="59000" />
+      <workItem from="1649594483430" duration="33000" />
+      <workItem from="1649777362135" duration="315000" />
+      <workItem from="1649777697683" duration="106000" />
+      <workItem from="1649863546882" duration="2153000" />
+      <workItem from="1649876511352" duration="3513000" />
+      <workItem from="1649961236612" duration="2498000" />
+      <workItem from="1650457733130" duration="600000" />
+      <workItem from="1650468458053" duration="1398000" />
+      <workItem from="1650637624869" duration="124000" />
+      <workItem from="1650637797134" duration="42000" />
+      <workItem from="1650637962883" duration="1333000" />
+      <workItem from="1650729385028" duration="2843000" />
+      <workItem from="1651485577799" duration="9421000" />
+      <workItem from="1651582550559" duration="6291000" />
+      <workItem from="1651675284072" duration="1210000" />
+      <workItem from="1651676668604" duration="814000" />
+      <workItem from="1651828401913" duration="7196000" />
+      <workItem from="1651846748187" duration="151000" />
+      <workItem from="1651846934300" duration="1559000" />
+      <workItem from="1652023855338" duration="6954000" />
+      <workItem from="1652032520683" duration="744000" />
+      <workItem from="1652033279927" duration="5838000" />
+      <workItem from="1652039307278" duration="799000" />
+      <workItem from="1652622055570" duration="3224000" />
+      <workItem from="1653312916015" duration="66000" />
+      <workItem from="1653313096746" duration="218000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>false</integration-enabled>
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="004_mesto" type="b2602c69:ProjectViewProjectNode" />
+        <item name="004_mesto" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
+</project>
