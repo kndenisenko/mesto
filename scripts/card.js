@@ -8,7 +8,7 @@ import { openModalWindow } from "./utils.js";
 
 export class Card {
   constructor(data, cardTemplateSelector) {
-    this._cardTemplate = document.querySelector(cardTemplateSelector).content /* .querySelector('.element') */;  // что клонируем
+    this._cardTemplate = document.querySelector(cardTemplateSelector).content;  // что клонируем
     this._name = data.name;
     this._src = data.src;
   }
@@ -28,9 +28,8 @@ export class Card {
     openModalWindow(popupPhotobox);  // открытие попапа
   }
 
-  _addEventListeners (cardNode, cardImage) {
+  _addEventListeners (cardImage) {
     this._cardElement.querySelector('.element__like').addEventListener('click', this._handleLikeIcon);
-    // cardNode.querySelector('.element__delete').addEventListener('click', this._handleDelete);
     this._cardElement.querySelector('.element__delete').addEventListener('click', this._handleDelete);
     cardImage.addEventListener('click', this._handlePhotobox);
   }
@@ -38,14 +37,16 @@ export class Card {
   // note функция создания карточек
   getCardElement () {
     this._cardElement = this._cardTemplate.cloneNode(true);  // клонируем темплейт
-    this._cardElement.querySelector('.element__title').textContent = this._name;
+    this._cardElement.querySelector('.element__title').textContent = this._name; // добавляем имя (заголовок)
 
     const cardImage = this._cardElement.querySelector('.element__image');
     cardImage.src = this._src;
-    cardImage.alt = this._alt;
+    cardImage.alt = this._name;
 
     this._addEventListeners(this._cardElement, cardImage);
 
     return this._cardElement; // Возвращаем результат работы функции
+
   }
+
 }

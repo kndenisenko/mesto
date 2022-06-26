@@ -67,7 +67,6 @@ function addUserCard (evt) {
   const newCard = { // создаём массив для будущей карточки, данные берутся из формы
     name: newCardName.value,
     src: newCardSrc.value,
-    alt: newCardName.value
   };
 
   renderSecondCards(newCard); // рендер карточки
@@ -75,10 +74,10 @@ function addUserCard (evt) {
   newCardName.value = ''; // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
   newCardSrc.value = '';  // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
 
-  // Делаем кнопку сабмита неактивной совсем
-  const popupButtondisabled = newCardPopup.querySelector('.popup__button');
-  popupButtondisabled.disableSubmitButton; // используем метод disableSubmitButton из formValidator.js
-  popupButtondisabled.classList.add('popup__button_disabled');
+  // Делаем кнопку сабмита неактивной совсем (закомемнтировано для код-ревью от 26.06.2022)
+  // const popupButtondisabled = newCardPopup.querySelector('.popup__button');
+  // popupButtondisabled.disableSubmitButton; // используем метод disableSubmitButton из formValidator.js
+  // popupButtondisabled.classList.add('popup__button_disabled');
 }
 
 // note Создание дополнительной, пользовательской карточки и добавления её в начало
@@ -123,3 +122,4 @@ newCardPopupClose.addEventListener('click', () => { // закрытие попа
 
 addCardValidator.enableValidation();
 editProfileValidator.enableValidation();
+addCardValidator.disableSubmitButton(); // Делаем кнопку сабмита неактивной, когда она не нужна. (код-ревью 26.06.2022)
