@@ -53,7 +53,7 @@ export class FormValidator {
   };
 
   // note отключение кнопки при невалидном инпуте, сделан приватным после код-ревью
-  disableSubmitButton() {
+  _disableSubmitButton() {
     this._buttonElement.classList.add(this._settings.inactiveButtonClass);
     this._buttonElement.disabled = true;
   }
@@ -67,7 +67,7 @@ export class FormValidator {
   // note выбор класса включения или выключения клавиши в зависимости от состояния инпута
   _toggleButtonState(inputList, buttonElement) {
     if (this._hasInvalidInput(inputList)) {
-      this.disableSubmitButton(buttonElement);
+      this._disableSubmitButton(buttonElement);
     } else {
       this._enableSubmitButton(buttonElement);
     }

@@ -6,7 +6,6 @@ import { openModalWindow, closePopup, } from "./utils.js";
 import { FormValidator } from "./formValidator.js";
 import { Card } from "./card.js";
 
-
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopup = document.querySelector('.popup-profile');
 const profilePopupOpenButton = document.querySelector('.profile__edit');
@@ -41,22 +40,14 @@ const editProfileValidator = new FormValidator(validatorConfig, userInfoForm);
 // note место, куда клонируем темплейт карточки
 const cloneTarget = document.querySelector('.elements__container');
 
+initialCards.forEach((data) => {
+  renderInitialCards(data, cloneTarget);
+})
 
-
-// note Инициализация первых карточек из массива
-function renderFirstCards() {
-  initialCards.forEach(firstCardsAppend);
-}
-renderFirstCards()
-
-// note готовые первые карточки добавляем в начало DOM
-function firstCardsAppend(data) {
-  cloneTarget.append(createCard(data))
-}
-
-// note задействуем класс
-function createCard(data) {
-  return new Card(data, '#cardTemplate').getCardElement();
+function renderInitialCards(data, cloneTarget) {
+  let card = new Card(data, '#cardTemplate');
+  let markup = card.getCardElement();
+  cloneTarget.prepend(markup);
 }
 
 // note добавление новой карточки пользователем
@@ -69,7 +60,7 @@ function addUserCard (evt) {
     src: newCardSrc.value,
   };
 
-  renderSecondCards(newCard); // рендер карточки
+  renderCard(newCard); // рендер карточки
   closePopup(newCardPopup); // закрытие попапа
   newCardName.value = ''; // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
   newCardSrc.value = '';  // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
@@ -81,11 +72,11 @@ function addUserCard (evt) {
 }
 
 // note Создание дополнительной, пользовательской карточки и добавления её в начало
-function renderSecondCards(card) {
-  const cardNode = createCard(card)
-  cloneTarget.prepend(cardNode);
+function renderCard(data) {
+  let userCard = new Card(data, '#cardTemplate');
+  let markup = userCard.getCardElement();
+  cloneTarget.prepend(markup);
 }
-
 
 // note обработчики нажатий для попапа с изменением информации о пользователе
 profilePopupOpenButton.addEventListener('click', () => {
@@ -103,7 +94,6 @@ profilePopupForm.addEventListener('submit', evt => {
   closePopup(profilePopup);
 });
 
-
 // note Обработчик нажатия на клавишу закрытия попапа с большой картинкой
 popupPhotoboxClose.addEventListener('click', () => { // Закрытие попапа
   closePopup(popupPhotobox);
@@ -119,7 +109,5 @@ newCardPopupClose.addEventListener('click', () => { // закрытие попа
   closePopup(newCardPopup);
 })
 
-
 addCardValidator.enableValidation();
 editProfileValidator.enableValidation();
-addCardValidator.disableSubmitButton(); // Делаем кнопку сабмита неактивной, когда она не нужна. (код-ревью 26.06.2022)

@@ -5,14 +5,12 @@
 import { popupPhotobox, popupPhotoboxPicture, popupPhotoboxCaption } from "./const.js";
 import { openModalWindow } from "./utils.js";
 
-
 export class Card {
   constructor(data, cardTemplateSelector) {
     this._cardTemplate = document.querySelector(cardTemplateSelector).content;  // что клонируем
     this._name = data.name;
     this._src = data.src;
   }
-
 
   // note два следующих метода  должны работать через this._ но не получилось :'(
   _handleLikeIcon = (event) => { // Лайк карточки
@@ -43,10 +41,9 @@ export class Card {
     cardImage.src = this._src;
     cardImage.alt = this._name;
 
-    this._addEventListeners(this._cardElement, cardImage);
+    this._addEventListeners(cardImage);
 
     return this._cardElement; // Возвращаем результат работы функции
 
   }
-
 }
