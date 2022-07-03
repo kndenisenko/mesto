@@ -40,18 +40,19 @@ const editProfileValidator = new FormValidator(validatorConfig, userInfoForm);
 // note место, куда клонируем темплейт карточки
 const cloneTarget = document.querySelector('.elements__container');
 
-initialCards.forEach((data) => {
-  renderInitialCards(data, cloneTarget);
-})
-
-function renderInitialCards(data, cloneTarget) {
-  let card = new Card(data, '#cardTemplate');
-  let markup = card.getCardElement();
+// note функция, которая получает данные и создаёт карточку
+function createCard(data, cloneTarget) {
+  const card = new Card(data, '#cardTemplate');
+  const markup = card.getCardElement();
   cloneTarget.prepend(markup);
 }
 
+// note Рендер первых 6 карточек
+initialCards.forEach((data) => {
+  createCard(data, cloneTarget);
+})
+
 // note добавление новой карточки пользователем
-// note забрали из 5-го спринта и переименовали
 function addUserCard (evt) {
   evt.preventDefault();
 
@@ -60,7 +61,7 @@ function addUserCard (evt) {
     src: newCardSrc.value,
   };
 
-  renderCard(newCard); // рендер карточки
+  renderAdditionalCard(newCard); // рендер карточки
   closePopup(newCardPopup); // закрытие попапа
   newCardName.value = ''; // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
   newCardSrc.value = '';  // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
@@ -71,11 +72,9 @@ function addUserCard (evt) {
   // popupButtondisabled.classList.add('popup__button_disabled');
 }
 
-// note Создание дополнительной, пользовательской карточки и добавления её в начало
-function renderCard(data) {
-  let userCard = new Card(data, '#cardTemplate');
-  let markup = userCard.getCardElement();
-  cloneTarget.prepend(markup);
+// note Рендер дополнительной, пользовательской карточки, через функцию createCard
+function renderAdditionalCard(data) {
+  createCard(data, cloneTarget);
 }
 
 // note обработчики нажатий для попапа с изменением информации о пользователе
