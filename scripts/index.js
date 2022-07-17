@@ -63,8 +63,7 @@ function addUserCard (evt) {
 
   renderAdditionalCard(newCard); // рендер карточки
   closePopup(newCardPopup); // закрытие попапа
-  newCardName.value = ''; // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
-  newCardSrc.value = '';  // очистка полей ввода после вывода карточки (очистка формы через reset() не сработала)
+  addCardForm.reset(); // очистка полей ввода формы через reset()
 
   // Делаем кнопку сабмита неактивной совсем (закомемнтировано для код-ревью от 26.06.2022)
   // const popupButtondisabled = newCardPopup.querySelector('.popup__button');
