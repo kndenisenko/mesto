@@ -1,2 +1,4 @@
 # Intellij Idea files:
 .idea
+node_modules
+dist

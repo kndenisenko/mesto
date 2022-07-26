@@ -33,7 +33,7 @@ export class Card {
   }
 
   // note функция создания карточек
-  getCardElement () {
+  getCardElement() {
     this._cardElement = this._cardTemplate.cloneNode(true);  // клонируем темплейт
     this._cardElement.querySelector('.element__title').textContent = this._name; // добавляем имя (заголовок)
 

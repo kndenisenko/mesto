@@ -5,6 +5,7 @@ import { openModalWindow, closePopup, } from "./utils.js";
 // note импорт классов
 import { FormValidator } from "./formValidator.js";
 import { Card } from "./card.js";
+import { Section } from "./section.js"
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopup = document.querySelector('.popup-profile');
@@ -42,15 +43,15 @@ const cloneTarget = document.querySelector('.elements__container');
 
 // note функция, которая получает данные и создаёт карточку
 function createCard(data, cloneTarget) {
-  const card = new Card(data, '#cardTemplate');
+  const card = new Card(data, '#cardTemplate'); // #cardTemplate - шаблон для карточки в HTML
   const markup = card.getCardElement();
-  cloneTarget.prepend(markup);
+  cloneTarget.append(markup);
 }
 
-// note Рендер первых 6 карточек
-initialCards.forEach((data) => {
-  createCard(data, cloneTarget);
-})
+// // note Рендер первых 6 карточек
+// initialCards.forEach((data) => {
+//   createCard(data, cloneTarget);
+// })
 
 // note добавление новой карточки пользователем
 function addUserCard (evt) {
@@ -109,3 +110,8 @@ newCardPopupClose.addEventListener('click', () => { // закрытие попа
 
 addCardValidator.enableValidation();
 editProfileValidator.enableValidation();
+
+
+// Вывод карточек через класс Section
+const section = new Section({items: initialCards, renderer: createCard }, cloneTarget);
+section.renderItems();
