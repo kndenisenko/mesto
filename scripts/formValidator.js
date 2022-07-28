@@ -75,8 +75,8 @@ export class FormValidator {
 
   // note неприватный метод включения валидации
   enableValidation() {
-    this._form.addEventListener('submit', () => { // добавляем каждому элементу массива (форме) слушателей
-      // evt.preventDefault();
+    this._form.addEventListener('submit', (evt) => { // добавляем каждому элементу массива (форме) слушателей
+      evt.preventDefault();
     });
     this._setEventListeners();
   };

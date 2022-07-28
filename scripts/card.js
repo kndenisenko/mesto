@@ -2,14 +2,12 @@
 // note mesto - спринт 7
 //----------------------------------------------------------------------------------------------------------------------
 
-import { popupPhotobox, popupPhotoboxPicture, popupPhotoboxCaption } from "./const.js";
-import { openModalWindow } from "./utils.js";
-
 export class Card {
-  constructor(data, cardTemplateSelector) {
+  constructor(data, cardTemplateSelector, handleImageClick) {
     this._cardTemplate = document.querySelector(cardTemplateSelector).content;  // что клонируем
     this._name = data.name;
     this._src = data.src;
+    this._handleImageClick = handleImageClick
   }
 
   // note два следующих метода  должны работать через this._ но не получилось :'(
@@ -19,17 +17,12 @@ export class Card {
   _handleDelete = (event) => { // Удаление карточки
     event.target.closest('.element').remove();
   }
-  _handlePhotobox = () => { // Открытие попапа с большой картинкой
-    popupPhotoboxPicture.src = this._src;
-    popupPhotoboxPicture.alt = this._name;
-    popupPhotoboxCaption.textContent = this._name;
-    openModalWindow(popupPhotobox);  // открытие попапа
-  }
-
+  
+  // добавление слушателей 
   _addEventListeners (cardImage) {
     this._cardElement.querySelector('.element__like').addEventListener('click', this._handleLikeIcon);
     this._cardElement.querySelector('.element__delete').addEventListener('click', this._handleDelete);
-    cardImage.addEventListener('click', this._handlePhotobox);
+    this._cardElement.querySelector('.element__image').addEventListener('click', this._handleImageClick);
   }
 
   // note функция создания карточек
