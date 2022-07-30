@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./pages/index.css" />
+  <title>Экспедиция Фёдора Конюхова и Виктора Симонова</title>
+</head>
+
+<body class="root">
+  <header class="header root__header">
+    <div class="header__logo"></div>
+  </header>
+  <main>
+    <section class="profile root__profile">
+      <img class="profile__avatar" src="./images/avatar.jpg" alt="аватар пользователя" />
+      <div class="profile__info">
+        <h1 class="profile__name">Федор Конюхов</h1>
+        <button class="profile__edit" aria-label="редактировать профиль" type="button"></button>
+        <p class="profile__occupation">Путешественник везде</p>
+      </div>
+      <button class="profile__add-button" aria-label="добавить карточку места" type="button"></button>
+    </section>
+    <section class="elements root__elements">
+      <ul class="elements__container"></ul>
+    </section>
+  </main>
+  <footer class="footer root__footer">
+    <p class="footer__copyright">© 2022 mesto russia</p>
+  </footer>
+
+  <template class="cards" id="cardTemplate">
+    <li class="element">
+      <img class="element__image" src="./images/reliz.jpeg" alt="" /> <!-- валидатор практикума не пропускал с пустым src, добавил ему src-->
+      <div class="element__group">
+        <h2 class="element__title"></h2>
+        <button class="element__like" type="button"></button>
+      </div>
+      <div class="delete__container">
+        <button class="element__delete" type="button"></button>
+      </div>
+    </li>
+  </template>
+
+  <div class="popup popup-profile">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button"></button>
+      <form class="popup__form popup__form_username" name="profile-form" novalidate>
+        <h2 class="popup__header">Редактировать профиль</h2>
+        <input class="popup__input username-input" type="text" id="username-input" name="usermane" value="" minlength="2" maxlength="40" placeholder="Имя пользователя" required/>
+        <span class="popup__error popup__input-error" id="username-input-error"></span>
+        <input class="popup__input occupation-input" type="text" id="occupation-input" name="occupation" value="" minlength="2" maxlength="200" placeholder="Профессия" required/>
+        <span class="popup__error" id="occupation-input-error"></span>
+        <button class="popup__button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_addcard">
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_add" type="button"></button>
+      <form class="popup__form popup__addform" name="addcart-form" novalidate>
+        <h2 class="popup__header">Новое место</h2>
+        <input class="popup__input popup__input-caption" type="text" id="header-input" name="caption" placeholder="Название" value="" minlength="2" maxlength="30" required/>
+        <span class="popup__error" id="header-input-error"></span>
+        <input class="popup__input popup__input-src" id="source-input" name="src" placeholder="ссылка на картинку" value="" type="url" required/>
+        <span class="popup__error" id="source-input-error"></span>
+        <button class="popup__button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_photobox">
+    <div class="popup__photobox-container">
+      <figure>
+        <img class="popup__photobox-image" src="./images/reliz.jpeg" alt=""> <!-- валидатор практикума не пропускал с пустым src, добавил ему src-->
+        <figcaption class="popup__photobox-caption">Caption</figcaption>
+      </figure>
+      <button class="popup__close-button popup__photobox-close" type="button"></button>
+    </div>
+  </div>
+
+  <script type="module" src="./scripts/index.js"></script>
+</body>
+</html>
