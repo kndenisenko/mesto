@@ -1,3 +1,6 @@
+
+import '../pages/index.css' 
+
 // note импорт переменных и функций
 import { validatorConfig, initialCards } from "./const.js";
 

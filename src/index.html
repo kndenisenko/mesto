@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./pages/index.css" />
   <title>Экспедиция Фёдора Конюхова и Виктора Симонова</title>
 </head>
 
@@ -14,7 +13,7 @@
   </header>
   <main>
     <section class="profile root__profile">
-      <img class="profile__avatar" src="./images/avatar.jpg" alt="аватар пользователя" />
+      <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="аватар пользователя" />
       <div class="profile__info">
         <h1 class="profile__name">Федор Конюхов</h1>
         <button class="profile__edit" aria-label="редактировать профиль" type="button"></button>
@@ -32,7 +31,7 @@
 
   <template class="cards" id="cardTemplate">
     <li class="element">
-      <img class="element__image" src="./images/reliz.jpeg" alt="" /> <!-- валидатор практикума не пропускал с пустым src, добавил ему src-->
+      <img class="element__image" src="" alt="" /> <!-- валидатор практикума не пропускал с пустым src, добавил ему src-->
       <div class="element__group">
         <h2 class="element__title"></h2>
         <button class="element__like" type="button"></button>
@@ -74,13 +73,13 @@
   <div class="popup popup_photobox">
     <div class="popup__photobox-container">
       <figure>
-        <img class="popup__photobox-image" src="./images/reliz.jpeg" alt=""> <!-- валидатор практикума не пропускал с пустым src, добавил ему src-->
+        <img class="popup__photobox-image" src="" alt=""> <!-- валидатор практикума не пропускал с пустым src, добавил ему src-->
         <figcaption class="popup__photobox-caption">Caption</figcaption>
       </figure>
       <button class="popup__close-button popup__photobox-close" type="button"></button>
     </div>
   </div>
 
-  <script type="module" src="./scripts/index.js"></script>
+
 </body>
 </html>

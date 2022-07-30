@@ -3,6 +3,14 @@
 // Константы и массив с исходными карточками
 //----------------------------------------------------------------------------------------------------------------------
 
+import image1 from '../images/001_petrozavodsk.jpg'
+import image2 from '../images/002_Longyearbyen.jpg'
+import image3 from '../images/003-barneo.jpg'
+import image4 from '../images/004-north-pole.jpg'
+import image5 from '../images/005-greenland.jpg'
+import image6 from '../images/006-Qaqortoq.jpg'
+
+
 export const popupPhotoboxPicture = document.querySelector('.popup__photobox-image');
 export const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption');
 export const popupPhotobox = document.querySelector('.popup_photobox');
@@ -10,34 +18,39 @@ export const ESC_KEYCODE = 27;
 
 // note Массив исходных карточек
 export const initialCards = [
+  // {
+  //   name: 'Юлианехоб (какорто́к)',
+  //   src: './images/006-Qaqortoq.jpg',
+  //   alt: 'Юлианехоб, также известный как Какорто́к'
+  // },
   {
     name: 'Юлианехоб (какорто́к)',
-    src: './images/006-Qaqortoq.jpg',
+    src: image6,
     alt: 'Юлианехоб, также известный как Какорто́к'
   },
   {
     name: 'Гренландия',
-    src: './images/005-greenland.jpg',
+    src: image5,
     alt: 'Гренландия. здесь тоже был Фёдор Конюхов'
   },
   {
     name: 'Северный полюс',
-    src: './images/004-north-pole.jpg',
+    src: image4,
     alt: 'северный полюс. главная точка экспедиции'
   },
   {
     name: 'Барнео',
-    src: './images/003-barneo.jpg',
+    src: image3,
     alt: 'Барнео. база на северном полюсе'
   },
   {
     name: 'Лонгйир',
-    src: './images/002_Longyearbyen.jpg',
+    src: image2,
     alt: 'Лонгйир, второй известный город на пути'
   },
   {
     name: 'Петрозаводск',
-    src: './images/001_petrozavodsk.jpg',
+    src: image1,
     alt: 'Петрозаводск, начало экспедиции'
   }
 ];

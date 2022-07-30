@@ -1,4 +1,6 @@
 const root = require('path'); // Необходимая переменная, чтобы вебпак сам разобрался с путями
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // Плагин для очистки папки dist
+const htmlWebpackPlugin = require('html-webpack-plugin'); // Плагин для очистки папки dist
 
 module.exports = {
   entry: './src/scripts/index.js',
@@ -16,5 +18,18 @@ module.exports = {
         name: 'chrome',
       },
     },
-  }
+  },
+  plugins: [
+//    new CleanWebpackPlugin(),
+    new htmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+  ],
+  module: {
+    rules:[
+      { test: /\.txt$/, use: 'raw-loader' },
+      { test: /\.css$/i, use: ["style-loader", "css-loader"] },
+      { test: /\.(|gif|png|jpg|jpeg|svg|woff(2)?|ttf)$/, type: 'asset/resource' }
+    ],
+  },
 }
