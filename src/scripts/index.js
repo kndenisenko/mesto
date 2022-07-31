@@ -1,4 +1,5 @@
 
+
 import '../pages/index.css' 
 
 // note импорт переменных и функций
@@ -8,8 +9,8 @@ import { validatorConfig, initialCards } from "./const.js";
 import { FormValidator } from "./formValidator.js";
 import { Card } from "./card.js";
 import { Section } from "./section.js"
-import { popupWithImage } from "./popupWithImage.js";
-import { popupWithForm } from "./popupWithForm.js";
+import { PopupWithImage } from "./popupWithImage.js";
+import { PopupWithForm } from "./popupWithForm.js";
 import { UserInfo } from "./userInfo.js";
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
@@ -22,22 +23,18 @@ const professionField = document.getElementById('occupation-input');
 const newCardPopupOpen = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки (открытия попапа)
 
 // note переменные и классы для валидации
-const addCardForm = document.querySelector('.popup__addform');
+const popupAddCardForm = document.querySelector('.popup__addform');
 const userInfoForm = document.querySelector('.popup__form_username')
 
-const addCardValidator = new FormValidator(validatorConfig, addCardForm);
-const editProfileValidator = new FormValidator(validatorConfig, userInfoForm);
-
-// note место, куда клонируем темплейт карточки
-const cloneTarget = document.querySelector('.elements__container');
+const validatorForAddCardPopup = new FormValidator(validatorConfig, popupAddCardForm);
+const validatorForEditUserInfoPopup = new FormValidator(validatorConfig, userInfoForm);
 
 // note функция, которая получает данные и создаёт карточку
-function createCard(data, cloneTarget) {
+function createCard(data) {
   const card = new Card(data, '#cardTemplate', () => { // #cardTemplate - шаблон для карточки в HTML
     imagePopup.open(data.name, data.src);
-  }); 
-  const markup = card.getCardElement();
-  cloneTarget.prepend(markup);
+  });
+  return card.getCardElement(); 
 }
 
 // note обработчики нажатий для попапа с изменением информации о пользователе
@@ -50,7 +47,8 @@ profilePopupOpenButton.addEventListener('click', () => {
 
 // note обработчики нажатий открытия и закрытия попапа добавления карточки
 newCardPopupOpen.addEventListener('click', () => { // открытие попапа добавления карточки
-  addCardPopup.open();
+  validatorForAddCardPopup.resetValidation(); // сброс ошибок валидации, если есть
+  addCardPopup.open(); // открытие попапа
 })
 
 // обработчик открытия попапа с инфой о юзере
@@ -65,20 +63,20 @@ const handleCardFormSubmit = (data) => {
   const card = createCard({
     name: data.caption,
     src: data.src,
-  }, cloneTarget );
+  }, '.elements__container' );
   section.addItem(card);
   addCardPopup.close();
 }
 
 // подключаем валидацию
-addCardValidator.enableValidation();
-editProfileValidator.enableValidation();
+validatorForAddCardPopup.enableValidation();
+validatorForEditUserInfoPopup.enableValidation();
 
 // Вывод карточек через класс Section, добавление попапа с картинокй и активация попапов с инфой о юзере и добавлением карточки
-const section = new Section({items: initialCards, renderer: createCard }, cloneTarget);
-const imagePopup = new popupWithImage('.popup_photobox');
-const editProfilePopup = new popupWithForm('.popup-profile', handleProfileFormSubmit);
-const addCardPopup = new popupWithForm('.popup_addcard', handleCardFormSubmit);
+const section = new Section({items: initialCards, renderer: createCard }, '.elements__container');
+const imagePopup = new PopupWithImage('.popup_photobox');
+const editProfilePopup = new PopupWithForm('.popup-profile', handleProfileFormSubmit);
+const addCardPopup = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
 const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation'});
 
 imagePopup.setEventListeners();

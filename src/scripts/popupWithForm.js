@@ -1,6 +1,6 @@
 import { Popup } from "./popup.js";
 
-export class popupWithForm extends Popup {
+export class PopupWithForm extends Popup {
   constructor(popupSelector, handleSubmit) {
     super(popupSelector)
 
@@ -20,8 +20,10 @@ export class popupWithForm extends Popup {
 
     // Устанавливаем слушатель события на сабмит формы
   setEventListeners () {
+    
     super.setEventListeners();
-    this._form.addEventListener('submit', () => {
+    this._form.addEventListener('submit', (e) => {
+      e.preventDefault()
       this._handleSubmit(this._getInputValues())
     });
   }

@@ -15,39 +15,32 @@ import image6 from '../images/006-Qaqortoq.jpg'
 export const popupPhotoboxPicture = document.querySelector('.popup__photobox-image');
 export const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption');
 export const popupPhotobox = document.querySelector('.popup_photobox');
-export const ESC_KEYCODE = 27;
 
 // note Массив исходных карточек
 export const initialCards = [
   {
     name: 'Юлианехоб (какорто́к)',
     src: image6,
-    alt: 'Юлианехоб, также известный как Какорто́к'
   },
   {
     name: 'Гренландия',
     src: image5,
-    alt: 'Гренландия. здесь тоже был Фёдор Конюхов'
   },
   {
     name: 'Северный полюс',
     src: image4,
-    alt: 'северный полюс. главная точка экспедиции'
   },
   {
     name: 'Барнео',
     src: image3,
-    alt: 'Барнео. база на северном полюсе'
   },
   {
     name: 'Лонгйир',
     src: image2,
-    alt: 'Лонгйир, второй известный город на пути'
   },
   {
     name: 'Петрозаводск',
     src: image1,
-    alt: 'Петрозаводск, начало экспедиции'
   }
 ];
 

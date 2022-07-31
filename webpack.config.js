@@ -15,11 +15,7 @@ module.exports = {
     static: { directory: root.join(__dirname, 'dist') }, 
     compress: true,
     port: 8080,
-    open: { // Чтобы открывался хром вместо дефолтного браузера, для мака использовать 'Google Chrome'
-      app: {
-        name: 'chrome',
-      },
-    },
+    open: true,
   },
   plugins: [ // подключение плагинов
     new CleanWebpackPlugin(),

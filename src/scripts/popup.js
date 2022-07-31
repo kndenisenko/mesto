@@ -1,5 +1,3 @@
-import { ESC_KEYCODE } from "./const.js";
-
 export class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector)
@@ -20,10 +18,10 @@ export class Popup {
 
   // Закрытие попапа через esc
   _handleEscClose (evt) {
-    if (evt.which === ESC_KEYCODE) {
+    if (evt.key === "Escape") {
       this.close(); // note Возможна потеря контекста
     }
-  }
+  } 
 
 
   // Установка слушателей событий

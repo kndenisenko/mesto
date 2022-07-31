@@ -48,9 +48,9 @@
       <form class="popup__form popup__form_username" name="profile-form" novalidate>
         <h2 class="popup__header">Редактировать профиль</h2>
         <input class="popup__input username-input" type="text" id="username-input" name="usermane" value="" minlength="2" maxlength="40" placeholder="Имя пользователя" required/>
-        <span class="popup__error popup__input-error" id="username-input-error"></span>
+        <span class="popup__error popup__input-error username-input-error" id="username-input-error"></span>
         <input class="popup__input occupation-input" type="text" id="occupation-input" name="occupation" value="" minlength="2" maxlength="200" placeholder="Профессия" required/>
-        <span class="popup__error" id="occupation-input-error"></span>
+        <span class="popup__error occupation-input-error" id="occupation-input-error"></span>
         <button class="popup__button" type="submit">Сохранить</button>
       </form>
     </div>
@@ -61,10 +61,10 @@
       <button class="popup__close-button popup__close-button_add" type="button"></button>
       <form class="popup__form popup__addform" name="addcart-form" novalidate>
         <h2 class="popup__header">Новое место</h2>
-        <input class="popup__input popup__input-caption" type="text" id="header-input" name="caption" placeholder="Название" value="" minlength="2" maxlength="30" required/>
-        <span class="popup__error" id="header-input-error"></span>
+        <input class="popup__input popup__input-caption header-input" type="text" id="header-input" name="caption" placeholder="Название" value="" minlength="2" maxlength="30" required/>
+        <span class="popup__error popup__input-error header-input-error" id="header-input-error"></span>
         <input class="popup__input popup__input-src" id="source-input" name="src" placeholder="ссылка на картинку" value="" type="url" required/>
-        <span class="popup__error" id="source-input-error"></span>
+        <span class="popup__error source-input source-input-error" id="source-input-error"></span>
         <button class="popup__button" type="submit">Сохранить</button>
       </form>
     </div>

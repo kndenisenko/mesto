@@ -10,6 +10,9 @@ export class FormValidator {
     // this._inputSelector = settings.inputSelector
     this._inputList = Array.from(this._form.querySelectorAll(this._settings.inputSelector))
     this._buttonElement = this._form.querySelector(this._settings.submitButtonSelector);
+    // this._formElement = document.querySelector('.popup__form');
+    // this._formInput = this._formElement.querySelector('.popup__input');
+    // this._formError = this._formElement.querySelector(`.${formInput.id}-error`);
   }
 
   // note метод для установки слушателей
@@ -33,16 +36,17 @@ export class FormValidator {
 
   // note метод вывода сообщения об ошибке в спан и применения стиля ошибки к инпуту
   _showInputError(inputElement, errorMessage) {
-    const errorElement = inputElement.nextElementSibling
+      const formError = this._form.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(this._settings.inputErrorClass);
-    errorElement.textContent = errorMessage; // вывод сообщения об ошибке
+    formError.textContent = errorMessage; // вывод сообщения об ошибке
   };
 
   // note метод скрытия сообщения об ошибке в спан и применения дефолтного стиля к инпуту
   _hideInputError (inputElement) {
-    const errorElement = inputElement.nextElementSibling
+    const formError = this._form.querySelector(`.${inputElement.id}-error`);
+
     inputElement.classList.remove(this._settings.inputErrorClass);
-    errorElement.textContent = ''; // скрытие сообщения об ошибке
+    formError.textContent = ''; // скрытие сообщения об ошибке
   };
 
 // note оценка состояния инпута (валиден или нет)
@@ -65,19 +69,26 @@ export class FormValidator {
   }
 
   // note выбор класса включения или выключения клавиши в зависимости от состояния инпута
-  _toggleButtonState(inputList, buttonElement) {
-    if (this._hasInvalidInput(inputList)) {
-      this._disableSubmitButton(buttonElement);
+  _toggleButtonState() {
+    if (this._hasInvalidInput()) {
+      this._disableSubmitButton();
     } else {
-      this._enableSubmitButton(buttonElement);
+      this._enableSubmitButton();
     }
   };
+  
+  // Сброс ошибок валидации в попапах
+  resetValidation() {
+    this._toggleButtonState(); // управляем кнопкой 
+
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement)  // очищаем ошибки
+    });
+
+  } 
 
   // note неприватный метод включения валидации
   enableValidation() {
-    this._form.addEventListener('submit', (evt) => { // добавляем каждому элементу массива (форме) слушателей
-      evt.preventDefault();
-    });
     this._setEventListeners();
   };
 }
