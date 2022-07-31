@@ -3,6 +3,7 @@
 // Константы и массив с исходными карточками
 //----------------------------------------------------------------------------------------------------------------------
 
+// Явный импорт картинок, чтобы они прогружались с помощью вебпака
 import image1 from '../images/001_petrozavodsk.jpg'
 import image2 from '../images/002_Longyearbyen.jpg'
 import image3 from '../images/003-barneo.jpg'
@@ -18,11 +19,6 @@ export const ESC_KEYCODE = 27;
 
 // note Массив исходных карточек
 export const initialCards = [
-  // {
-  //   name: 'Юлианехоб (какорто́к)',
-  //   src: './images/006-Qaqortoq.jpg',
-  //   alt: 'Юлианехоб, также известный как Какорто́к'
-  // },
   {
     name: 'Юлианехоб (какорто́к)',
     src: image6,

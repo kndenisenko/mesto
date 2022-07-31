@@ -54,6 +54,7 @@ export class FormValidator {
 
   // note отключение кнопки при невалидном инпуте, сделан приватным после код-ревью
   _disableSubmitButton() {
+    console.log(this._buttonElement);
     this._buttonElement.classList.add(this._settings.inactiveButtonClass);
     this._buttonElement.disabled = true;
   }
