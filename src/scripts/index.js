@@ -34,7 +34,6 @@ const cloneTarget = document.querySelector('.elements__container');
 // note функция, которая получает данные и создаёт карточку
 function createCard(data, cloneTarget) {
   const card = new Card(data, '#cardTemplate', () => { // #cardTemplate - шаблон для карточки в HTML
-    console.log('123')
     imagePopup.open(data.name, data.src);
   }); 
   const markup = card.getCardElement();

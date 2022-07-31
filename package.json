@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/kndenisenko/mesto.git"
   },
-  "author": "",
+  "author": "Konstantin Denisenko",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kndenisenko/mesto/issues"
