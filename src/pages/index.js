@@ -1,17 +1,15 @@
-
-
-import '../pages/index.css' 
+import './index.css' 
 
 // note импорт переменных и функций
-import { validatorConfig, initialCards } from "./const.js";
+import { validatorConfig, initialCards } from "../scripts/const.js";
 
 // note импорт классов
-import { FormValidator } from "./formValidator.js";
-import { Card } from "./card.js";
-import { Section } from "./section.js"
-import { PopupWithImage } from "./popupWithImage.js";
-import { PopupWithForm } from "./popupWithForm.js";
-import { UserInfo } from "./userInfo.js";
+import { FormValidator } from "../scripts/formValidator.js";
+import { Card } from "../scripts/card.js";
+import { Section } from "../scripts/section.js"
+import { PopupWithImage } from "../scripts/popupWithImage.js";
+import { PopupWithForm } from "../scripts/popupWithForm.js";
+import { UserInfo } from "../scripts/userInfo.js";
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopupOpenButton = document.querySelector('.profile__edit');

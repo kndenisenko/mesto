@@ -1,14 +1,14 @@
 .popup__button_disabled {
   background: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #D7D7D7;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #000;
+  color: #D7D7D7;
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
 }
 
 .popup__button_disabled:hover {
-  opacity: .2;
+  cursor: default;
 }

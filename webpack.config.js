@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // Плагин
 const htmlWebpackPlugin = require('html-webpack-plugin'); // Плагин для очистки папки dist
 
 module.exports = {
-  entry: './src/scripts/index.js',
+  entry: './src/pages/index.js',
   mode: 'production',
   output: {
     filename: 'index.js',

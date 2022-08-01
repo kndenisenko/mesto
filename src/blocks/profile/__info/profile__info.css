@@ -1,15 +1,23 @@
 .profile__info {
   max-width: 282px;
-  display: flex;
+  display: grid;
+  grid-template-areas:
+  "username button"
+  "occupation occupation";
   flex-direction: row;
   flex-wrap: wrap;
+  flex-basis: 100%;
   justify-content: center;
   margin: 25px auto 0 auto;
   position: relative;
+
+
 }
 
 @media screen and (min-width: 680px) {
   .profile__info {
+
+
     justify-content: flex-start;
     align-items: center;
     max-width: 376px;
