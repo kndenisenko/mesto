@@ -1,4 +1,4 @@
-import { Popup } from "./popup.js";
+import { Popup } from "./Popup.js";
 
 export class PopupWithForm extends Popup {
   constructor(popupSelector, handleSubmit) {
@@ -6,16 +6,16 @@ export class PopupWithForm extends Popup {
 
     this._handleSubmit = handleSubmit
     this._form = this._popup.querySelector('.popup__form') 
+    this._inputs = [...this._form.querySelectorAll('.popup__input')];
+    this._values = {};
   }
 
   // Получаем значения инпутов у активной формы
   _getInputValues() {
-    const inputs = [...this._form.querySelectorAll('.popup__input')];
-    const values = {};
-    inputs.forEach((input) => {
-      values[input.name] = input.value
+    this._inputs.forEach((input) => {
+    this._values[input.name] = input.value
     });
-    return values;
+    return this._values;
   }
 
     // Устанавливаем слушатель события на сабмит формы

@@ -1,4 +1,4 @@
 .popup__photobox-image {
-  width: 100%;
+  max-width: 75vw;
   object-fit: cover;
 }
