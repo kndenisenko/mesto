@@ -4,3 +4,10 @@
   top: -32px;
   right: 0px;
 }
+
+@media screen and (max-width: 580px) {
+  .popup__photobox-close {
+    top: -32px;
+    right: 28px;
+  }
+}
