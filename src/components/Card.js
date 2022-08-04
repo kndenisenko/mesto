@@ -9,7 +9,7 @@ export class Card {
     this._cardImage = this._cardElement.querySelector('.element__image');
     this._buttonLike = this._cardElement.querySelector('.element__like');
     this._name = data.name;
-    this._src = data.src;
+    this._src = data.link;
     this._handleImageClick = handleImageClick
   }
 

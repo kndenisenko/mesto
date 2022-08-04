@@ -30,7 +30,7 @@ const validatorForEditUserInfoPopup = new FormValidator(validatorConfig, userInf
 // note функция, которая получает данные и создаёт карточку
 function createCard(data) {
   const card = new Card(data, '#cardTemplate', () => { // #cardTemplate - шаблон для карточки в HTML
-    imagePopup.open(data.name, data.src);
+    imagePopup.open(data.name, data.link);
   });
   return card.getCardElement(); 
 }
@@ -60,7 +60,7 @@ const handleProfileFormSubmit = (data) => {
 const handleCardFormSubmit = (data) => {
   const card = createCard({
     name: data.caption,
-    src: data.src,
+    link: data.src,
   }, '.elements__container' );
   section.addItem(card);
   PopupAddCard.close();

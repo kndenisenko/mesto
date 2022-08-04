@@ -20,27 +20,27 @@ export const popupPhotobox = document.querySelector('.popup_photobox');
 export const initialCards = [
   {
     name: 'Юлианехоб (какорто́к)',
-    src: image6,
+    link: image6,
   },
   {
     name: 'Гренландия',
-    src: image5,
+    link: image5,
   },
   {
     name: 'Северный полюс',
-    src: image4,
+    link: image4,
   },
   {
     name: 'Барнео',
-    src: image3,
+    link: image3,
   },
   {
     name: 'Лонгйир',
-    src: image2,
+    link: image2,
   },
   {
     name: 'Петрозаводск',
-    src: image1,
+    link: image1,
   }
 ];
 

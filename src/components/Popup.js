@@ -11,7 +11,7 @@ export class Popup {
   }
 
   // Закрытие попапа
-  close (evt) {
+  close () {
     this._popup.classList.remove('popup_visible');
     document.removeEventListener('keydown', this._handleEscClose); // снятие слушателя, если попап закрыт другим способом
   }
