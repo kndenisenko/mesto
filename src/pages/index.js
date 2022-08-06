@@ -1,3 +1,32 @@
+
+
+
+
+
+
+
+
+
+
+
+
+// https://demotions.ru/uploads/posts/2019-11/1575003676_Pervyy-Kote-na-rayon_demotions.ru.jpg
+
+
+
+
+
+
+
+
+
+// подключаем слушателей событий
+
+
+// const validatorForNewPhotoPopup = new FormValidator(validatorConfig, UserPhotoPopupSelector);
+// validatorForNewPhotoPopup.enableValidation()
+
+
 import './index.css' 
 
 // note импорт переменных и функций
@@ -22,12 +51,9 @@ defaultCards.getdefaultStuff().then(data => {
 // Выводим данные пользователя с сервера, через API
 const defaultUser = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me')
 defaultUser.getdefaultStuff().then(data => {
-  console.log(data.avatar)
-  console.log(profileAvatar.style.backgroundImage)
   profileName.textContent = data.name
   profileAbout.textContent = data.about
   profileAvatar.style.backgroundImage = `url(${data.avatar})`
-  console.log(profileAvatar.style.backgroundImage)
 })
 
 // обработчик сабмита попапа о юзере
@@ -43,15 +69,37 @@ const handleProfileFormSubmit = (data) => {
   editProfilePopup.close();
 }
 
+// элемент открытия попапа про смену  фотки юзера
+const UserPhotoPopupSelector = document.querySelector('.profile__avatar')  // Находим кнопку попапа
+// Обработчик открытия попапа
+UserPhotoPopupSelector.addEventListener('click', () => {
+  userPhotoPopup.open()
+})
+
+// обработчик клика попапа: изменения фотки юзера на сервере и на странице 
+function insertSubmit() {
+  const AvatarField = document.getElementById('source-photo-input');
+  changePhotoApi.changeUserPhoto(AvatarField.value)
+.then(() => {
+  AvatarField.value
+})
+profileAvatar.style.backgroundImage = `url(${AvatarField.value})`
+  userPhotoPopup.close()
+}
+
+
+
+
+
+
+
 // обработчик сабмита попапа с добавлением картинки в том числе через апи
 const handleCardFormSubmit = (data) => {
-  console.log(data)
   const card = createCard({
     name: data.caption,
     link: data.src,
     likes: [],
   }, '.elements__container' );
-  console.log(data)
   newCardViaApi.addUserCard(data.caption, data.src)
   section.addItem(card);
   PopupAddCard.close();
@@ -68,17 +116,17 @@ const newCardPopupOpen = document.querySelector('.profile__add-button'); // на
 
 // note переменные и классы для валидации
 const popupAddCardForm = document.querySelector('.popup__addform');
-const userInfoForm = document.querySelector('.popup__form_username')
+const userInfoForm = document.querySelector('.popup__form_username');
+const popupAddPhotoForm = document.querySelector('.popup__changephoto-input');
 
 const validatorForAddCardPopup = new FormValidator(validatorConfig, popupAddCardForm);
 const validatorForEditUserInfoPopup = new FormValidator(validatorConfig, userInfoForm);
+const validatorForPhotoPopup = new FormValidator(validatorConfig, popupAddPhotoForm);
 
 // Переменные для блока инфы о юзере
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__occupation');
 const profileAvatar = document.querySelector('.profile__avatar')
-
-const newCardViaApi = new Api('https://mesto.nomoreparties.co/v1/cohort-46/cards');
 
 // note функция, которая получает данные и создаёт карточку
 const createCard = (data) => {
@@ -108,17 +156,22 @@ newCardPopupOpen.addEventListener('click', () => { // открытие попа�
 // подключаем валидацию
 validatorForAddCardPopup.enableValidation();
 validatorForEditUserInfoPopup.enableValidation();
+validatorForPhotoPopup.enableValidation();
 
 // Вывод карточек через класс Section, добавление попапа с картинокй и активация попапов с инфой о юзере и добавлением карточки
 const section = new Section({items: initialCards, renderer: createCard }, '.elements__container');
 const imagePopup = new PopupWithImage('.popup_photobox');
 const editProfilePopup = new PopupWithForm('.popup-profile', handleProfileFormSubmit);
+const userPhotoPopup = new PopupWithForm('.popup__changephoto', insertSubmit); //  Подключаем попап к классу
 const PopupAddCard = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
 const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation'});
+const newCardViaApi = new Api('https://mesto.nomoreparties.co/v1/cohort-46/cards');
+const changePhotoApi = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me/avatar ');
 
 imagePopup.setEventListeners();
 editProfilePopup.setEventListeners();
 PopupAddCard.setEventListeners();
+userPhotoPopup.setEventListeners();
 
 // фига-фигак и в продакшн
 //section.renderItems();
