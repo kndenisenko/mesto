@@ -1,8 +1,8 @@
 export class UserInfo {
-  constructor({userNameSelector, occupationSelector }) {
+  constructor({userNameSelector, occupationSelector, avatarSelector}) {
     this._nameElement = document.querySelector(userNameSelector)
     this._professionElement = document.querySelector(occupationSelector)
-  
+    this._avatar = document.querySelector(avatarSelector)
   }
 
   // вставляем в попап то, что написал пользователь или стандартные значения
@@ -13,9 +13,19 @@ export class UserInfo {
     }
   }
 
+  
+
+  // метод заменён на API
   // перезапись стандартных значений имени пользователя и профессии
-  setUserInfo (title, profession) {
-    this._nameElement.textContent = title;
-    this._professionElement.textContent = profession;
-  }
+//   setUserInfo (title, profession) {
+//     const testApi = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me');
+//     testApi.changeUser(title, profession)
+//     .then(data => {
+//     profileName.textContent = data.name
+//     profileAbout.textContent = data.about
+//     profileAvatar.src = data.avatar
+// })
+//     // this._nameElement.textContent = title;
+//     // this._professionElement.textContent = profession;
+//   }
 }

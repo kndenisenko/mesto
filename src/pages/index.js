@@ -10,6 +10,51 @@ import { Section } from "../components/Section.js"
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
+import { Api } from '../components/Api.js'
+
+// выводим стандартные карточки с сервера через API
+const defaultCards = new Api('https://mesto.nomoreparties.co/v1/cohort-46/cards');
+defaultCards.getdefaultStuff().then(data => { 
+  const section = new Section({items: data, renderer: createCard }, '.elements__container');
+  section.renderItems();
+})
+
+// Выводим данные пользователя с сервера, через API
+const defaultUser = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me')
+defaultUser.getdefaultStuff().then(data => {
+  console.log(data.avatar)
+  console.log(profileAvatar.style.backgroundImage)
+  profileName.textContent = data.name
+  profileAbout.textContent = data.about
+  profileAvatar.style.backgroundImage = `url(${data.avatar})`
+  console.log(profileAvatar.style.backgroundImage)
+})
+
+// обработчик сабмита попапа о юзере
+const userChange = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me');
+const handleProfileFormSubmit = (data) => {
+  const { usermane, occupation } = data
+  // userInfo.setUserInfo(usermane, occupation)
+  userChange.changeUser(usermane, occupation)
+  .then(() => {
+  profileName.textContent = usermane
+  profileAbout.textContent = occupation
+})
+  editProfilePopup.close();
+}
+
+// обработчик сабмита попапа с добавлением картинки в том числе через апи
+const handleCardFormSubmit = (data) => {
+  const card = createCard({
+    name: data.caption,
+    link: data.src,
+  }, '.elements__container' );
+  console.log(data)
+  newCardViaApi.addUserCard(data.caption, data.src)
+  section.addItem(card);
+  PopupAddCard.close();
+}
+
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopupOpenButton = document.querySelector('.profile__edit');
@@ -17,7 +62,6 @@ const profilePopupOpenButton = document.querySelector('.profile__edit');
 // note поиск полей имени и профессии в попапе
 const nameField = document.getElementById('username-input');
 const professionField = document.getElementById('occupation-input');
-
 const newCardPopupOpen = document.querySelector('.profile__add-button'); // находим кнопку добавления карточки (открытия попапа)
 
 // note переменные и классы для валидации
@@ -27,8 +71,15 @@ const userInfoForm = document.querySelector('.popup__form_username')
 const validatorForAddCardPopup = new FormValidator(validatorConfig, popupAddCardForm);
 const validatorForEditUserInfoPopup = new FormValidator(validatorConfig, userInfoForm);
 
+// Переменные для блока инфы о юзере
+const profileName = document.querySelector('.profile__name');
+const profileAbout = document.querySelector('.profile__occupation');
+const profileAvatar = document.querySelector('.profile__avatar')
+
+const newCardViaApi = new Api('https://mesto.nomoreparties.co/v1/cohort-46/cards');
+
 // note функция, которая получает данные и создаёт карточку
-function createCard(data) {
+const createCard = (data) => {
   const card = new Card(data, '#cardTemplate', () => { // #cardTemplate - шаблон для карточки в HTML
     imagePopup.open(data.name, data.link);
   });
@@ -49,22 +100,8 @@ newCardPopupOpen.addEventListener('click', () => { // открытие попа�
   PopupAddCard.open(); // открытие попапа
 })
 
-// обработчик открытия попапа с инфой о юзере
-const handleProfileFormSubmit = (data) => {
-  const { usermane, occupation } = data
-  userInfo.setUserInfo(usermane, occupation)
-  editProfilePopup.close();
-}
 
-// обработчик открытия попапа с добавлением картинки
-const handleCardFormSubmit = (data) => {
-  const card = createCard({
-    name: data.caption,
-    link: data.src,
-  }, '.elements__container' );
-  section.addItem(card);
-  PopupAddCard.close();
-}
+
 
 // подключаем валидацию
 validatorForAddCardPopup.enableValidation();
@@ -82,4 +119,4 @@ editProfilePopup.setEventListeners();
 PopupAddCard.setEventListeners();
 
 // фига-фигак и в продакшн
-section.renderItems();
+//section.renderItems();

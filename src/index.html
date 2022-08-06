@@ -13,11 +13,14 @@
   </header>
   <main>
     <section class="profile root__profile">
-      <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="аватар пользователя" />
+      <!-- <img class="profile__avatar" src="" alt="аватар пользователя" /> -->
+      <div class="profile__avatar">
+        <div class="profile__avatar-image"></div>
+      </div>
       <div class="profile__info">
-        <h1 class="profile__name">Федор Конюхов</h1>
+        <h1 class="profile__name"></h1>
         <button class="profile__edit" aria-label="редактировать профиль" type="button"></button>
-        <p class="profile__occupation">Путешественник везде</p>
+        <p class="profile__occupation"></p>
       </div>
       <button class="profile__add-button" aria-label="добавить карточку места" type="button"></button>
     </section>
