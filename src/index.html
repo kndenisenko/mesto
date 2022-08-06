@@ -33,11 +33,14 @@
   </footer>
 
   <template class="cards" id="cardTemplate">
-    <li class="element">
+    <li class="element" id="">
       <img class="element__image" src="./images/reliz.jpeg" alt="" /> <!-- валидатор практикума не пропускал с пустым src, добавил ему src-->
       <div class="element__group">
         <h2 class="element__title"></h2>
-        <button class="element__like" type="button"></button>
+        <div class="element__like-container">
+          <button class="element__like" type="button"></button>
+          <p class="element__like-counter"></p>
+        </div>
       </div>
       <div class="delete__container">
         <button class="element__delete" type="button"></button>
@@ -72,6 +75,26 @@
       </form>
     </div>
   </div>
+
+
+
+  <div class="popup popup__changephoto">
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_add" type="button"></button>
+      <form class="popup__form popup__addform" name="addcart-form" novalidate>
+        <h2 class="popup__header">Обновить Аватар</h2>
+        <input class="popup__input popup__input-src" id="source-photo-input" name="src" placeholder="ссылка на картинку" value="" type="url" required/>
+        <span class="popup__error source-photo-input source-photo-input-error" id="source-photo-input-error"></span>
+        <button class="popup__button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
 
   <div class="popup popup_photobox">
     <div class="popup__photobox-container">

@@ -35,7 +35,7 @@ const userChange = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me
 const handleProfileFormSubmit = (data) => {
   const { usermane, occupation } = data
   // userInfo.setUserInfo(usermane, occupation)
-  userChange.changeUser(usermane, occupation)
+  userChange.changeUserInfo(usermane, occupation)
   .then(() => {
   profileName.textContent = usermane
   profileAbout.textContent = occupation
@@ -45,9 +45,11 @@ const handleProfileFormSubmit = (data) => {
 
 // обработчик сабмита попапа с добавлением картинки в том числе через апи
 const handleCardFormSubmit = (data) => {
+  console.log(data)
   const card = createCard({
     name: data.caption,
     link: data.src,
+    likes: [],
   }, '.elements__container' );
   console.log(data)
   newCardViaApi.addUserCard(data.caption, data.src)
