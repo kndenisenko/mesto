@@ -1,32 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-// https://demotions.ru/uploads/posts/2019-11/1575003676_Pervyy-Kote-na-rayon_demotions.ru.jpg
-
-
-
-
-
-
-
-
-
-// подключаем слушателей событий
-
-
-// const validatorForNewPhotoPopup = new FormValidator(validatorConfig, UserPhotoPopupSelector);
-// validatorForNewPhotoPopup.enableValidation()
-
-
 import './index.css' 
 
 // note импорт переменных и функций
@@ -39,22 +10,32 @@ import { Section } from "../components/Section.js"
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
+
+// Новое апи
+import { apiexp } from '../components/Apithwo.js'
+// старое апи
 import { Api } from '../components/Api.js'
 
-// выводим стандартные карточки с сервера через API
-const defaultCards = new Api('https://mesto.nomoreparties.co/v1/cohort-46/cards');
-defaultCards.getdefaultStuff().then(data => { 
-  const section = new Section({items: data, renderer: createCard }, '.elements__container');
-  section.renderItems();
-})
 
-// Выводим данные пользователя с сервера, через API
-const defaultUser = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me')
-defaultUser.getdefaultStuff().then(data => {
+// Получаем и вставляем на страницу данные пользователя. С сервера через API
+apiexp.loadProfile()
+.then(data => {
   profileName.textContent = data.name
   profileAbout.textContent = data.about
   profileAvatar.style.backgroundImage = `url(${data.avatar})`
 })
+.catch((err) => console.log(`Ошибка вставки данных пользователя ${err}`));
+
+// выводим стандартные карточки с сервера через API
+apiexp.getInitialCards().then(data => { 
+  const section = new Section({items: data, renderer: createCard }, '.elements__container');
+  section.renderItems();
+})
+.catch((err) => console.log(`Ошибка вставки карточек ${err}`));
+
+
+
+// всё, что ниже - проверить и переделать
 
 // обработчик сабмита попапа о юзере
 const userChange = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me');
@@ -86,12 +67,6 @@ function insertSubmit() {
 profileAvatar.style.backgroundImage = `url(${AvatarField.value})`
   userPhotoPopup.close()
 }
-
-
-
-
-
-
 
 // обработчик сабмита попапа с добавлением картинки в том числе через апи
 const handleCardFormSubmit = (data) => {
@@ -150,9 +125,6 @@ newCardPopupOpen.addEventListener('click', () => { // открытие попа�
   PopupAddCard.open(); // открытие попапа
 })
 
-
-
-
 // подключаем валидацию
 validatorForAddCardPopup.enableValidation();
 validatorForEditUserInfoPopup.enableValidation();
@@ -173,5 +145,6 @@ editProfilePopup.setEventListeners();
 PopupAddCard.setEventListeners();
 userPhotoPopup.setEventListeners();
 
-// фига-фигак и в продакшн
-//section.renderItems();
+
+
+

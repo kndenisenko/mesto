@@ -1,3 +1,5 @@
+// Старое api
+
 export class Api {
   constructor(url){
     this._url = url
@@ -102,11 +104,26 @@ export class Api {
     })
   }
 
-
-
-
-
-
-
+  deleteCard(id){
+    return fetch(`${this._url}${id}`, {
+      method: 'DELETE',
+      'Content-Type': 'application/json',
+      headers: {
+        authorization: '98760490-2f6a-4756-8d3f-d350bd1b865c',
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(res => { 
+      if (res.ok) {
+        return res.json()
+      } else {
+        throw new Error(`not ok with code ${res.status}`)
+      }
+    } )
+    .catch((err) => {
+      console.error(err);
+      return [];
+    })
+  }
 
 }
