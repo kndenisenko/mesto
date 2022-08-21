@@ -2,7 +2,6 @@ import './index.css'
 
 // note импорт переменных и функций
 import { validatorConfig, initialCards } from "../scripts/const.js";
-
 // note импорт классов
 import { FormValidator } from "../components/FormValidator.js";
 import { Card } from "../components/Card.js";
@@ -10,11 +9,8 @@ import { Section } from "../components/Section.js"
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
-
 // Новое апи
 import { apiexp } from '../components/Apithwo.js'
-// старое апи
-import { Api } from '../components/Api.js'
 
 
 // Получаем и вставляем на страницу данные пользователя. С сервера через API
@@ -27,28 +23,25 @@ apiexp.loadProfile()
 .catch((err) => console.log(`Ошибка вставки данных пользователя ${err}`));
 
 // выводим стандартные карточки с сервера через API
-apiexp.getInitialCards().then(data => { 
+apiexp.loadInitialCards().then(data => { 
   const section = new Section({items: data, renderer: createCard }, '.elements__container');
   section.renderItems();
 })
 .catch((err) => console.log(`Ошибка вставки карточек ${err}`));
 
 
-
-// всё, что ниже - проверить и переделать
-
 // обработчик сабмита попапа о юзере
-const userChange = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me');
 const handleProfileFormSubmit = (data) => {
   const { usermane, occupation } = data
-  // userInfo.setUserInfo(usermane, occupation)
-  userChange.changeUserInfo(usermane, occupation)
+  apiexp.editProfile(usermane, occupation)
   .then(() => {
   profileName.textContent = usermane
   profileAbout.textContent = occupation
 })
+.catch((err) => console.log(`Ошибка редактирования профиля: ${err}`));
   editProfilePopup.close();
 }
+
 
 // элемент открытия попапа про смену  фотки юзера
 const UserPhotoPopupSelector = document.querySelector('.profile__avatar')  // Находим кнопку попапа
@@ -60,25 +53,29 @@ UserPhotoPopupSelector.addEventListener('click', () => {
 // обработчик клика попапа: изменения фотки юзера на сервере и на странице 
 function insertSubmit() {
   const AvatarField = document.getElementById('source-photo-input');
-  changePhotoApi.changeUserPhoto(AvatarField.value)
+  apiexp.editAvatar(AvatarField.value)
 .then(() => {
   AvatarField.value
 })
+.catch((err) => console.log(`Ошибка изменения аватара профиля: ${err}`));
 profileAvatar.style.backgroundImage = `url(${AvatarField.value})`
   userPhotoPopup.close()
 }
 
-// обработчик сабмита попапа с добавлением картинки в том числе через апи
+
+// обработчик сабмита попапа с добавлением карточки в том числе через апи
 const handleCardFormSubmit = (data) => {
   const card = createCard({
     name: data.caption,
     link: data.src,
     likes: [],
   }, '.elements__container' );
-  newCardViaApi.addUserCard(data.caption, data.src)
+  apiexp.addnewCard(data.caption, data.src).catch((err) => console.log(`Ошибка добавления карточки: ${err}`));
   section.addItem(card);
   PopupAddCard.close();
 }
+
+
 
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
@@ -137,8 +134,6 @@ const editProfilePopup = new PopupWithForm('.popup-profile', handleProfileFormSu
 const userPhotoPopup = new PopupWithForm('.popup__changephoto', insertSubmit); //  Подключаем попап к классу
 const PopupAddCard = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
 const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation'});
-const newCardViaApi = new Api('https://mesto.nomoreparties.co/v1/cohort-46/cards');
-const changePhotoApi = new Api('https://mesto.nomoreparties.co/v1/cohort-46/users/me/avatar ');
 
 imagePopup.setEventListeners();
 editProfilePopup.setEventListeners();

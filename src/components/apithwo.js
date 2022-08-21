@@ -4,7 +4,7 @@ class Apii {
     this._headers = headers;
   }
   
-  getInitialCards() {
+  loadInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
     }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
@@ -16,7 +16,37 @@ class Apii {
     }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
   }
 
+  editProfile(name, about) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        name,
+        about,
+      }),
+    }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }
 
+  editAvatar(avatar) {
+    return fetch(`${this._baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        avatar,
+      }),
+    }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }
+
+  addnewCard(name, link) {
+    return fetch(`${this._baseUrl}/cards`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({
+        name,
+        link,
+      }),
+    }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }
 
 }
 
