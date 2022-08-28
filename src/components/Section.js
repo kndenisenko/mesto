@@ -14,6 +14,6 @@ export class Section {
 
 // добавление карточки в DOM, в начало - prepend
   addItem(element) {
-    this._container.prepend(element);
+    this._container.append(element);
   }
 }

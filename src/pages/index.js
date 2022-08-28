@@ -13,12 +13,22 @@ import { UserInfo } from "../components/UserInfo.js";
 import { apiexp } from '../components/Apithwo.js'
 
 
+let userID; // Задаём пустой userID, который заменится на реальный ID. Для отображения кнопки Delete
+
+// Удаление карточки по её _id
+// const handledeleteClick = (id) => {
+//   apiexp.deleteCard(id)
+//   .catch((err) => console.log(`Ошибка удаления карточки ${err}`));
+// }
+
+
 // Получаем и вставляем на страницу данные пользователя. С сервера через API
 apiexp.loadProfile()
 .then(data => {
-  profileName.textContent = data.name
-  profileAbout.textContent = data.about
-  profileAvatar.style.backgroundImage = `url(${data.avatar})`
+  profileName.textContent = data.name;
+  profileAbout.textContent = data.about;
+  userID = (data._id) ;
+  profileAvatar.style.backgroundImage = `url(${data.avatar})`;
 })
 .catch((err) => console.log(`Ошибка вставки данных пользователя ${err}`));
 
@@ -68,8 +78,11 @@ const handleCardFormSubmit = (data) => {
   const card = createCard({
     name: data.caption,
     link: data.src,
+    owner: userID,
     likes: [],
-  }, '.elements__container' );
+    }, 
+  '.elements__container'
+  );
   apiexp.addnewCard(data.caption, data.src).catch((err) => console.log(`Ошибка добавления карточки: ${err}`));
   section.addItem(card);
   PopupAddCard.close();
@@ -102,11 +115,42 @@ const profileAvatar = document.querySelector('.profile__avatar')
 
 // note функция, которая получает данные и создаёт карточку
 const createCard = (data) => {
-  const card = new Card(data, '#cardTemplate', () => { // #cardTemplate - шаблон для карточки в HTML
-    imagePopup.open(data.name, data.link);
-  });
+  const card = new Card(
+    data, 
+    '#cardTemplate', // #cardTemplate - шаблон для карточки в HTML
+    () => {imagePopup.open(data.name, data.link)},
+    userID, // стрелочная функция-обработчик клика по картинке в карточке
+    // блок удаление карточки - начало
+    // блок удаления карточки открывает попап и меняет слушателя его сабмита
+    // новый слушатель сабмита запускает api удаления 
+    // и удаляет карточку со страницы через класс card
+    // затем попап закрывается 
+    (id) => {
+      popupDelete.open();
+      popupDelete.takeaction(() => {
+        apiexp.deleteCard(id)
+        .then(() => {
+          card.handleDelete();
+          popupDelete.close()
+        })
+      .catch((err) => console.log(`Ошибка удаления карточки ${err}`))
+    })
+    }
+    // блок удаление карточки - окончание
+  );
   return card.getCardElement(); 
 }
+const paramparam = (id) => {
+  popupDelete.open();
+  popupDelete.takeaction(() => {
+    apiexp.deleteCard(id)
+    .then((res) => {
+      card.handleDelete();
+      popupDelete.close()
+    })
+  .catch((err) => console.log(`Ошибка удаления карточки ${err}`))
+})}
+
 
 // note обработчики нажатий для попапа с изменением информации о пользователе
 profilePopupOpenButton.addEventListener('click', () => {
@@ -140,6 +184,30 @@ editProfilePopup.setEventListeners();
 PopupAddCard.setEventListeners();
 userPhotoPopup.setEventListeners();
 
+const popupDelete = new PopupWithForm('.popup__deleteCard'); // поиск попапа для обработки сабмита
+popupDelete.setEventListeners();
 
+
+const HandleDeletePopup = () => {
+  popupDelete.open()
+}
+
+function handledeleteClick (id) {
+  console.log('delete popup click', id)
+  apiexp
+  .deleteCard(id)
+  .then(() => {
+    card.handleDelete();
+    popupConfirmDelete.close();
+  })
+  .catch((err) => console.log(`Ошибка удаления карточки: ${err}`));
+  popupDelete.close();
+} 
+
+
+function popupdelfunc(){
+  console.log(card)
+
+}
 
 

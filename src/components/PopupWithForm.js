@@ -20,12 +20,16 @@ export class PopupWithForm extends Popup {
 
     // Устанавливаем слушатель события на сабмит формы
   setEventListeners () {
-    
     super.setEventListeners();
     this._form.addEventListener('submit', (e) => {
       e.preventDefault()
       this._handleSubmit(this._getInputValues())
     });
+  }
+
+  takeaction(newSubmitHandler) {
+    this._handleSubmit = newSubmitHandler
+    console.log('123')
   }
 
   // Закрытие попапа и сброс значений инпутов
