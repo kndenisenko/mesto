@@ -145,10 +145,10 @@ const handleProfileFormSubmit = (data) => {
 const section = new Section({initialCards, renderer: createCard }, '.elements__container');
 const imagePopup = new PopupWithImage('.popup_photobox');
 const editProfilePopup = new PopupWithForm('.popup-profile', handleProfileFormSubmit);
-const userPhotoPopup = new PopupWithForm('.popup__changephoto', ChangePhoto); //  Подключаем попап к классу
+const userPhotoPopup = new PopupWithForm('.popup_changephoto', ChangePhoto); //  Подключаем попап к классу
 const PopupAddCard = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
 const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation'});
-const popupDelete = new PopupWithForm('.popup__deleteCard'); // поиск попапа для обработки сабмита
+const popupDelete = new PopupWithForm('.popup_deleteCard'); // поиск попапа для обработки сабмита
 const userPhotoPopupSelector = document.querySelector('.profile__avatar')  //  Элемент, который открывает попап смены фотки юзера
 
 imagePopup.setEventListeners();
