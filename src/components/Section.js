@@ -8,12 +8,17 @@ export class Section {
   // инициализация карточек из массива
   renderItems() {
     this._items.forEach(data  => {
-      this.addItem(this._renderer(data))
+      this.addFirstItems(this._renderer(data))
     });
   }
 
-// добавление карточки в DOM, в начало - prepend
-  addItem(element) {
+// добавление исходные карточки в DOM
+  addFirstItems(element) {
     this._container.append(element);
+  }
+
+  // добавление новой, пользровательской карточки в DOM
+  addUserItem(element) {
+    this._container.prepend(element);
   }
 }

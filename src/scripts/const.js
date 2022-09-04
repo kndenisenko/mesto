@@ -3,46 +3,13 @@
 // Константы и массив с исходными карточками
 //----------------------------------------------------------------------------------------------------------------------
 
-// Явный импорт картинок, чтобы они прогружались с помощью вебпака
-import image1 from '../images/001_petrozavodsk.jpg'
-import image2 from '../images/002_Longyearbyen.jpg'
-import image3 from '../images/003-barneo.jpg'
-import image4 from '../images/004-north-pole.jpg'
-import image5 from '../images/005-greenland.jpg'
-import image6 from '../images/006-Qaqortoq.jpg'
-
 
 export const popupPhotoboxPicture = document.querySelector('.popup__photobox-image');
 export const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption');
 export const popupPhotobox = document.querySelector('.popup_photobox');
 
-// note Массив исходных карточек
-export const initialCards = [
-  {
-    name: 'Юлианехоб (какорто́к)',
-    link: image6,
-  },
-  {
-    name: 'Гренландия',
-    link: image5,
-  },
-  {
-    name: 'Северный полюс',
-    link: image4,
-  },
-  {
-    name: 'Барнео',
-    link: image3,
-  },
-  {
-    name: 'Лонгйир',
-    link: image2,
-  },
-  {
-    name: 'Петрозаводск',
-    link: image1,
-  }
-];
+// note Массив исходных карточек. Стал пустым после перехода на api
+export const initialCards = [];
 
 // note Конфиг для валидатора
 export const validatorConfig = {

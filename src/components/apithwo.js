@@ -55,6 +55,20 @@ class Apii {
     }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
   }
 
+  setLike(id) {
+    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+      method: "PUT",
+      headers: this._headers,
+    }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }
+
+  deleteLike(id) {
+    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+      method: "DELETE",
+      headers: this._headers,
+    }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }
+
 }
 
 

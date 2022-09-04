@@ -13,7 +13,10 @@ export class UserInfo {
     }
   }
 
-  
+  setUserInfo(name, about) {
+    this._nameElement.textContent = name;
+    this._professionElement.textContent = about;
+  }
 
   // метод заменён на API
   // перезапись стандартных значений имени пользователя и профессии
