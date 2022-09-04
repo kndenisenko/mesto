@@ -10,85 +10,9 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
 // Новое апи
-import { apiexp } from '../components/Apithwo.js'
+import { api } from '../components/Api.js'
 
 let userID; // Задаём пустой userID, который заменится на реальный ID. Для отображения кнопки Delete
-
-// Получаем и вставляем на страницу данные пользователя. С сервера через API
-apiexp.loadProfile()
-.then(data => {
-  profileName.textContent = data.name;
-  profileAbout.textContent = data.about;
-  userID = (data._id) ;
-  profileAvatar.style.backgroundImage = `url(${data.avatar})`;
-})
-.catch((err) => console.log(`Ошибка вставки данных пользователя ${err}`));
-
-
-// выводим стандартные карточки с сервера через API
-apiexp.loadInitialCards().then(data => { 
-  const section = new Section({items: data, renderer: createCard }, '.elements__container');
-  section.renderItems();
-})
-.catch((err) => console.log(`Ошибка вставки карточек ${err}`));
-
-// обработчик сабмита попапа о юзере
-const handleProfileFormSubmit = (data) => {
-  const { usermane, occupation } = data;
-  editProfilePopup.changeButtonText(true);
-  apiexp.editProfile(usermane, occupation)
-  .then(() => {
-  profileName.textContent = usermane
-  profileAbout.textContent = occupation
-})
-.catch((err) => console.log(`Ошибка редактирования профиля: ${err}`))
-.finally(() => {
-  editProfilePopup.changeButtonText(false);
-  editProfilePopup.close();
-});
-  
-}
-
-// элемент открытия попапа про смену  фотки юзера
-const UserPhotoPopupSelector = document.querySelector('.profile__avatar')  // Находим кнопку попапа
-// Обработчик открытия попапа
-UserPhotoPopupSelector.addEventListener('click', () => {
-  userPhotoPopup.open()
-})
-
-// обработчик клика попапа: изменения фотки юзера на сервере и на странице 
-function ChangePhoto() {
-  const AvatarField = document.getElementById('source-photo-input');
-  userPhotoPopup.changeButtonText(true)
-  apiexp.editAvatar(AvatarField.value)
-.then(() => {
-  AvatarField.value
-})
-.catch((err) => console.log(`Ошибка изменения аватара профиля: ${err}`))
-.finally(() => {
-  userPhotoPopup.changeButtonText(false);
-  userPhotoPopup.close();
-});
-profileAvatar.style.backgroundImage = `url(${AvatarField.value})`
-  
-  
-  
-}
-
-// обработчик сабмита попапа с добавлением карточки юзером в том числе через апи
-const handleCardFormSubmit = (data) => {
-  PopupAddCard.changeButtonText(true);  
-  apiexp
-  .addnewCard(data.caption, data.src)
-  .then((res) => {
-    section.addUserItem(createCard(res, userID))
-  })
-  .catch((err) => console.log(`Ошибка добавления карточки: ${err}`))
-  .finally(() => {
-    PopupAddCard.changeButtonText(false)
-    PopupAddCard.close();
-  });
-}
 
 // note поиск попапа изменения профиля, кнопок его открытия и закрытия и формы
 const profilePopupOpenButton = document.querySelector('.profile__edit');
@@ -102,15 +26,37 @@ const newCardPopupOpen = document.querySelector('.profile__add-button'); // на
 const popupAddCardForm = document.querySelector('.popup__addform');
 const userInfoForm = document.querySelector('.popup__form_username');
 const popupAddPhotoForm = document.querySelector('.popup__changephoto-input');
-
 const validatorForAddCardPopup = new FormValidator(validatorConfig, popupAddCardForm);
 const validatorForEditUserInfoPopup = new FormValidator(validatorConfig, userInfoForm);
 const validatorForPhotoPopup = new FormValidator(validatorConfig, popupAddPhotoForm);
+
+// подключаем валидацию
+validatorForAddCardPopup.enableValidation();
+validatorForEditUserInfoPopup.enableValidation();
+validatorForPhotoPopup.enableValidation();
 
 // Переменные для блока инфы о юзере
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__occupation');
 const profileAvatar = document.querySelector('.profile__avatar')
+
+// Получаем и вставляем на страницу данные пользователя. С сервера через API
+api.loadProfile()
+.then(data => {
+  profileName.textContent = data.name;
+  profileAbout.textContent = data.about;
+  userID = (data._id) ;
+  profileAvatar.style.backgroundImage = `url(${data.avatar})`;
+})
+.catch((err) => console.log(`Ошибка вставки данных пользователя ${err}`));
+
+
+// выводим стандартные карточки с сервера через API
+api.loadInitialCards().then(data => { 
+  const section = new Section({items: data, renderer: createCard }, '.elements__container');
+  section.renderItems();
+})
+.catch((err) => console.log(`Ошибка вставки карточек ${err}`));
 
 // note функция, которая получает данные и создаёт карточку
 const createCard = (data) => {
@@ -127,7 +73,7 @@ const createCard = (data) => {
     (id) => {
       popupDelete.open();
         popupDelete.takeaction(() => {
-          apiexp.deleteCard(id)
+          api.deleteCard(id)
           .then(() => {
             card.handleDelete();
             popupDelete.close();
@@ -140,13 +86,13 @@ const createCard = (data) => {
     // блок установки-удаления лайка, начало
     (id) => {
       if (card.isLiked()) {
-        apiexp.deleteLike(id)
+        api.deleteLike(id)
         .then((res) => {
           card.setLikes(res.likes);
           console.log('remove like', res.likes)
         });
       } else {
-        apiexp
+        api
           .setLike(id)
           .then((res) => {
             console.log('res from index.js', res)
@@ -163,6 +109,75 @@ const createCard = (data) => {
 }
 
 
+// обработчик сабмита попапа с добавлением карточки юзером в том числе через апи
+const handleCardFormSubmit = (data) => {
+  PopupAddCard.changeButtonText(true);  
+  api
+  .addnewCard(data.caption, data.src)
+  .then((res) => {
+    section.addUserItem(createCard(res, userID))
+  })
+  .catch((err) => console.log(`Ошибка добавления карточки: ${err}`))
+  .finally(() => {
+    PopupAddCard.changeButtonText(false)
+    PopupAddCard.close();
+  });
+}
+
+// обработчик сабмита попапа о юзере
+const handleProfileFormSubmit = (data) => {
+  const { usermane, occupation } = data;
+  editProfilePopup.changeButtonText(true);
+  api.editProfile(usermane, occupation)
+  .then(() => {
+  profileName.textContent = usermane
+  profileAbout.textContent = occupation
+})
+.catch((err) => console.log(`Ошибка редактирования профиля: ${err}`))
+.finally(() => {
+  editProfilePopup.changeButtonText(false);
+  editProfilePopup.close();
+});
+  
+}
+
+// Вывод карточек через класс Section, добавление попапа с картинокй и активация попапов с инфой о юзере и добавлением карточки
+const section = new Section({initialCards, renderer: createCard }, '.elements__container');
+const imagePopup = new PopupWithImage('.popup_photobox');
+const editProfilePopup = new PopupWithForm('.popup-profile', handleProfileFormSubmit);
+const userPhotoPopup = new PopupWithForm('.popup__changephoto', ChangePhoto); //  Подключаем попап к классу
+const PopupAddCard = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
+const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation'});
+const popupDelete = new PopupWithForm('.popup__deleteCard'); // поиск попапа для обработки сабмита
+const userPhotoPopupSelector = document.querySelector('.profile__avatar')  //  Элемент, который открывает попап смены фотки юзера
+
+imagePopup.setEventListeners();
+editProfilePopup.setEventListeners();
+PopupAddCard.setEventListeners();
+userPhotoPopup.setEventListeners();
+popupDelete.setEventListeners();
+
+// обработчик клика попапа: изменения фотки юзера на сервере и на странице 
+function ChangePhoto() {
+  const AvatarField = document.getElementById('source-photo-input');
+  userPhotoPopup.changeButtonText(true)
+  api.editAvatar(AvatarField.value)
+.then(() => {
+  AvatarField.value
+})
+.catch((err) => console.log(`Ошибка изменения аватара профиля: ${err}`))
+.finally(() => {
+  userPhotoPopup.changeButtonText(false);
+  userPhotoPopup.close();
+});
+profileAvatar.style.backgroundImage = `url(${AvatarField.value})`
+}
+
+// Обработчик открытия попапа смены фотки юзера
+userPhotoPopupSelector.addEventListener('click', () => {
+  userPhotoPopup.open()
+})
+
 // note обработчики нажатий для попапа с изменением информации о пользователе
 profilePopupOpenButton.addEventListener('click', () => {
   const {name, profession} = userInfo.getUserInfo();
@@ -176,26 +191,3 @@ newCardPopupOpen.addEventListener('click', () => { // открытие попа�
   validatorForAddCardPopup.resetValidation(); // сброс ошибок валидации, если есть
   PopupAddCard.open(); // открытие попапа
 })
-
-// подключаем валидацию
-validatorForAddCardPopup.enableValidation();
-validatorForEditUserInfoPopup.enableValidation();
-validatorForPhotoPopup.enableValidation();
-
-// Вывод карточек через класс Section, добавление попапа с картинокй и активация попапов с инфой о юзере и добавлением карточки
-const section = new Section({initialCards, renderer: createCard }, '.elements__container');
-const imagePopup = new PopupWithImage('.popup_photobox');
-const editProfilePopup = new PopupWithForm('.popup-profile', handleProfileFormSubmit);
-const userPhotoPopup = new PopupWithForm('.popup__changephoto', ChangePhoto); //  Подключаем попап к классу
-const PopupAddCard = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
-const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation'});
-
-imagePopup.setEventListeners();
-editProfilePopup.setEventListeners();
-PopupAddCard.setEventListeners();
-userPhotoPopup.setEventListeners();
-
-const popupDelete = new PopupWithForm('.popup__deleteCard'); // поиск попапа для обработки сабмита
-popupDelete.setEventListeners();
-
-

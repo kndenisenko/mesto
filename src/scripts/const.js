@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------------------------------------
-// note mesto - спринт 7 и 8
+// mesto - спринт 7 и 8
 // Константы и массив с исходными карточками
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -8,10 +8,10 @@ export const popupPhotoboxPicture = document.querySelector('.popup__photobox-ima
 export const popupPhotoboxCaption = document.querySelector('.popup__photobox-caption');
 export const popupPhotobox = document.querySelector('.popup_photobox');
 
-// note Массив исходных карточек. Стал пустым после перехода на api
+// Массив исходных карточек. Стал пустым после перехода на api
 export const initialCards = [];
 
-// note Конфиг для валидатора
+// Конфиг для валидатора
 export const validatorConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',

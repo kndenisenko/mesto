@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------------------------------------
-// note mesto - спринт 7
+// mesto - спринт 7
 //----------------------------------------------------------------------------------------------------------------------
 
 export class Card {
@@ -10,7 +10,7 @@ export class Card {
     this._userID = userID
     this._ownerID = data.owner._id;
 
-    this._cardTemplate = document.querySelector(cardTemplateSelector).content;  // что клонируем
+    this._cardTemplate = document.querySelector(cardTemplateSelector).content; // что клонируем
     this._cardElement = this._cardTemplate.querySelector('.element').cloneNode(true); 
     this._cardImage = this._cardElement.querySelector('.element__image');
 
@@ -29,32 +29,32 @@ export class Card {
 
   }
 
-  // Обработчики клика на лайк и на удаление
-  _handleLikeIcon = () => { // Лайк карточки
-  //  this._buttonLike.classList.toggle('element__like_liked') // уже не требуется, за дайк отвечает другой метод 
+ // Обработчики клика на лайк и на удаление
+  _handleLikeIcon = () => {// Лайк карточки
+  // this._buttonLike.classList.toggle('element__like_liked')// уже не требуется, за дайк отвечает другой метод 
   }
 
-  handleDelete = () => { // Удаление карточки
-    this._handledeleteClick(this._id) // тут запускается функция удаления карточки через api и тут же ей передаётся id нужной карточки
+  handleDelete = () => {// Удаление карточки
+    this._handledeleteClick(this._id)// тут запускается функция удаления карточки через api и тут же ей передаётся id нужной карточки
     this._cardElement.remove();
     this._cardElement = null;
     console.log('handleDelete from card js', this._id)
   } 
   
-  // добавление слушателей 
+ // добавление слушателей 
   _addEventListeners () {
-    this._buttonLike.addEventListener('click', () => this._handleLikeClick(this._id)); // ('click', () => this._handleLikeIcon());
+    this._buttonLike.addEventListener('click', () => this._handleLikeClick(this._id));// ('click', () => this._handleLikeIcon());
     this._cardElement.querySelector('.element__delete').addEventListener('click', () => this._handledeleteClick(this._id)); 
     this._cardImage.addEventListener('click', () => this._handleImageClick());
   }
 
-  // вот это должно менять количество лайков, но что-то пошло не так
+ // вот это должно менять количество лайков, но что-то пошло не так
   setLikes(newLikes) {
     this._likes = newLikes
-    // console.log(this._likes.length)
+   // console.log(this._likes.length)
     this._likeCounter.textContent = this._likes.length
 
-    // меняем цвет кнопки лайка при нажатии
+   // меняем цвет кнопки лайка при нажатии
     if(this.isLiked()) {
       this._buttonLike.classList.add('element__like_liked')
     } else {
@@ -62,7 +62,7 @@ export class Card {
     }
   }
 
-  // Карточки, лйакнутые пользователем этой страницы
+ // Карточки, лйакнутые пользователем этой страницы
   isLiked() {
     const myOwnLikes = this._likes.find(user => user._id === this._userID)
 
@@ -70,13 +70,13 @@ export class Card {
   }
 
 
-  // note функция создания карточек
+  // функция создания карточек
   getCardElement() {
-    this._cardElement.querySelector('.element__title').textContent = this._name; // добавляем имя (заголовок)
+    this._cardElement.querySelector('.element__title').textContent = this._name;// добавляем имя (заголовок)
     this._cardImage.src = this._src;
     this._cardImage.alt = this._name;
 
-    this._cardElement.id = this._id // добавляем ID к карточке
+    this._cardElement.id = this._id// добавляем ID к карточке
     
     this._addEventListeners();
     this.setLikes(this._likes);
@@ -84,7 +84,7 @@ export class Card {
     if(this._ownerID !== this._userID) {
       this._buttonDelete.style.display = 'none'
     }
-    return this._cardElement; // Возвращаем результат работы 
+    return this._cardElement;// Возвращаем результат работы 
 
   }
 }

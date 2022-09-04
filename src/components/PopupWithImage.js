@@ -1,7 +1,7 @@
 import { Popup } from "./Popup.js";
 
 // Создаём класса popupWithImage, который расширяет исходный класс popup
-export class PopupWithImage extends Popup { // перезаписываем open
+export class PopupWithImage extends Popup {// перезаписываем open
   constructor(popupSelector) {
     super(popupSelector);
     this._image = this._popup.querySelector('.popup__photobox-image');
@@ -14,6 +14,6 @@ export class PopupWithImage extends Popup { // перезаписываем open
     this._caption.textContent = text;
 
     
-    super.open() // отсылка к исходному классу
+    super.open()// отсылка к исходному классу
   }
 }

@@ -11,7 +11,7 @@ export class PopupWithForm extends Popup {
     this._values = {};
   }
 
-  // Получаем значения инпутов у активной формы
+ // Получаем значения инпутов у активной формы
   _getInputValues() {
     this._inputs.forEach((input) => {
     this._values[input.name] = input.value
@@ -19,7 +19,7 @@ export class PopupWithForm extends Popup {
     return this._values;
   }
 
-    // Устанавливаем слушатель события на сабмит формы
+   // Устанавливаем слушатель события на сабмит формы
   setEventListeners () {
     super.setEventListeners();
     this._form.addEventListener('submit', (e) => {
@@ -33,7 +33,7 @@ export class PopupWithForm extends Popup {
     console.log('123')
   }
 
-  // замена текста кнопки "сохранить при сабмите"
+ // замена текста кнопки "сохранить при сабмите"
   changeButtonText(ischangeButtonText) {
     if (ischangeButtonText) {
       this._submitButton.textContent = "Сохранение...";
@@ -42,9 +42,9 @@ export class PopupWithForm extends Popup {
     }
   }
   
-  // Закрытие попапа и сброс значений инпутов
+ // Закрытие попапа и сброс значений инпутов
   close() {
     super.close();
-    this._form.reset() // сбрасываем данные формы   
+    this._form.reset()// сбрасываем данные формы   
   }
 }
