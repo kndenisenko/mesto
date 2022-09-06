@@ -40,6 +40,16 @@ const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__occupation');
 const profileAvatar = document.querySelector('.profile__avatar')
 
+Promise.all([api.loadProfile(), api.loadInitialCards()])
+.then(([loadProfile, loadInitialCards]) => { 
+  console.log(userInfo);
+//  userInfo.loadProfile(loadProfile.name, loadProfile.about); // userinfo loadprofile is not a function
+    userID = loadProfile._id;
+    section.renderItems(loadInitialCards, loadProfile._id);
+})
+.catch((err)=>{ console.log(`Ошибка промисов ${err}`);
+})
+
 // Получаем и вставляем на страницу данные пользователя. С сервера через API
 api.loadProfile()
 .then(data => {
@@ -51,15 +61,8 @@ api.loadProfile()
 .catch((err) => console.log(`Ошибка вставки данных пользователя ${err}`));
 
 
-// выводим стандартные карточки с сервера через API
-api.loadInitialCards().then(data => { 
-  const section = new Section({items: data, renderer: createCard }, '.elements__container');
-  section.renderItems();
-})
-.catch((err) => console.log(`Ошибка вставки карточек ${err}`));
-
 // note функция, которая получает данные и создаёт карточку
-const createCard = (data) => {
+const createCard = (data, userID) => {
   const card = new Card(
     data, 
     '#cardTemplate', // #cardTemplate - шаблон для карточки в HTML
@@ -89,16 +92,12 @@ const createCard = (data) => {
         api.deleteLike(id)
         .then((res) => {
           card.setLikes(res.likes);
-          console.log('remove like', res.likes)
         });
       } else {
         api
           .setLike(id)
           .then((res) => {
-            console.log('res from index.js', res)
-            console.log('res likes from index.js', res.likes)
             card.setLikes(res.likes);
-            // console.log('set like', res.likes)
           })
           .catch((err) => console.log(`Ошибка по лайку: ${err}`));
       }
@@ -111,16 +110,16 @@ const createCard = (data) => {
 
 // обработчик сабмита попапа с добавлением карточки юзером в том числе через апи
 const handleCardFormSubmit = (data) => {
-  PopupAddCard.changeButtonText(true);  
+  popupAddCard .changeButtonText(true);  
   api
   .addnewCard(data.caption, data.src)
   .then((res) => {
     section.addUserItem(createCard(res, userID))
+    popupAddCard .close();
   })
   .catch((err) => console.log(`Ошибка добавления карточки: ${err}`))
   .finally(() => {
-    PopupAddCard.changeButtonText(false)
-    PopupAddCard.close();
+    popupAddCard .changeButtonText(false)
   });
 }
 
@@ -132,45 +131,51 @@ const handleProfileFormSubmit = (data) => {
   .then(() => {
   profileName.textContent = usermane
   profileAbout.textContent = occupation
+  editProfilePopup.close();
 })
 .catch((err) => console.log(`Ошибка редактирования профиля: ${err}`))
 .finally(() => {
   editProfilePopup.changeButtonText(false);
-  editProfilePopup.close();
 });
   
 }
 
 // Вывод карточек через класс Section, добавление попапа с картинокй и активация попапов с инфой о юзере и добавлением карточки
-const section = new Section({initialCards, renderer: createCard }, '.elements__container');
+const section = new Section({
+  initialCards,
+    renderer: (item) => section.addFirstItems(createCard(item, userID)),
+  },
+'.elements__container'
+);
+
 const imagePopup = new PopupWithImage('.popup_photobox');
 const editProfilePopup = new PopupWithForm('.popup-profile', handleProfileFormSubmit);
-const userPhotoPopup = new PopupWithForm('.popup_changephoto', ChangePhoto); //  Подключаем попап к классу
-const PopupAddCard = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
+const userPhotoPopup = new PopupWithForm('.popup_changephoto', changePhoto); //  Подключаем попап к классу
+const popupAddCard  = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
 const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation'});
 const popupDelete = new PopupWithForm('.popup_deleteCard'); // поиск попапа для обработки сабмита
 const userPhotoPopupSelector = document.querySelector('.profile__avatar')  //  Элемент, который открывает попап смены фотки юзера
 
 imagePopup.setEventListeners();
 editProfilePopup.setEventListeners();
-PopupAddCard.setEventListeners();
+popupAddCard .setEventListeners();
 userPhotoPopup.setEventListeners();
 popupDelete.setEventListeners();
 
 // обработчик клика попапа: изменения фотки юзера на сервере и на странице 
-function ChangePhoto() {
-  const AvatarField = document.getElementById('source-photo-input');
+function changePhoto() {
+  const avatarField = document.getElementById('source-photo-input');
   userPhotoPopup.changeButtonText(true)
-  api.editAvatar(AvatarField.value)
+  api.editAvatar(avatarField.value)
 .then(() => {
-  AvatarField.value
+  avatarField.value
+  userPhotoPopup.close();
 })
 .catch((err) => console.log(`Ошибка изменения аватара профиля: ${err}`))
 .finally(() => {
   userPhotoPopup.changeButtonText(false);
-  userPhotoPopup.close();
 });
-profileAvatar.style.backgroundImage = `url(${AvatarField.value})`
+profileAvatar.style.backgroundImage = `url(${avatarField.value})`
 }
 
 // Обработчик открытия попапа смены фотки юзера
@@ -189,5 +194,5 @@ profilePopupOpenButton.addEventListener('click', () => {
 // note обработчики нажатий открытия и закрытия попапа добавления карточки
 newCardPopupOpen.addEventListener('click', () => { // открытие попапа добавления карточки
   validatorForAddCardPopup.resetValidation(); // сброс ошибок валидации, если есть
-  PopupAddCard.open(); // открытие попапа
+  popupAddCard .open(); // открытие попапа
 })
