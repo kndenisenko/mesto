@@ -26,9 +26,9 @@ export class Popup {
 
  // Установка слушателей событий
   setEventListeners () {
-    const closeButton = this._popup.querySelector('.popup__close-button');
     this._popup.addEventListener('click', (e) => {
-      if(!e.target.closest('.popup__container') || e.target === closeButton) {
+      if(e.target.classList.contains('popup__close-button') || e.target === e.currentTarget) // Чтобы попап закрывался по клику
+      {
         this.close();
       }
     })

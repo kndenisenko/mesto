@@ -7,7 +7,7 @@ export class PopupWithForm extends Popup {
     this._handleSubmit = handleSubmit
     this._form = this._popup.querySelector('.popup__form') 
     this._inputs = [...this._form.querySelectorAll('.popup__input')];
-    this._submitButton = this._form.querySelector(".popup__button");
+    this._submitButton = this._form.querySelector('.popup__button');
     this._values = {};
   }
 
@@ -30,15 +30,14 @@ export class PopupWithForm extends Popup {
 
   takeaction(newSubmitHandler) {
     this._handleSubmit = newSubmitHandler
-    console.log('123')
   }
 
  // замена текста кнопки "сохранить при сабмите"
   changeButtonText(ischangeButtonText) {
     if (ischangeButtonText) {
-      this._submitButton.textContent = "Сохранение...";
+      this._submitButton.textContent = 'Сохранение...';
     } else {
-      this._submitButton.textContent = "Сохранить";
+      this._submitButton.textContent = 'Сохранить';
     }
   }
   

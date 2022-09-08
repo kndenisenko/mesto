@@ -35,30 +35,16 @@ validatorForAddCardPopup.enableValidation();
 validatorForEditUserInfoPopup.enableValidation();
 validatorForPhotoPopup.enableValidation();
 
-// Переменные для блока инфы о юзере
-const profileName = document.querySelector('.profile__name');
-const profileAbout = document.querySelector('.profile__occupation');
-const profileAvatar = document.querySelector('.profile__avatar')
-
+// Вставляем первоначальные данные пользователя и делаем это так, чтобы вся страница открылась сразу 
 Promise.all([api.loadProfile(), api.loadInitialCards()])
 .then(([loadProfile, loadInitialCards]) => { 
-  console.log(userInfo);
-//  userInfo.loadProfile(loadProfile.name, loadProfile.about); // userinfo loadprofile is not a function
-    userID = loadProfile._id;
-    section.renderItems(loadInitialCards, loadProfile._id);
+    userInfo.setUserInfo(loadProfile.name, loadProfile.about); // вставляем имя и профессию пользователя
+    userInfo.setAvatar(loadProfile.avatar); // вставляем аватар
+    userID = loadProfile._id; // задаём значение для переменной var
+    section.renderItems(loadInitialCards, loadProfile._id); // рендеринг карточек
 })
 .catch((err)=>{ console.log(`Ошибка промисов ${err}`);
 })
-
-// Получаем и вставляем на страницу данные пользователя. С сервера через API
-api.loadProfile()
-.then(data => {
-  profileName.textContent = data.name;
-  profileAbout.textContent = data.about;
-  userID = (data._id) ;
-  profileAvatar.style.backgroundImage = `url(${data.avatar})`;
-})
-.catch((err) => console.log(`Ошибка вставки данных пользователя ${err}`));
 
 
 // note функция, которая получает данные и создаёт карточку
@@ -127,10 +113,10 @@ const handleCardFormSubmit = (data) => {
 const handleProfileFormSubmit = (data) => {
   const { usermane, occupation } = data;
   editProfilePopup.changeButtonText(true);
-  api.editProfile(usermane, occupation)
-  .then(() => {
-  profileName.textContent = usermane
-  profileAbout.textContent = occupation
+  api
+  .editProfile(usermane, occupation)
+  .then((res) => {
+  userInfo.setUserInfo(res.name, res.about);
   editProfilePopup.close();
 })
 .catch((err) => console.log(`Ошибка редактирования профиля: ${err}`))
@@ -152,7 +138,7 @@ const imagePopup = new PopupWithImage('.popup_photobox');
 const editProfilePopup = new PopupWithForm('.popup-profile', handleProfileFormSubmit);
 const userPhotoPopup = new PopupWithForm('.popup_changephoto', changePhoto); //  Подключаем попап к классу
 const popupAddCard  = new PopupWithForm('.popup_addcard', handleCardFormSubmit);
-const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation'});
+const userInfo = new UserInfo ({userNameSelector: '.profile__name', occupationSelector: '.profile__occupation', avatarSelector: '.profile__avatar'});
 const popupDelete = new PopupWithForm('.popup_deleteCard'); // поиск попапа для обработки сабмита
 const userPhotoPopupSelector = document.querySelector('.profile__avatar')  //  Элемент, который открывает попап смены фотки юзера
 
@@ -166,16 +152,19 @@ popupDelete.setEventListeners();
 function changePhoto() {
   const avatarField = document.getElementById('source-photo-input');
   userPhotoPopup.changeButtonText(true)
-  api.editAvatar(avatarField.value)
-.then(() => {
-  avatarField.value
+  api
+  .editAvatar(avatarField.value)
+  .then((res) => {
+    console.log(res.avatar);
+    userInfo.setAvatar(res.avatar)
+  
   userPhotoPopup.close();
 })
 .catch((err) => console.log(`Ошибка изменения аватара профиля: ${err}`))
 .finally(() => {
   userPhotoPopup.changeButtonText(false);
 });
-profileAvatar.style.backgroundImage = `url(${avatarField.value})`
+// profileAvatar.style.backgroundImage = `url(${avatarField.value})`
 }
 
 // Обработчик открытия попапа смены фотки юзера
