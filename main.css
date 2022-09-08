@@ -42,5 +42,7 @@
 .popup__photobox-caption{color:#fff;font-size:12px;line-height:15px;margin:10px 0 0}
 .popup__button_disabled{background:#fff;border:1px solid #d7d7d7;border-radius:2px;box-sizing:border-box;color:#d7d7d7;font-size:18px;font-weight:400;line-height:22px}.popup__button_disabled:hover{cursor:default}
 .popup__error{color:red;font-size:12px;height:29px;line-height:15px;margin:5px 0 0 34px;width:358px}@media screen and (max-width:580px){.popup__error{margin:5px 0 0 22px;width:238px}}
+.popup__form_delete{height:181px}
+.popup__button-delete{margin:0 36px}
 .popup__input_type-error{border-bottom:1px solid red}
 
