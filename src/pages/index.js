@@ -152,7 +152,7 @@ popupDelete.setEventListeners();
 function changePhoto(data) {
   userPhotoPopup.changeButtonText(true)
   api
-  .editAvatar(data[""]) // вытаскиваем ссылку на новый ававатр из data
+  .editAvatar(data["avatar-input"]) // вытаскиваем ссылку на новый ававатр из data
   .then((res) => {
     userInfo.setAvatar(res.avatar)
   userPhotoPopup.close();
@@ -180,5 +180,5 @@ profilePopupOpenButton.addEventListener('click', () => {
 // note обработчики нажатий открытия и закрытия попапа добавления карточки
 newCardPopupOpen.addEventListener('click', () => { // открытие попапа добавления карточки
   validatorForAddCardPopup.resetValidation(); // сброс ошибок валидации, если есть
-  popupAddCard .open(); // открытие попапа
+  popupAddCard.open(); // открытие попапа
 })
