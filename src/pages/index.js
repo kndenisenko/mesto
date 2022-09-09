@@ -149,15 +149,12 @@ userPhotoPopup.setEventListeners();
 popupDelete.setEventListeners();
 
 // обработчик клика попапа: изменения фотки юзера на сервере и на странице 
-function changePhoto() {
-  const avatarField = document.getElementById('source-photo-input');
+function changePhoto(data) {
   userPhotoPopup.changeButtonText(true)
   api
-  .editAvatar(avatarField.value)
+  .editAvatar(data[""]) // вытаскиваем ссылку на новый ававатр из data
   .then((res) => {
-    console.log(res.avatar);
     userInfo.setAvatar(res.avatar)
-  
   userPhotoPopup.close();
 })
 .catch((err) => console.log(`Ошибка изменения аватара профиля: ${err}`))
